@@ -111,7 +111,7 @@ export const UPCOMING_EVENT: Event = {
       total: 500,
       isHighlighted: false,
       ctaLabel: 'Get GA Tickets',
-      ticketUrl: 'https://tixr.com',
+      ticketUrl: 'https://gatekeepers.com',
     },
     {
       id: 'tier-ga-plus',
@@ -128,7 +128,7 @@ export const UPCOMING_EVENT: Event = {
       total: 250,
       isHighlighted: false,
       ctaLabel: 'Get GA+ Tickets',
-      ticketUrl: 'https://tixr.com',
+      ticketUrl: 'https://gatekeepers.com',
     },
     {
       id: 'tier-vip',
@@ -137,15 +137,14 @@ export const UPCOMING_EVENT: Event = {
       perks: [
         'Priority entry — skip the line',
         'Dedicated VIP section',
-        '2-hour premium open bar',
-        'Complimentary drink on arrival',
         'Exclusive VIP lounge access',
+        'Cash bar access',
       ],
       available: 75,
       total: 100,
       isHighlighted: true,
       ctaLabel: 'Secure VIP',
-      ticketUrl: 'https://tixr.com',
+      ticketUrl: 'https://gatekeepers.com',
     },
   ],
 }

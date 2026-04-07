@@ -24,7 +24,7 @@ const FAQS = [
       },
       {
         q: 'What should I wear?',
-        a: 'This is a premium experience — dress the part. Think elevated, fashion-forward fits. We love to see the culture show up and show out.',
+        a: 'This is a premium experience — dress the part. Think elevated, fashion-forward fits. We love to see the people show up and show out.',
       },
       {
         q: 'Is there parking available?',
@@ -37,7 +37,7 @@ const FAQS = [
     questions: [
       {
         q: 'What ticket types are available?',
-        a: 'We offer three tiers: General Admission (GA) at $40, GA+ at $55 which includes early entry and an exclusive wristband, and VIP at $90 which includes priority entry, a dedicated VIP section, and a 2-hour premium open bar.',
+        a: 'We offer three tiers: General Admission (GA) at $40, GA+ at $55 which includes early entry and an exclusive wristband, and VIP at $90 which includes priority entry and access to the exclusive VIP section and lounge.',
       },
       {
         q: 'Can I get a refund?',
@@ -45,7 +45,7 @@ const FAQS = [
       },
       {
         q: 'What is included with VIP?',
-        a: 'VIP includes priority entry (skip the line), access to the dedicated VIP section, a 2-hour premium open bar, a complimentary drink on arrival, and access to the exclusive VIP lounge.',
+        a: 'VIP includes priority entry (skip the line), access to the dedicated VIP section, exclusive VIP lounge access, and cash bar access.',
       },
       {
         q: 'What is GA+ and how is it different from GA?',
@@ -53,7 +53,7 @@ const FAQS = [
       },
       {
         q: 'Where do I purchase tickets?',
-        a: 'Tickets are available through Tixr. You can purchase directly from the Tickets section on this site. Make sure to buy from official links only.',
+        a: 'Tickets are available through Gatekeepers. You can purchase directly from the Tickets section on this site. Make sure to buy from official links only.',
       },
     ],
   },
@@ -62,7 +62,7 @@ const FAQS = [
     questions: [
       {
         q: 'Will there be food and drinks?',
-        a: 'Yes. A full cash bar will be available to all attendees. VIP guests receive a 2-hour open bar included with their ticket. Food vendors may be on-site — follow @lovenrnbfest for updates.',
+        a: 'Yes. A full cash bar will be available to all attendees. Food vendors will be on-site — follow @lovenrnbfest for updates.',
       },
       {
         q: 'Is re-entry allowed?',
