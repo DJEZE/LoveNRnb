@@ -22,20 +22,20 @@ export function Sponsors({ sponsors }: SponsorsProps) {
             {sponsors.map((sponsor) => (
               <a
                 key={sponsor.id}
-                href={sponsor.url}
+                href={sponsor.url ?? '#'}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={sponsor.name}
                 className="relative flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0"
               >
                 {sponsor.logo ? (
-                  <div className="relative h-10 lg:h-14 w-28 lg:w-40">
+                  <div className="relative h-12 lg:h-16 w-32 lg:w-44">
                     <Image
                       src={sponsor.logo}
                       alt={sponsor.name}
                       fill
-                      className="object-contain"
-                      sizes="160px"
+                      className="object-contain object-center"
+                      sizes="176px"
                     />
                   </div>
                 ) : (

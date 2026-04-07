@@ -215,5 +215,6 @@ export const SPONSORS: Sponsor[] = [
     name: '5ifity Boys',
     logo: '/images/sponsors/5ifity-BOYS.png',
     tier: 'presenting',
+    url: 'https://www.instagram.com/fiftyhospitality/',
   },
 ]
