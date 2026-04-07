@@ -2,11 +2,11 @@ import { NextRequest, NextResponse } from 'next/server'
 
 // ---------------------------------------------------------------------------
 // POST /api/subscribe
-// Adds an email to your Klaviyo list.
+// Adds an email to your Brevo (formerly Sendinblue) contact list.
 //
 // Required env vars (set in Vercel dashboard or .env.local):
-//   KLAVIYO_API_KEY   — your private API key (Settings → API Keys)
-//   KLAVIYO_LIST_ID   — the List ID to subscribe to (Lists & Segments)
+//   BREVO_API_KEY   — Brevo dashboard → SMTP & API → API Keys
+//   BREVO_LIST_ID   — Brevo dashboard → Contacts → Lists → pick your list → ID in the URL
 // ---------------------------------------------------------------------------
 
 export async function POST(req: NextRequest) {
@@ -16,60 +16,39 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Invalid email' }, { status: 400 })
   }
 
-  const apiKey = process.env.KLAVIYO_API_KEY
-  const listId = process.env.KLAVIYO_LIST_ID
+  const apiKey = process.env.BREVO_API_KEY
+  const listId = process.env.BREVO_LIST_ID
 
   if (!apiKey || !listId) {
-    console.error('Missing KLAVIYO_API_KEY or KLAVIYO_LIST_ID env vars')
+    console.error('Missing BREVO_API_KEY or BREVO_LIST_ID env vars')
     return NextResponse.json({ error: 'Server misconfiguration' }, { status: 500 })
   }
 
   try {
-    // 1. Create / update the profile
-    const profileRes = await fetch('https://a.klaviyo.com/api/profiles/', {
+    const res = await fetch('https://api.brevo.com/v3/contacts', {
       method: 'POST',
       headers: {
         accept: 'application/json',
-        revision: '2024-02-15',
         'content-type': 'application/json',
-        Authorization: `Klaviyo-API-Key ${apiKey}`,
+        'api-key': apiKey,
       },
       body: JSON.stringify({
-        data: {
-          type: 'profile',
-          attributes: { email },
-        },
+        email,
+        listIds: [Number(listId)],
+        updateEnabled: true, // update existing contact instead of throwing error
       }),
     })
 
-    // 409 = profile already exists — that's fine, extract the id
-    const profileData = await profileRes.json()
-    const profileId =
-      profileRes.status === 409
-        ? profileData.errors[0].meta.duplicate_profile_id
-        : profileData.data?.id
-
-    if (!profileId) {
-      throw new Error('Could not resolve profile ID')
+    // 204 = success, 400 with code "duplicate_parameter" = already subscribed (still fine)
+    if (!res.ok) {
+      const err = await res.json()
+      const alreadyExists = err?.code === 'duplicate_parameter'
+      if (!alreadyExists) throw new Error(err?.message ?? 'Brevo error')
     }
-
-    // 2. Subscribe profile to list
-    await fetch(`https://a.klaviyo.com/api/lists/${listId}/relationships/profiles/`, {
-      method: 'POST',
-      headers: {
-        accept: 'application/json',
-        revision: '2024-02-15',
-        'content-type': 'application/json',
-        Authorization: `Klaviyo-API-Key ${apiKey}`,
-      },
-      body: JSON.stringify({
-        data: [{ type: 'profile', id: profileId }],
-      }),
-    })
 
     return NextResponse.json({ success: true })
   } catch (err) {
-    console.error('Klaviyo subscribe error:', err)
+    console.error('Brevo subscribe error:', err)
     return NextResponse.json({ error: 'Subscription failed' }, { status: 500 })
   }
 }
