@@ -35,6 +35,7 @@ export interface Sponsor {
   logo: string
   tier: SponsorTier
   url?: string
+  logoSize?: string // optional Tailwind classes to override default logo container size
 }
 
 export interface PastEvent {

@@ -209,6 +209,7 @@ export const SPONSORS: Sponsor[] = [
     logo: '/images/sponsors/redbull.svg',
     tier: 'presenting',
     url: 'https://www.redbull.com',
+    logoSize: 'h-16 lg:h-20 w-40 lg:w-52',
   },
   {
     id: 'spon-002',
