@@ -20,7 +20,7 @@ function HeadlinerCard({ artist }: { artist: Artist }) {
       className="group relative col-span-full overflow-hidden rounded-md bg-surface border border-gold-border/30 shadow-card hover:shadow-card-hover transition-all duration-500"
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[360px] lg:min-h-[440px]">
-        {/* Image side */}
+        {/* Image / TBA side */}
         <div className="relative overflow-hidden bg-surface-3">
           {artist.image && !artist.tba ? (
             <Image
@@ -31,10 +31,15 @@ function HeadlinerCard({ artist }: { artist: Artist }) {
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
           ) : (
-            <div className="absolute inset-0 flex items-center justify-center bg-surface-3">
-              <span className="font-display text-6xl text-dim font-bold">
-                {artist.name[0]}
-              </span>
+            <div className="absolute inset-0 flex flex-col items-center justify-center gap-4"
+              style={{
+                background: 'radial-gradient(ellipse 80% 80% at 50% 50%, rgba(201,168,76,0.06) 0%, transparent 70%)',
+              }}
+            >
+              <div className="w-20 h-20 rounded-full border border-dashed border-gold-border flex items-center justify-center">
+                <span className="font-display text-3xl text-gold/40">?</span>
+              </div>
+              <p className="font-body text-2xs text-dim uppercase tracking-[0.3em]">Announcement Coming</p>
             </div>
           )}
           {/* Image gradient */}
@@ -50,16 +55,27 @@ function HeadlinerCard({ artist }: { artist: Artist }) {
             </span>
           </div>
 
-          <h3 className="font-display text-display-md text-cream leading-none mb-3">
-            {artist.name}
+          <h3 className="font-display text-display-md text-cream/40 leading-none mb-3 italic">
+            {artist.tba ? 'To Be Announced' : artist.name}
           </h3>
 
           <p className="font-body text-sm text-cream-muted tracking-wide mb-8">
-            {artist.genre}
+            {artist.tba ? 'Follow us for the reveal' : artist.genre}
           </p>
 
           <div className="flex items-center gap-4">
-            {artist.instagram && (
+            {artist.tba && (
+              <a
+                href="https://instagram.com/lovenrnb"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-gold hover:text-gold-light transition-colors duration-200 text-xs uppercase tracking-widest"
+              >
+                <Instagram size={14} strokeWidth={1.5} />
+                <span>@lovenrnb</span>
+              </a>
+            )}
+            {!artist.tba && artist.instagram && (
               <a
                 href={artist.instagram}
                 target="_blank"
