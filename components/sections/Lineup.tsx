@@ -162,11 +162,11 @@ function ArtistCard({ artist }: { artist: Artist }) {
 
 export function Lineup({ artists, eventName }: LineupProps) {
   const headliner = artists.find((a) => a.role === 'headliner')
-  const rest = artists.filter((a) => a.role !== 'headliner')
+  const supporting = artists.filter((a) => a.role !== 'headliner' && a.role !== 'dj')
+  const djs = artists.filter((a) => a.role === 'dj')
 
   return (
     <section id="lineup" className="bg-black">
-      {/* Top rule */}
       <div className="w-full h-px bg-white/10" />
 
       {/* Section header */}
@@ -184,26 +184,39 @@ export function Lineup({ artists, eventName }: LineupProps) {
             </h2>
           </div>
           <p className="font-body text-xs text-white/40 uppercase tracking-[0.2em] hidden lg:block pb-3">
-            More TBA
+            Announcements Coming
           </p>
         </AnimatedSection>
       </div>
 
-      {/* Bottom rule */}
       <div className="w-full h-px bg-white/10" />
 
-      {/* Artist grid */}
-      <StaggerContainer className="container mx-auto px-6 py-8 lg:py-10">
+      {/* ── Artists ── */}
+      <StaggerContainer className="container mx-auto px-6 pt-8 lg:pt-10 pb-6">
+        <p className="font-body text-2xs text-gold uppercase tracking-[0.3em] mb-6">
+          Artists (3–4)
+        </p>
         <div className="grid grid-cols-1 gap-4 lg:gap-5">
-          {/* Headliner — full width */}
           {headliner && <HeadlinerCard artist={headliner} />}
-
-          {/* Supporting — 3 col grid */}
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
-            {rest.map((artist) => (
+            {supporting.map((artist) => (
               <ArtistCard key={artist.id} artist={artist} />
             ))}
           </div>
+        </div>
+      </StaggerContainer>
+
+      <div className="w-full h-px bg-white/10 mx-6" />
+
+      {/* ── DJs ── */}
+      <StaggerContainer className="container mx-auto px-6 pt-8 lg:pt-10 pb-8 lg:pb-12">
+        <p className="font-body text-2xs text-gold uppercase tracking-[0.3em] mb-6">
+          DJs (3–4)
+        </p>
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5">
+          {djs.map((dj) => (
+            <ArtistCard key={dj.id} artist={dj} />
+          ))}
         </div>
       </StaggerContainer>
 

@@ -36,6 +36,7 @@ export const UPCOMING_EVENT: Event = {
   isUpcoming: true,
   isSoldOut: false,
   lineup: [
+    // Artists (3–4)
     {
       id: 'artist-001',
       name: 'TBA',
@@ -68,20 +69,37 @@ export const UPCOMING_EVENT: Event = {
       genre: 'R&B',
       tba: true,
     },
+    // DJs (3–4)
     {
-      id: 'artist-005',
+      id: 'dj-001',
       name: 'TBA',
-      role: 'opener',
+      role: 'dj',
       image: '',
-      genre: 'R&B',
+      genre: 'DJ Set',
       tba: true,
     },
     {
-      id: 'artist-006',
+      id: 'dj-002',
       name: 'TBA',
-      role: 'opener',
+      role: 'dj',
       image: '',
-      genre: 'R&B',
+      genre: 'DJ Set',
+      tba: true,
+    },
+    {
+      id: 'dj-003',
+      name: 'TBA',
+      role: 'dj',
+      image: '',
+      genre: 'DJ Set',
+      tba: true,
+    },
+    {
+      id: 'dj-004',
+      name: 'TBA',
+      role: 'dj',
+      image: '',
+      genre: 'DJ Set',
       tba: true,
     },
   ],

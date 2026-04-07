@@ -1,4 +1,4 @@
-export type ArtistRole = 'headliner' | 'featured' | 'supporting' | 'opener'
+export type ArtistRole = 'headliner' | 'featured' | 'supporting' | 'opener' | 'dj'
 
 export interface Artist {
   id: string
