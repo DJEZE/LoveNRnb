@@ -26,7 +26,7 @@ function HeadlinerCard({ artist }: { artist: Artist }) {
           <div
             className="absolute inset-0 opacity-5"
             style={{
-              backgroundImage: `repeating-linear-gradient(-45deg, #C9A84C 0px, #C9A84C 1px, transparent 1px, transparent 50px)`,
+              backgroundImage: `repeating-linear-gradient(-45deg, #CC0000 0px, #CC0000 1px, transparent 1px, transparent 50px)`,
             }}
           />
           <p className="font-body text-xs text-gold uppercase tracking-[0.3em] relative z-10">Headliner</p>

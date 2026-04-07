@@ -35,8 +35,8 @@ export function Hero({ event }: HeroProps) {
           className="absolute inset-0"
           style={{
             background: `
-              radial-gradient(ellipse 90% 70% at 70% 30%, rgba(100,40,10,0.45) 0%, transparent 65%),
-              radial-gradient(ellipse 60% 60% at 20% 80%, rgba(60,20,50,0.35) 0%, transparent 65%),
+              radial-gradient(ellipse 90% 70% at 70% 30%, rgba(160,0,0,0.35) 0%, transparent 65%),
+              radial-gradient(ellipse 60% 60% at 20% 80%, rgba(120,0,0,0.25) 0%, transparent 65%),
               #000000
             `,
           }}
