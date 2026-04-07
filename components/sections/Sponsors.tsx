@@ -53,7 +53,7 @@ export function Sponsors({ sponsors }: SponsorsProps) {
           {/* Partnership CTA */}
           <div className="flex flex-col sm:flex-row items-center gap-6">
             <p className="font-body text-sm text-white/40">
-              Interested in partnering with LoveNRnb?
+              Interested in being a part of LoveNRnb?
             </p>
             <a
               href="mailto:partnerships@lovenrnb.com"
