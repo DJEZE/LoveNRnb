@@ -81,7 +81,7 @@ export function Hero({ event }: HeroProps) {
         >
           <h1 className="sr-only">LoveNRnb</h1>
           <Image
-            src="/images/logo.png"
+            src="/images/lovenrnb_logo_red.png"
             alt="LoveNRnb"
             width={900}
             height={450}
