@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     template: '%s | LoveNRnb',
   },
   description:
-    'LoveNRnb is Houston\'s premier curated R&B concert series. Intimate shows, headlining artists, elevated atmosphere. 21+ events for music lovers.',
+    'LoveNRnb is Houston\'s premier curated R&B concert series. Intimate shows, headlining artists, elevated atmosphere.',
   keywords: [
     'R&B concert Houston',
     'LoveNRnb',
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     title: 'LoveNRnb — Premium R&B Experience',
     description: 'Houston\'s most curated R&B concert series.',
     images: ['/og-image.jpg'],
-    creator: '@lovenrnb',
+    creator: '@lovenrnbfest',
   },
   robots: {
     index: true,

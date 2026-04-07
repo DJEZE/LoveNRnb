@@ -37,13 +37,13 @@ function HeadlinerCard({ artist }: { artist: Artist }) {
             To Be<br />Announced
           </p>
           <a
-            href="https://instagram.com/lovenrnb"
+            href="https://instagram.com/lovenrnbfest"
             target="_blank"
             rel="noopener noreferrer"
             className="relative z-10 flex items-center gap-2 font-body text-xs text-gold uppercase tracking-[0.2em] hover:text-gold-light transition-colors"
           >
             <Instagram size={13} strokeWidth={1.5} />
-            Follow @lovenrnb for the reveal
+            Follow @lovenrnbfest for the reveal
           </a>
         </div>
       ) : (
@@ -194,7 +194,7 @@ export function Lineup({ artists, eventName }: LineupProps) {
       {/* ── Artists ── */}
       <StaggerContainer className="container mx-auto px-6 pt-8 lg:pt-10 pb-6">
         <p className="font-body text-2xs text-gold uppercase tracking-[0.3em] mb-6">
-          Artists (3–4)
+          Artists
         </p>
         <div className="grid grid-cols-1 gap-4 lg:gap-5">
           {headliner && <HeadlinerCard artist={headliner} />}
@@ -211,7 +211,7 @@ export function Lineup({ artists, eventName }: LineupProps) {
       {/* ── DJs ── */}
       <StaggerContainer className="container mx-auto px-6 pt-8 lg:pt-10 pb-8 lg:pb-12">
         <p className="font-body text-2xs text-gold uppercase tracking-[0.3em] mb-6">
-          DJs (3–4)
+          DJs
         </p>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5">
           {djs.map((dj) => (
@@ -225,9 +225,9 @@ export function Lineup({ artists, eventName }: LineupProps) {
         <div className="w-full h-px bg-white/10 mb-6" />
         <p className="font-body text-xs text-white/30 uppercase tracking-[0.2em] text-center">
           Lineup subject to change · Follow{' '}
-          <a href="https://instagram.com/lovenrnb" target="_blank" rel="noopener noreferrer"
+          <a href="https://instagram.com/lovenrnbfest" target="_blank" rel="noopener noreferrer"
             className="text-gold hover:text-gold-light transition-colors">
-            @lovenrnb
+            @lovenrnbfest
           </a>{' '}
           for announcements
         </p>

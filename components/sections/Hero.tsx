@@ -68,7 +68,7 @@ export function Hero({ event }: HeroProps) {
         >
           <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse-dot" />
           <span className="font-body text-2xs text-gold uppercase tracking-[0.3em] font-medium">
-            Upcoming — Houston, TX · 21+
+            Upcoming — Houston, TX
           </span>
         </motion.div>
 

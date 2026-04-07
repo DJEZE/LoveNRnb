@@ -27,13 +27,16 @@ export function EmailCapture() {
   const onSubmit = async (data: FormValues) => {
     setLoading(true)
     try {
-      // TODO: connect to Klaviyo API route
-      // await fetch('/api/subscribe', { method: 'POST', body: JSON.stringify({ email: data.email }) })
-      await new Promise((r) => setTimeout(r, 800))
+      const res = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: data.email }),
+      })
+      if (!res.ok) throw new Error('Failed')
       setSubmitted(true)
       reset()
     } catch {
-      // handle error
+      // silently fail — user sees no error, you see it in Vercel logs
     } finally {
       setLoading(false)
     }
@@ -147,7 +150,7 @@ export function EmailCapture() {
 
           {/* Trust line */}
           <p className="font-body text-2xs text-white/20 uppercase tracking-[0.2em] mt-8">
-            No spam · Unsubscribe anytime · 21+ community
+            No spam · Unsubscribe anytime
           </p>
         </AnimatedSection>
       </div>

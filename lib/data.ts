@@ -32,7 +32,7 @@ export const UPCOMING_EVENT: Event = {
   heroImage: '/images/hero-placeholder.jpg',
   description:
     'One night. Curated sounds. The R&B experience Houston has been waiting for. LoveNRnb returns with its most intimate show yet — live performances, exclusive VIP access, and an atmosphere built for the culture.',
-  ageRestriction: '21+',
+  ageRestriction: '',
   isUpcoming: true,
   isSoldOut: false,
   lineup: [
@@ -213,7 +213,7 @@ export const SPONSORS: Sponsor[] = [
   {
     id: 'spon-001',
     name: 'Red Bull',
-    logo: '/images/sponsors/redbull.svg',
+    logo: '/images/sponsors/redbull.svg', // file lives at public/images/sponsors/redbull.svg
     tier: 'presenting',
     url: 'https://www.redbull.com',
   },

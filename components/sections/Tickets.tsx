@@ -174,7 +174,7 @@ export function Tickets({ tiers, eventName, eventDate, venue }: TicketsProps) {
         <AnimatedSection className="pb-10 lg:pb-14" delay={0.2}>
           <div className="w-full h-px bg-white/10 mb-6" />
           <p className="font-body text-xs text-white/25 max-w-lg">
-            All sales final · 21+ with valid ID · Non-transferable ·{' '}
+            All sales final · Non-transferable ·{' '}
             <a href="/terms" className="hover:text-white/50 underline underline-offset-2 transition-colors">Terms apply</a>
           </p>
         </AnimatedSection>
