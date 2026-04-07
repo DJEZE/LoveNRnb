@@ -72,11 +72,12 @@ export const UPCOMING_EVENT: Event = {
     // DJs (3–4)
     {
       id: 'dj-001',
-      name: 'TBA',
+      name: 'DJEZE',
       role: 'dj',
       image: '',
       genre: 'DJ Set',
-      tba: true,
+      instagram: 'https://www.instagram.com/djeze__',
+      tba: false,
     },
     {
       id: 'dj-002',
