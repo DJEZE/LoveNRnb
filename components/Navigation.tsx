@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Menu, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { NAV_LINKS } from '@/lib/data'
@@ -46,9 +47,14 @@ export function Navigation() {
 
             {/* Logo */}
             <Link href="/" aria-label="LoveNRnb">
-              <span className="font-display font-black text-2xl lg:text-3xl uppercase tracking-tight text-white hover:text-gold transition-colors duration-200">
-                LoveN<span className="text-gold">Rnb</span>
-              </span>
+              <Image
+                src="/images/logo.png"
+                alt="LoveNRnb"
+                width={120}
+                height={60}
+                className="h-10 lg:h-12 w-auto object-contain hover:opacity-80 transition-opacity duration-200"
+                priority
+              />
             </Link>
 
             {/* Desktop links */}
@@ -105,9 +111,13 @@ export function Navigation() {
         )}
       >
         <div className="flex flex-col justify-center items-center h-full gap-10">
-          <span className="font-display font-black text-4xl uppercase text-white">
-            LoveN<span className="text-gold">Rnb</span>
-          </span>
+          <Image
+            src="/images/logo.png"
+            alt="LoveNRnb"
+            width={180}
+            height={90}
+            className="h-20 w-auto object-contain"
+          />
 
           <nav className="flex flex-col items-center gap-6">
             {NAV_LINKS.map((link) =>
