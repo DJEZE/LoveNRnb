@@ -74,7 +74,7 @@ export const UPCOMING_EVENT: Event = {
       id: 'dj-001',
       name: 'DJEZE',
       role: 'dj',
-      image: '',
+      image: '/images/artists/djeze.jpg',
       genre: 'DJ Set',
       instagram: 'https://www.instagram.com/djeze__',
       tba: false,
