@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Instagram, Youtube } from 'lucide-react'
+import { Instagram } from 'lucide-react'
 
 function TikTokIcon({ size = 16 }: { size?: number }) {
   return (
@@ -25,12 +25,10 @@ const FOOTER_LINKS: Record<string, FooterLink[]> = {
   Connect: [
     { label: 'Instagram', href: 'https://instagram.com/lovenrnbfest', isExternal: true },
     { label: 'TikTok', href: 'https://tiktok.com/@lovenrnbfest', isExternal: true },
-    { label: 'YouTube', href: 'https://youtube.com', isExternal: true },
   ],
   Partners: [
     { label: 'Become a Sponsor', href: 'mailto:partnerships@lovenrnb.com', isExternal: true },
     { label: 'Vendor Inquiry', href: 'mailto:vendors@lovenrnb.com', isExternal: true },
-    { label: 'Artist Bookings', href: 'mailto:bookings@lovenrnb.com', isExternal: true },
     { label: 'Press & Media', href: 'mailto:press@lovenrnb.com', isExternal: true },
   ],
 }
@@ -60,7 +58,6 @@ export function Footer() {
               {[
                 { href: 'https://instagram.com/lovenrnbfest', label: 'Instagram', icon: <Instagram size={15} strokeWidth={1.5} /> },
                 { href: 'https://tiktok.com/@lovenrnbfest', label: 'TikTok', icon: <TikTokIcon size={15} /> },
-                { href: 'https://youtube.com', label: 'YouTube', icon: <Youtube size={15} strokeWidth={1.5} /> },
               ].map(({ href, label, icon }) => (
                 <a
                   key={label}
