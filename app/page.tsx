@@ -3,13 +3,14 @@ import { Hero } from '@/components/sections/Hero'
 import { Lineup } from '@/components/sections/Lineup'
 import { Tickets } from '@/components/sections/Tickets'
 import { EmailCapture } from '@/components/sections/EmailCapture'
+import { Sponsors } from '@/components/sections/Sponsors'
 import { Footer } from '@/components/Footer'
-import { UPCOMING_EVENT } from '@/lib/data'
+import { UPCOMING_EVENT, SPONSORS } from '@/lib/data'
 import { formatEventDate } from '@/lib/utils'
 
 export default function HomePage() {
   return (
-    <main className="relative">
+    <main className="relative bg-black">
       <Navigation />
 
       <Hero event={UPCOMING_EVENT} />
@@ -27,6 +28,8 @@ export default function HomePage() {
       />
 
       <EmailCapture />
+
+      <Sponsors sponsors={SPONSORS} />
 
       <Footer />
     </main>

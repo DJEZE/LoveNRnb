@@ -11,106 +11,74 @@ interface FormValues {
   email: string
 }
 
+// Rolling Loud style marquee ticker content
+const TICKER_ITEMS = [
+  'Early Access', 'VIP Drops', 'Artist Announcements', 'Presale Codes',
+  'Exclusive Offers', 'Lineup Reveals', 'Early Access', 'VIP Drops',
+  'Artist Announcements', 'Presale Codes', 'Exclusive Offers', 'Lineup Reveals',
+]
+
 export function EmailCapture() {
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    reset,
-  } = useForm<FormValues>()
+  const { register, handleSubmit, formState: { errors }, reset } = useForm<FormValues>()
 
   const onSubmit = async (data: FormValues) => {
     setLoading(true)
     try {
-      // TODO: Replace with your Klaviyo / Mailchimp API endpoint
-      // await fetch('/api/subscribe', {
-      //   method: 'POST',
-      //   body: JSON.stringify({ email: data.email }),
-      //   headers: { 'Content-Type': 'application/json' },
-      // })
-
-      // Simulate API call for now
-      await new Promise((r) => setTimeout(r, 900))
+      // TODO: connect to Klaviyo API route
+      // await fetch('/api/subscribe', { method: 'POST', body: JSON.stringify({ email: data.email }) })
+      await new Promise((r) => setTimeout(r, 800))
       setSubmitted(true)
       reset()
     } catch {
-      // Handle error silently — in production, surface this to the user
+      // handle error
     } finally {
       setLoading(false)
     }
   }
 
   return (
-    <section
-      id="contact"
-      className="relative overflow-hidden bg-surface py-24 lg:py-36"
-    >
-      {/* Background elements */}
-      <div className="absolute inset-0 pointer-events-none">
-        {/* Left blur */}
-        <div
-          className="absolute -left-32 top-1/2 -translate-y-1/2 w-96 h-96 opacity-15"
-          style={{
-            background: 'radial-gradient(circle, rgba(201, 168, 76, 0.6) 0%, transparent 70%)',
-            filter: 'blur(60px)',
-          }}
-        />
-        {/* Right blur */}
-        <div
-          className="absolute -right-32 top-1/2 -translate-y-1/2 w-96 h-96 opacity-10"
-          style={{
-            background: 'radial-gradient(circle, rgba(120, 40, 80, 0.6) 0%, transparent 70%)',
-            filter: 'blur(60px)',
-          }}
-        />
-      </div>
+    <section id="contact" className="bg-black">
+      <div className="w-full h-px bg-white/10" />
 
-      {/* Marquee ticker */}
-      <div className="absolute top-0 left-0 right-0 overflow-hidden py-3 border-b border-gold-border/30 bg-gold-faint">
+      {/* Marquee ticker — Rolling Loud signature */}
+      <div className="overflow-hidden bg-gold py-3">
         <div className="flex whitespace-nowrap animate-marquee">
-          {Array.from({ length: 8 }).map((_, i) => (
+          {[...TICKER_ITEMS, ...TICKER_ITEMS].map((item, i) => (
             <span
               key={i}
-              className="inline-flex items-center gap-6 px-8 font-body text-2xs text-gold uppercase tracking-[0.3em]"
+              className="inline-flex items-center gap-5 px-5 font-body text-xs text-black font-semibold uppercase tracking-[0.2em]"
             >
-              <span className="w-1 h-1 rounded-full bg-gold" />
-              Early Access
-              <span className="w-1 h-1 rounded-full bg-gold" />
-              VIP Drops
-              <span className="w-1 h-1 rounded-full bg-gold" />
-              Exclusive Offers
-              <span className="w-1 h-1 rounded-full bg-gold" />
-              Presale Access
+              <span className="w-1 h-1 rounded-full bg-black/40" />
+              {item}
             </span>
           ))}
         </div>
       </div>
 
-      <div className="container mx-auto px-6 relative">
-        <AnimatedSection className="max-w-2xl mx-auto text-center">
+      <div className="container mx-auto px-6 py-20 lg:py-28">
+        <AnimatedSection className="max-w-3xl mx-auto">
           {/* Eyebrow */}
-          <p className="font-body text-2xs text-gold uppercase tracking-[0.3em] mb-6">
-            Join the Inner Circle
+          <p className="font-body text-2xs text-gold uppercase tracking-[0.3em] mb-5">
+            Inner Circle
           </p>
 
-          {/* Heading */}
-          <h2 className="font-display text-display-md text-cream mb-6">
-            Be First.
-            <br />
-            <span
-              className="bg-gold-shimmer bg-clip-text text-transparent animate-shimmer"
-              style={{ backgroundSize: '400% 100%' }}
-            >
-              Always.
-            </span>
+          {/* Heading — Rolling Loud massive condensed */}
+          <h2
+            className="font-display font-black uppercase text-white leading-none mb-6"
+            style={{ fontSize: 'clamp(4.5rem, 12vw, 11rem)', letterSpacing: '-0.03em' }}
+          >
+            Be First.<br />
+            <span className="text-gold">Always.</span>
           </h2>
 
-          <p className="font-body text-base text-cream-muted mb-12 max-w-md mx-auto leading-relaxed">
-            Get presale access, VIP drops, and insider updates before anyone else.
-            No spam. Just culture.
+          <div className="w-16 h-0.5 bg-gold mb-8" />
+
+          <p className="font-body text-base text-white/50 mb-12 max-w-md leading-relaxed">
+            Get presale access, VIP drops, and lineup reveals before the public.
+            No spam. Just the culture.
           </p>
 
           {/* Form */}
@@ -119,32 +87,26 @@ export function EmailCapture() {
               <motion.form
                 key="form"
                 onSubmit={handleSubmit(onSubmit)}
-                initial={{ opacity: 1 }}
                 exit={{ opacity: 0, y: -8 }}
-                transition={{ duration: 0.3 }}
-                className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
+                transition={{ duration: 0.25 }}
+                className="flex flex-col sm:flex-row gap-0 max-w-lg"
               >
                 <div className="flex-1 relative">
                   <input
                     {...register('email', {
                       required: 'Email is required',
-                      pattern: {
-                        value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                        message: 'Enter a valid email',
-                      },
+                      pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: 'Enter a valid email' },
                     })}
                     type="email"
                     placeholder="your@email.com"
                     autoComplete="email"
                     className={cn(
-                      'w-full h-12 sm:h-14 px-5',
-                      'font-body text-sm text-cream placeholder:text-dim',
-                      'bg-surface-3 border rounded-sm',
-                      'focus:outline-none focus:ring-1 focus:ring-gold',
-                      'transition-all duration-200',
-                      errors.email
-                        ? 'border-red-500/60 focus:ring-red-500/40'
-                        : 'border-gold-border/40 focus:border-gold-border'
+                      'w-full h-12 lg:h-14 px-5',
+                      'font-body text-sm text-white placeholder:text-white/25',
+                      'bg-surface-2 border-y border-l',
+                      'focus:outline-none focus:border-gold',
+                      'transition-colors duration-200',
+                      errors.email ? 'border-red-500/60' : 'border-white/15'
                     )}
                   />
                   {errors.email && (
@@ -157,67 +119,40 @@ export function EmailCapture() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className={cn(
-                    'h-12 sm:h-14 px-7',
-                    'inline-flex items-center justify-center gap-2',
-                    'font-body text-xs uppercase tracking-widest text-background',
-                    'bg-gold-gradient rounded-sm',
-                    'hover:brightness-110 hover:shadow-gold-md',
-                    'active:brightness-95',
-                    'transition-all duration-300',
-                    'disabled:opacity-60 disabled:cursor-not-allowed',
-                    'flex-shrink-0 whitespace-nowrap'
-                  )}
+                  className="h-12 lg:h-14 px-6 lg:px-8 inline-flex items-center justify-center gap-2 font-body text-xs font-semibold uppercase tracking-[0.15em] text-black bg-gold hover:bg-gold-light transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap flex-shrink-0"
                 >
                   {loading ? (
-                    <span className="flex items-center gap-2">
-                      <span
-                        className="w-3.5 h-3.5 border-2 border-background/30 border-t-background rounded-full animate-spin"
-                      />
-                      Joining...
-                    </span>
+                    <span className="w-4 h-4 border-2 border-black/30 border-t-black rounded-full animate-spin" />
                   ) : (
-                    <>
-                      Join the List
-                      <ArrowRight size={14} />
-                    </>
+                    <>Join the List <ArrowRight size={14} /></>
                   )}
                 </button>
               </motion.form>
             ) : (
               <motion.div
                 key="success"
-                initial={{ opacity: 0, y: 12 }}
+                initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                className="flex flex-col items-center gap-4"
+                transition={{ duration: 0.5 }}
+                className="flex items-center gap-4"
               >
-                <div className="w-14 h-14 rounded-full bg-gold-faint border border-gold-border flex items-center justify-center">
-                  <CheckCircle2 size={24} className="text-gold" />
-                </div>
+                <CheckCircle2 size={24} className="text-gold" />
                 <div>
-                  <p className="font-display text-xl text-cream">You&apos;re in.</p>
-                  <p className="font-body text-sm text-cream-muted mt-1">
-                    Welcome to the inner circle. Check your inbox.
-                  </p>
+                  <p className="font-display font-black text-2xl uppercase text-white">You&apos;re in.</p>
+                  <p className="font-body text-sm text-white/40 mt-0.5">Welcome to the inner circle.</p>
                 </div>
               </motion.div>
             )}
           </AnimatePresence>
 
-          {/* Trust signals */}
-          <div className="flex items-center justify-center gap-6 mt-10">
-            {['No spam, ever', 'Unsubscribe anytime', '21+ community'].map((text) => (
-              <span
-                key={text}
-                className="font-body text-2xs text-dim uppercase tracking-widest hidden sm:block"
-              >
-                {text}
-              </span>
-            ))}
-          </div>
+          {/* Trust line */}
+          <p className="font-body text-2xs text-white/20 uppercase tracking-[0.2em] mt-8">
+            No spam · Unsubscribe anytime · 21+ community
+          </p>
         </AnimatedSection>
       </div>
+
+      <div className="w-full h-px bg-white/10" />
     </section>
   )
 }

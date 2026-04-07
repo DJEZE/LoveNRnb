@@ -1,5 +1,5 @@
-/* Google Fonts — loaded at runtime for CDN caching benefits */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,700&family=Inter:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&display=swap');
+/* Fonts — Barlow Condensed (Rolling Loud style condensed display) + Inter body */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,800;1,900&family=Inter:wght@300;400;500;600;700&family=DM+Mono:wght@300;400;500&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -8,7 +8,7 @@
 /* ─── Base ──────────────────────────────────────────────────────────────── */
 @layer base {
   :root {
-    --font-playfair: 'Playfair Display', Georgia, serif;
+    --font-barlow-condensed: 'Barlow Condensed', Impact, 'Arial Narrow', sans-serif;
     --font-inter: 'Inter', system-ui, sans-serif;
     --font-dm-mono: 'DM Mono', 'Courier New', monospace;
   }
@@ -27,104 +27,54 @@
   }
 
   body {
-    @apply bg-background text-cream font-body;
+    @apply bg-background text-white font-body;
     overflow-x: hidden;
   }
 
-  /* Custom scrollbar */
-  ::-webkit-scrollbar {
-    width: 6px;
-  }
-
-  ::-webkit-scrollbar-track {
-    @apply bg-background;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    @apply bg-gold-dark rounded-full;
-    border: 1px solid transparent;
-    background-clip: padding-box;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    @apply bg-gold;
-  }
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { @apply bg-background; }
+  ::-webkit-scrollbar-thumb { @apply bg-gold rounded-sm; }
 
   /* Selection */
-  ::selection {
-    @apply bg-gold/20 text-cream;
-  }
+  ::selection { @apply bg-gold/30 text-white; }
 
-  /* Focus ring */
+  /* Focus */
   :focus-visible {
     outline: 2px solid theme('colors.gold.DEFAULT');
     outline-offset: 2px;
   }
 
-  /* Images */
-  img {
-    max-width: 100%;
-    height: auto;
-  }
+  /* Anchor offset for fixed nav */
+  [id] { scroll-margin-top: 72px; }
 
-  /* Smooth anchor scroll offset for fixed nav */
-  [id] {
-    scroll-margin-top: 80px;
-  }
+  img { max-width: 100%; height: auto; }
 }
 
 /* ─── Components ────────────────────────────────────────────────────────── */
 @layer components {
   .container {
     width: 100%;
-    max-width: 1280px;
+    max-width: 1400px;
     margin-inline: auto;
   }
 
-  /* Gold shimmer text utility */
-  .text-gold-shimmer {
-    background: theme('backgroundImage.gold-shimmer');
-    background-size: 400% 100%;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: shimmer 3s linear infinite;
+  /* Horizontal rule with Rolling Loud energy */
+  .rule {
+    @apply w-full h-px bg-border;
   }
 
-  /* Divider with centered text */
-  .divider-gold {
-    @apply relative flex items-center gap-4;
-  }
-
-  .divider-gold::before,
-  .divider-gold::after {
-    content: '';
-    @apply flex-1 h-px bg-gold-border;
+  /* Section header treatment */
+  .section-eyebrow {
+    @apply font-body text-2xs text-gold uppercase tracking-[0.3em] font-medium;
   }
 }
 
 /* ─── Utilities ─────────────────────────────────────────────────────────── */
 @layer utilities {
-  /* Hide scrollbar but keep scroll */
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-  .no-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-
-  /* Fluid text */
-  .text-fluid-sm {
-    font-size: clamp(0.875rem, 2vw, 1rem);
-  }
-
-  .text-fluid-md {
-    font-size: clamp(1rem, 2.5vw, 1.25rem);
-  }
-
-  /* Gold text gradient */
   .text-gradient-gold {
     background: theme('backgroundImage.gold-gradient');
     -webkit-background-clip: text;
@@ -132,8 +82,14 @@
     -webkit-text-fill-color: transparent;
   }
 
-  /* Backdrop for elements that need it */
-  .glass {
-    @apply bg-surface/80 backdrop-blur-md border border-gold-border/30;
+  /* Rolling Loud style — full-bleed image with dark bottom overlay */
+  .artist-overlay {
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.95) 0%,
+      rgba(0, 0, 0, 0.5) 40%,
+      rgba(0, 0, 0, 0.1) 70%,
+      transparent 100%
+    );
   }
 }

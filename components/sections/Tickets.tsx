@@ -2,8 +2,6 @@
 
 import { Check, AlertCircle } from 'lucide-react'
 import { motion } from 'framer-motion'
-import { Button } from '@/components/ui/Button'
-import { SectionLabel } from '@/components/ui/SectionLabel'
 import { AnimatedSection, StaggerContainer, staggerChild } from '@/components/ui/AnimatedSection'
 import { getAvailabilityLabel, cn } from '@/lib/utils'
 import type { TicketTier } from '@/lib/types'
@@ -24,201 +22,165 @@ function TierCard({ tier }: { tier: TicketTier }) {
     <motion.div
       variants={staggerChild}
       className={cn(
-        'relative flex flex-col rounded-md border transition-all duration-500',
-        'shadow-card hover:shadow-card-hover',
+        'relative flex flex-col border transition-all duration-300',
         tier.isHighlighted
-          ? 'border-gold bg-surface-2 scale-[1.02] lg:scale-[1.04]'
-          : 'border-gold-border/30 bg-surface hover:border-gold-border/60'
+          ? 'border-gold bg-surface-2'
+          : 'border-white/10 bg-surface hover:border-white/25'
       )}
     >
-      {/* Featured badge */}
+      {/* Popular badge */}
       {tier.isHighlighted && (
-        <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-          <span className="inline-flex items-center gap-1.5 font-body text-2xs text-background bg-gold-gradient px-4 py-1.5 rounded-sm uppercase tracking-widest whitespace-nowrap shadow-gold-sm">
-            <span className="w-1 h-1 rounded-full bg-background/60" />
+        <div className="absolute -top-px left-0 right-0 h-0.5 bg-gold" />
+      )}
+      {tier.isHighlighted && (
+        <div className="absolute -top-8 left-0">
+          <span className="font-body text-2xs bg-gold text-black px-3 py-1.5 uppercase tracking-[0.15em] font-semibold">
             Most Popular
           </span>
         </div>
       )}
 
       <div className="p-7 lg:p-8 flex flex-col flex-1">
-        {/* Tier name */}
-        <div className="mb-6">
-          <p
-            className={cn(
-              'font-body text-2xs uppercase tracking-[0.25em] mb-2',
-              tier.isHighlighted ? 'text-gold' : 'text-cream-muted'
-            )}
-          >
+        {/* Header */}
+        <div className="mb-7">
+          <p className={cn(
+            'font-body text-2xs uppercase tracking-[0.25em] font-medium mb-3',
+            tier.isHighlighted ? 'text-gold' : 'text-white/50'
+          )}>
             {tier.name}
           </p>
 
-          {/* Price */}
-          <div className="flex items-baseline gap-1.5">
+          <div className="flex items-baseline gap-1">
             {tier.priceLabel ? (
-              <p className="font-display text-3xl text-cream">{tier.priceLabel}</p>
+              <p className="font-display font-black text-4xl text-white uppercase">{tier.priceLabel}</p>
             ) : (
               <>
-                <span className="font-body text-lg text-cream-muted">$</span>
-                <span className="font-display text-5xl text-cream leading-none">
-                  {tier.price}
+                <span className="font-display font-black text-5xl lg:text-6xl text-white leading-none">
+                  ${tier.price}
                 </span>
-                <span className="font-body text-xs text-cream-muted">/ person</span>
+                <span className="font-body text-xs text-white/40 uppercase tracking-wide ml-1">/ person</span>
               </>
             )}
           </div>
         </div>
 
-        {/* Divider */}
-        <div
-          className={cn(
-            'h-px mb-6',
-            tier.isHighlighted ? 'bg-gold-border' : 'bg-cream-faint'
-          )}
-        />
+        {/* Rule */}
+        <div className={cn('h-px mb-6', tier.isHighlighted ? 'bg-gold/30' : 'bg-white/10')} />
 
         {/* Perks */}
-        <ul className="flex flex-col gap-3.5 mb-8 flex-1">
+        <ul className="flex flex-col gap-3 mb-8 flex-1">
           {tier.perks.map((perk) => (
             <li key={perk} className="flex items-start gap-3">
               <Check
-                size={14}
+                size={13}
                 strokeWidth={2.5}
-                className={cn(
-                  'flex-shrink-0 mt-0.5',
-                  tier.isHighlighted ? 'text-gold' : 'text-cream-muted'
-                )}
+                className={cn('flex-shrink-0 mt-0.5', tier.isHighlighted ? 'text-gold' : 'text-white/40')}
               />
-              <span className="font-body text-sm text-cream/80 leading-snug">{perk}</span>
+              <span className="font-body text-sm text-white/70 leading-snug">{perk}</span>
             </li>
           ))}
         </ul>
 
-        {/* Availability indicator */}
-        <div className="mb-5">
+        {/* Availability bar */}
+        <div className="mb-6">
           <div className="flex items-center justify-between mb-2">
-            <span className="font-body text-2xs text-cream-muted uppercase tracking-widest">
-              Availability
-            </span>
+            <span className="font-body text-2xs text-white/30 uppercase tracking-widest">Availability</span>
             <div className="flex items-center gap-1.5">
-              {urgent && !soldOut && (
-                <AlertCircle size={11} className="text-amber-400" />
-              )}
-              <span
-                className={cn(
-                  'font-body text-2xs uppercase tracking-widest',
-                  soldOut
-                    ? 'text-dim'
-                    : urgent
-                    ? 'text-amber-400'
-                    : 'text-cream-muted'
-                )}
-              >
+              {urgent && !soldOut && <AlertCircle size={11} className="text-amber-400" />}
+              <span className={cn(
+                'font-body text-2xs uppercase tracking-widest',
+                soldOut ? 'text-white/20' : urgent ? 'text-amber-400' : 'text-white/40'
+              )}>
                 {availLabel}
               </span>
             </div>
           </div>
-
-          {/* Progress bar */}
-          <div className="h-1 rounded-full bg-surface-3 overflow-hidden">
+          <div className="h-0.5 bg-white/10">
             <div
-              className={cn(
-                'h-full rounded-full transition-all duration-500',
-                soldOut
-                  ? 'bg-dim'
-                  : tier.isHighlighted
-                  ? 'bg-gold-gradient'
-                  : 'bg-cream/30'
-              )}
+              className={cn('h-full transition-all duration-500', soldOut ? 'bg-white/20' : tier.isHighlighted ? 'bg-gold' : 'bg-white/40')}
               style={{ width: `${Math.min(fillPct, 100)}%` }}
             />
           </div>
         </div>
 
         {/* CTA */}
-        <Button
-          variant={tier.isHighlighted ? 'gold' : 'outline'}
-          size="md"
+        <a
           href={soldOut ? undefined : tier.ticketUrl}
-          isExternal={!soldOut}
-          disabled={soldOut}
-          className="w-full justify-center"
+          target={soldOut ? undefined : '_blank'}
+          rel={soldOut ? undefined : 'noopener noreferrer'}
+          className={cn(
+            'flex items-center justify-center h-12 font-body text-xs font-semibold uppercase tracking-[0.15em] transition-all duration-200',
+            soldOut
+              ? 'border border-white/10 text-white/20 cursor-not-allowed pointer-events-none'
+              : tier.isHighlighted
+              ? 'bg-gold text-black hover:bg-gold-light'
+              : 'border border-white/20 text-white hover:bg-white/5 hover:border-white/40'
+          )}
         >
           {soldOut ? 'Sold Out' : tier.ctaLabel}
-        </Button>
+        </a>
       </div>
-
-      {/* Bottom glow for highlighted */}
-      {tier.isHighlighted && (
-        <div className="absolute inset-x-0 bottom-0 h-1 bg-gold-gradient rounded-b-md" />
-      )}
     </motion.div>
   )
 }
 
 export function Tickets({ tiers, eventName, eventDate, venue }: TicketsProps) {
+  const vipTier = tiers.find((t) => t.isHighlighted)
+
   return (
-    <section
-      id="tickets"
-      className="relative bg-surface py-24 lg:py-36 overflow-hidden"
-    >
-      {/* Section fade edges */}
-      <div className="absolute inset-x-0 top-0 h-24 bg-section-fade-top pointer-events-none" />
-      <div className="absolute inset-x-0 bottom-0 h-24 bg-section-fade-bottom pointer-events-none" />
+    <section id="tickets" className="bg-black">
+      <div className="w-full h-px bg-white/10" />
 
-      {/* Background glow */}
-      <div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] opacity-10 pointer-events-none"
-        style={{
-          background: 'radial-gradient(ellipse, rgba(201, 168, 76, 0.5) 0%, transparent 70%)',
-          filter: 'blur(40px)',
-        }}
-      />
-
-      <div className="container mx-auto px-6 relative">
+      <div className="container mx-auto px-6">
         {/* Header */}
-        <AnimatedSection className="flex flex-col items-center text-center mb-16 lg:mb-20">
-          <SectionLabel align="center" className="mb-6">
+        <AnimatedSection className="py-10 lg:py-14">
+          <p className="font-body text-2xs text-gold uppercase tracking-[0.3em] mb-3">
             Secure Your Spot
-          </SectionLabel>
-          <h2 className="font-display text-display-md text-cream mb-4">
-            Tickets
-          </h2>
-          <p className="font-body text-sm text-cream-muted max-w-sm">
-            {eventName} · {venue}
           </p>
-
-          {/* Urgency banner */}
-          <div className="mt-6 flex items-center gap-2 border border-amber-500/30 bg-amber-500/10 rounded-sm px-4 py-2.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse-dot flex-shrink-0" />
-            <span className="font-body text-xs text-amber-300 tracking-wide">
-              VIP spots are filling fast — only {tiers.find(t => t.isHighlighted)?.available} remaining
-            </span>
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
+            <h2
+              className="font-display font-black uppercase text-white leading-none"
+              style={{ fontSize: 'clamp(4rem, 10vw, 10rem)', letterSpacing: '-0.03em' }}
+            >
+              Tickets
+            </h2>
+            <div className="lg:pb-3 space-y-1">
+              <p className="font-body text-sm text-white/50">{eventName}</p>
+              <p className="font-body text-sm text-white/30">{eventDate} · {venue}</p>
+            </div>
           </div>
         </AnimatedSection>
 
-        {/* Tier cards */}
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6 items-start mt-8">
+        <div className="w-full h-px bg-white/10 mb-10 lg:mb-14" />
+
+        {/* Urgency banner */}
+        {vipTier && vipTier.available > 0 && (
+          <AnimatedSection className="flex items-center gap-3 border border-amber-500/25 bg-amber-500/5 p-4 mb-8">
+            <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse-dot flex-shrink-0" />
+            <p className="font-body text-xs text-amber-300 uppercase tracking-wide">
+              Only {vipTier.available} VIP spots remaining — selling fast
+            </p>
+          </AnimatedSection>
+        )}
+
+        {/* Cards */}
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-5 pb-14 lg:pb-20 mt-8">
           {tiers.map((tier) => (
             <TierCard key={tier.id} tier={tier} />
           ))}
         </StaggerContainer>
 
         {/* Fine print */}
-        <AnimatedSection className="flex flex-col items-center gap-2 mt-12 text-center" delay={0.2}>
-          <p className="font-body text-xs text-dim max-w-lg">
-            All sales are final. This is a 21+ event — valid ID required at entry.
-            Tickets are non-transferable. By purchasing, you agree to our{' '}
-            <a href="/terms" className="text-cream-muted hover:text-gold underline underline-offset-2 transition-colors">
-              Terms of Service
-            </a>
-            .
-          </p>
-          <p className="font-body text-2xs text-dim/70 uppercase tracking-widest">
-            Secured by Tixr · 256-bit encryption
+        <AnimatedSection className="pb-10 lg:pb-14" delay={0.2}>
+          <div className="w-full h-px bg-white/10 mb-6" />
+          <p className="font-body text-xs text-white/25 max-w-lg">
+            All sales final · 21+ with valid ID · Non-transferable ·{' '}
+            <a href="/terms" className="hover:text-white/50 underline underline-offset-2 transition-colors">Terms apply</a>
           </p>
         </AnimatedSection>
       </div>
+
+      <div className="w-full h-px bg-white/10" />
     </section>
   )
 }
