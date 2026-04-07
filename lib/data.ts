@@ -206,8 +206,14 @@ export const SPONSORS: Sponsor[] = [
   {
     id: 'spon-001',
     name: 'Red Bull',
-    logo: '/images/sponsors/redbull.svg', // file lives at public/images/sponsors/redbull.svg
+    logo: '/images/sponsors/redbull.svg',
     tier: 'presenting',
     url: 'https://www.redbull.com',
+  },
+  {
+    id: 'spon-002',
+    name: '5ifity Boys',
+    logo: '/images/sponsors/5ifity-BOYS.png',
+    tier: 'presenting',
   },
 ]
