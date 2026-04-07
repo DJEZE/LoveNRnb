@@ -11,7 +11,7 @@ export interface Artist {
   tba?: boolean
 }
 
-export type TicketTierName = 'General Admission' | 'VIP Access' | 'Table Service'
+export type TicketTierName = 'General Admission' | 'GA+' | 'VIP Access'
 
 export interface TicketTier {
   id: string
