@@ -195,37 +195,9 @@ export const PAST_EVENTS: PastEvent[] = [
 export const SPONSORS: Sponsor[] = [
   {
     id: 'spon-001',
-    name: 'Hennessy',
-    logo: '/images/sponsors/hennessy.svg',
+    name: 'Red Bull',
+    logo: '/images/sponsors/redbull.svg',
     tier: 'presenting',
-    url: 'https://www.hennessy.com',
-  },
-  {
-    id: 'spon-002',
-    name: 'ESSENCE',
-    logo: '/images/sponsors/essence.svg',
-    tier: 'partner',
-    url: 'https://www.essence.com',
-  },
-  {
-    id: 'spon-003',
-    name: 'Spotify',
-    logo: '/images/sponsors/spotify.svg',
-    tier: 'partner',
-    url: 'https://www.spotify.com',
-  },
-  {
-    id: 'spon-004',
-    name: 'Fashion Nova',
-    logo: '/images/sponsors/fashionnova.svg',
-    tier: 'community',
-    url: 'https://www.fashionnova.com',
-  },
-  {
-    id: 'spon-005',
-    name: 'House of CB',
-    logo: '/images/sponsors/houseofcb.svg',
-    tier: 'community',
-    url: 'https://www.houseofcb.com',
+    url: 'https://www.redbull.com',
   },
 ]

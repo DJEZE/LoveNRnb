@@ -2,11 +2,9 @@ import { Navigation } from '@/components/Navigation'
 import { Hero } from '@/components/sections/Hero'
 import { Lineup } from '@/components/sections/Lineup'
 import { Tickets } from '@/components/sections/Tickets'
-import { PastEvents } from '@/components/sections/PastEvents'
 import { EmailCapture } from '@/components/sections/EmailCapture'
-import { Sponsors } from '@/components/sections/Sponsors'
 import { Footer } from '@/components/Footer'
-import { UPCOMING_EVENT, PAST_EVENTS, SPONSORS } from '@/lib/data'
+import { UPCOMING_EVENT } from '@/lib/data'
 import { formatEventDate } from '@/lib/utils'
 
 export default function HomePage() {
@@ -28,11 +26,7 @@ export default function HomePage() {
         venue={`${UPCOMING_EVENT.venue}, ${UPCOMING_EVENT.city}`}
       />
 
-      <PastEvents events={PAST_EVENTS} />
-
       <EmailCapture />
-
-      <Sponsors sponsors={SPONSORS} />
 
       <Footer />
     </main>
