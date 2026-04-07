@@ -5,16 +5,21 @@ export function cn(...inputs: ClassValue[]) {
   return clsx(inputs)
 }
 
+// Strip time before parsing so timezone offsets never shift the date
+function parseDateOnly(isoString: string) {
+  return parseISO(isoString.split('T')[0])
+}
+
 export function formatEventDate(isoString: string): string {
-  return format(parseISO(isoString), 'MMMM d, yyyy')
+  return format(parseDateOnly(isoString), 'MMMM d, yyyy')
 }
 
 export function formatEventDateShort(isoString: string): string {
-  return format(parseISO(isoString), 'MMM d')
+  return format(parseDateOnly(isoString), 'MMM d')
 }
 
 export function formatEventYear(isoString: string): string {
-  return format(parseISO(isoString), 'yyyy')
+  return format(parseDateOnly(isoString), 'yyyy')
 }
 
 export function getCountdownParts(targetISO: string): {
