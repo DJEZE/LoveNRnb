@@ -53,15 +53,25 @@ export function Navigation() {
 
             {/* Desktop links */}
             <nav className="hidden md:flex items-center gap-8">
-              {NAV_LINKS.map((link) => (
-                <button
-                  key={link.label}
-                  onClick={() => scrollTo(link.href)}
-                  className="font-body text-xs font-medium uppercase tracking-[0.15em] text-white/60 hover:text-white transition-colors duration-150"
-                >
-                  {link.label}
-                </button>
-              ))}
+              {NAV_LINKS.map((link) =>
+                link.href.startsWith('/') ? (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    className="font-body text-xs font-medium uppercase tracking-[0.15em] text-white/60 hover:text-white transition-colors duration-150"
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <button
+                    key={link.label}
+                    onClick={() => scrollTo(link.href)}
+                    className="font-body text-xs font-medium uppercase tracking-[0.15em] text-white/60 hover:text-white transition-colors duration-150"
+                  >
+                    {link.label}
+                  </button>
+                )
+              )}
             </nav>
 
             {/* Desktop CTA */}
@@ -100,7 +110,17 @@ export function Navigation() {
           </span>
 
           <nav className="flex flex-col items-center gap-6">
-            {NAV_LINKS.map((link) => (
+            {NAV_LINKS.map((link) =>
+              link.href.startsWith('/') ? (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  onClick={() => setMobileOpen(false)}
+                  className="font-display font-black text-4xl uppercase text-white hover:text-gold transition-colors duration-150"
+                >
+                  {link.label}
+                </a>
+              ) : (
               <button
                 key={link.label}
                 onClick={() => scrollTo(link.href)}
@@ -108,7 +128,8 @@ export function Navigation() {
               >
                 {link.label}
               </button>
-            ))}
+              )
+            )}
           </nav>
 
           <a
