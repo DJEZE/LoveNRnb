@@ -26,7 +26,7 @@ export function Sponsors({ sponsors }: SponsorsProps) {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={sponsor.name}
-                className="relative flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0"
+                className="relative flex items-center justify-center opacity-90 hover:opacity-100 transition-opacity duration-300"
               >
                 {sponsor.logo ? (
                   <div className={`relative ${sponsor.logoSize ?? 'h-40 lg:h-56 w-96 lg:w-[576px]'}`}>
