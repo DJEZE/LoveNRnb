@@ -29,7 +29,7 @@ export function Sponsors({ sponsors }: SponsorsProps) {
                 className="relative flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0"
               >
                 {sponsor.logo ? (
-                  <div className="relative h-16 lg:h-20 w-40 lg:w-56">
+                  <div className="relative h-20 lg:h-28 w-48 lg:w-72">
                     <Image
                       src={sponsor.logo}
                       alt={sponsor.name}
