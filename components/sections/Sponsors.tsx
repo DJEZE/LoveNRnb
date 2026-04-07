@@ -14,7 +14,7 @@ export function Sponsors({ sponsors }: SponsorsProps) {
       <div className="container mx-auto px-6 py-16 lg:py-20">
         <AnimatedSection className="flex flex-col items-center text-center">
           <p className="font-body text-2xs text-gold uppercase tracking-[0.3em] mb-10">
-            Presented With
+            Presented By
           </p>
 
           {/* Sponsor logos */}
@@ -29,7 +29,7 @@ export function Sponsors({ sponsors }: SponsorsProps) {
                 className="relative flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0"
               >
                 {sponsor.logo ? (
-                  <div className="relative h-12 lg:h-16 w-32 lg:w-44">
+                  <div className="relative h-16 lg:h-20 w-40 lg:w-56">
                     <Image
                       src={sponsor.logo}
                       alt={sponsor.name}
