@@ -48,7 +48,7 @@ export function Navigation() {
             {/* Logo */}
             <Link href="/" aria-label="LoveNRnb">
               <Image
-                src="/images/lovenrnb_logo_red.png"
+                src="/images/lovenrnb_logo_red_transparent.png"
                 alt="LoveNRnb"
                 width={120}
                 height={60}
@@ -112,7 +112,7 @@ export function Navigation() {
       >
         <div className="flex flex-col justify-center items-center h-full gap-10">
           <Image
-            src="/images/lovenrnb_logo_red.png"
+            src="/images/lovenrnb_logo_red_transparent.png"
             alt="LoveNRnb"
             width={180}
             height={90}
