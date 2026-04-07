@@ -43,16 +43,16 @@ export function Navigation() {
         )}
       >
         <div className="container mx-auto px-6">
-          <div className="flex items-center justify-between h-16 lg:h-[72px]">
+          <div className="flex items-center justify-between h-20 lg:h-[144px]">
 
             {/* Logo */}
             <Link href="/" aria-label="LoveNRnb">
               <Image
                 src="/images/lovenrnb_logo_red_transparent.png"
                 alt="LoveNRnb"
-                width={120}
-                height={60}
-                className="h-10 lg:h-12 w-auto object-contain hover:opacity-80 transition-opacity duration-200"
+                width={240}
+                height={120}
+                className="h-20 lg:h-24 w-auto object-contain hover:opacity-80 transition-opacity duration-200"
                 priority
               />
             </Link>
