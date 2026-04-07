@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
-import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { MapPin, Clock } from 'lucide-react'
 import { CountdownTimer } from '@/components/ui/CountdownTimer'
@@ -73,21 +72,19 @@ export function Hero({ event }: HeroProps) {
           </span>
         </motion.div>
 
-        {/* Brand logo */}
+        {/* Brand / Event title */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
         >
-          <h1 className="sr-only">LoveNRnb</h1>
-          <Image
-            src="/images/lovenrnb_logo_red_transparent.png"
-            alt="LoveNRnb"
-            width={900}
-            height={450}
-            className="w-full max-w-[min(90vw,700px)] h-auto object-contain"
-            priority
-          />
+          <h1 className="font-display font-black uppercase leading-none text-white"
+            style={{ fontSize: 'clamp(5.5rem, 18vw, 20rem)', letterSpacing: '-0.03em' }}
+          >
+            Love
+            <span className="text-gold">N</span>
+            Rnb
+          </h1>
         </motion.div>
 
         {/* Thin rule */}
