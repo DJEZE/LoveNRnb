@@ -53,7 +53,7 @@ const FAQS = [
       },
       {
         q: 'Where do I purchase tickets?',
-        a: 'Tickets are available through Gatekeepers. You can purchase directly from the Tickets section on this site. Make sure to buy from official links only.',
+        a: 'Tickets are available through Gatekeepers. You can purchase directly from the Tickets section on this site or at gatekeepers.app. Make sure to buy from official links only.',
       },
     ],
   },
