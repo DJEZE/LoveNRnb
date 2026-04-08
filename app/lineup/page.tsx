@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { Lineup } from '@/components/sections/Lineup'
 import { Navigation } from '@/components/Navigation'
 import { Footer } from '@/components/Footer'
-import { EVENT } from '@/lib/data'
+import { UPCOMING_EVENT } from '@/lib/data'
 
 export const metadata: Metadata = {
   title: 'Lineup',
@@ -13,7 +13,7 @@ export default function LineupPage() {
     <>
       <Navigation />
       <main className="bg-black min-h-screen pt-20">
-        <Lineup artists={EVENT.lineup} eventName={EVENT.name} />
+        <Lineup artists={UPCOMING_EVENT.lineup} eventName={UPCOMING_EVENT.name} />
       </main>
       <Footer />
     </>
