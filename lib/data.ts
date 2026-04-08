@@ -121,7 +121,7 @@ export const UPCOMING_EVENT: Event = {
       perks: [
         'General floor access',
         'Live performances',
-        'Early entry — before GA',
+        'Priority entry',
         'Exclusive GA+ wristband',
       ],
       available: 200,
