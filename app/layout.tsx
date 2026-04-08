@@ -31,9 +31,9 @@ export const metadata: Metadata = {
       'Houston\'s most curated R&B concert series. Headlining artists, VIP access, and an atmosphere built for the culture.',
     images: [
       {
-        url: '/images/lovenrnb_logo_red_transparent.png',
-        width: 1080,
-        height: 1080,
+        url: '/eze-back-lovernb.jpg',
+        width: 1200,
+        height: 630,
         alt: 'LoveNRnb — Premium R&B Experience',
       },
     ],
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'LoveNRnb — Premium R&B Experience',
     description: 'Houston\'s most curated R&B concert series.',
-    images: ['/images/lovenrnb_logo_red_transparent.png'],
+    images: ['/eze-back-lovernb.jpg'],
     creator: '@lovenrnbfest',
   },
   robots: {
