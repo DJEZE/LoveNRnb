@@ -97,6 +97,16 @@ export const UPCOMING_EVENT: Event = {
       genre: 'DJ Set',
       tba: true,
     },
+    // MC
+    {
+      id: 'mc-001',
+      name: 'MCWAZZ',
+      role: 'mc',
+      image: '/images/artists/mcwazz.jpeg',
+      genre: 'MC',
+      instagram: 'https://www.instagram.com/wazodunbaku/',
+      tba: false,
+    },
   ],
   ticketTiers: [
     {

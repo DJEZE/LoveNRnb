@@ -133,7 +133,7 @@ function ArtistCard({ artist }: { artist: Artist }) {
           'font-body text-2xs uppercase tracking-[0.25em] mb-1.5',
           artist.role === 'featured' ? 'text-gold' : 'text-white/50'
         )}>
-          {artist.role === 'featured' ? 'Featured' : 'Supporting'}
+          {artist.role === 'featured' ? 'Featured' : artist.role === 'dj' ? 'DJ' : artist.role === 'mc' ? 'MC' : 'Supporting'}
         </p>
         <h3 className="font-display font-black uppercase text-white leading-none text-2xl lg:text-3xl">
           {artist.name}
@@ -162,8 +162,9 @@ function ArtistCard({ artist }: { artist: Artist }) {
 
 export function Lineup({ artists, eventName }: LineupProps) {
   const headliner = artists.find((a) => a.role === 'headliner')
-  const supporting = artists.filter((a) => a.role !== 'headliner' && a.role !== 'dj')
+  const supporting = artists.filter((a) => a.role !== 'headliner' && a.role !== 'dj' && a.role !== 'mc')
   const djs = artists.filter((a) => a.role === 'dj')
+  const mcs = artists.filter((a) => a.role === 'mc')
 
   return (
     <section id="lineup" className="bg-black">
@@ -219,6 +220,23 @@ export function Lineup({ artists, eventName }: LineupProps) {
           ))}
         </div>
       </StaggerContainer>
+
+      {/* ── MCs ── */}
+      {mcs.length > 0 && (
+        <>
+          <div className="w-full h-px bg-white/10 mx-6" />
+          <StaggerContainer className="container mx-auto px-6 pt-8 lg:pt-10 pb-8 lg:pb-12">
+            <p className="font-body text-2xs text-gold uppercase tracking-[0.3em] mb-6">
+              MC
+            </p>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5">
+              {mcs.map((mc) => (
+                <ArtistCard key={mc.id} artist={mc} />
+              ))}
+            </div>
+          </StaggerContainer>
+        </>
+      )}
 
       {/* Footer note */}
       <div className="container mx-auto px-6 pb-10">
