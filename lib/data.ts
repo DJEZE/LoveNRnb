@@ -5,7 +5,7 @@ import type { Event, PastEvent, Sponsor, NavLink } from './types'
 // ---------------------------------------------------------------------------
 export const NAV_LINKS: NavLink[] = [
   { label: 'Events', href: '#events' },
-  { label: 'Lineup', href: '#lineup' },
+  { label: 'Lineup', href: '/lineup' },
   { label: 'Tickets', href: '#tickets' },
   { label: 'Experience', href: '#contact' },
   { label: 'FAQ', href: '/faq' },
