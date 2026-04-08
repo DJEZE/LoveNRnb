@@ -125,7 +125,7 @@ function TierCard({ tier }: { tier: TicketTier }) {
 }
 
 export function Tickets({ tiers, eventName, eventDate, venue }: TicketsProps) {
-  const vipTier = tiers.find((t) => t.isHighlighted)
+  const vipTier = tiers.find((t) => t.id === 'tier-vip')
 
   return (
     <section id="tickets" className="bg-black">
