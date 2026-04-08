@@ -82,11 +82,12 @@ export const UPCOMING_EVENT: Event = {
     },
     {
       id: 'dj-003',
-      name: 'TBA',
+      name: 'DJ A.Y.',
       role: 'dj',
-      image: '',
+      image: '/images/artists/djA.y.jpg',
       genre: 'DJ Set',
-      tba: true,
+      instagram: 'https://www.instagram.com/dja.y_/',
+      tba: false,
     },
     {
       id: 'dj-004',
