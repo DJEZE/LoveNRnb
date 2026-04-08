@@ -199,7 +199,12 @@ export function Lineup({ artists, eventName }: LineupProps) {
         </p>
         <div className="grid grid-cols-1 gap-4 lg:gap-5">
           {headliner && <HeadlinerCard artist={headliner} />}
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
+          <div className={cn(
+            'grid grid-cols-2 gap-4 lg:gap-5',
+            supporting.length === 1 ? 'lg:grid-cols-1' :
+            supporting.length === 2 ? 'lg:grid-cols-2' :
+            'lg:grid-cols-3'
+          )}>
             {supporting.map((artist) => (
               <ArtistCard key={artist.id} artist={artist} />
             ))}
