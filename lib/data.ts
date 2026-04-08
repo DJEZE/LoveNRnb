@@ -54,14 +54,6 @@ export const UPCOMING_EVENT: Event = {
       tba: true,
     },
     {
-      id: 'artist-003',
-      name: 'TBA',
-      role: 'supporting',
-      image: '',
-      genre: 'R&B',
-      tba: true,
-    },
-    {
       id: 'artist-004',
       name: 'Aaron Page',
       role: 'supporting',
