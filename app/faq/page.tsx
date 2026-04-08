@@ -73,6 +73,10 @@ const FAQS = [
         a: 'Personal phones and small cameras are welcome. Professional cameras with detachable lenses require prior media approval. Contact us at press@lovenrnb.com for media credentials.',
       },
       {
+        q: 'What is the age requirement?',
+        a: 'This is an 18+ event. Valid government-issued ID is required for entry. Guests must be 21+ to purchase or consume alcohol — ID will be checked at the bar.',
+      },
+      {
         q: 'What items are not allowed?',
         a: 'Outside food and beverages, weapons of any kind, professional camera equipment (without credentials), and any items deemed unsafe by venue staff are not permitted.',
       },
