@@ -105,7 +105,6 @@ export const UPCOMING_EVENT: Event = {
       price: 40,
       perks: [
         'General floor access',
-        'Cash bar access',
         'Live performances',
         'Photo opportunities',
       ],
@@ -121,7 +120,6 @@ export const UPCOMING_EVENT: Event = {
       price: 55,
       perks: [
         'General floor access',
-        'Cash bar access',
         'Live performances',
         'Early entry — before GA',
         'Exclusive GA+ wristband',
@@ -140,7 +138,6 @@ export const UPCOMING_EVENT: Event = {
         'Priority entry — skip the line',
         'Dedicated VIP section',
         'Exclusive VIP lounge access',
-        'Cash bar access',
       ],
       available: 75,
       total: 100,
