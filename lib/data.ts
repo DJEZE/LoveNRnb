@@ -22,7 +22,7 @@ export const UPCOMING_EVENT: Event = {
   name: 'LoveNRnb Houston',
   tagline: 'An Evening of Soul & Desire',
   date: '2026-08-15T21:00:00-05:00',
-  doorsOpen: '6:00 PM',
+  doorsOpen: '5:00 PM',
   showTime: '10:00 PM',
   venue: '9PM Music Hall',
   address: 'Houston, TX',
