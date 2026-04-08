@@ -73,11 +73,12 @@ export const UPCOMING_EVENT: Event = {
     },
     {
       id: 'dj-002',
-      name: 'TBA',
+      name: 'ALIST',
       role: 'dj',
-      image: '',
+      image: '/images/artists/alist.JPG',
       genre: 'DJ Set',
-      tba: true,
+      instagram: 'https://www.instagram.com/alistsounds/',
+      tba: false,
     },
     {
       id: 'dj-003',
