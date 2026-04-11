@@ -24,7 +24,7 @@ const FOOTER_LINKS: Record<string, FooterLink[]> = {
   ],
   Connect: [
     { label: 'Instagram', href: 'https://instagram.com/lovenrnbfest', isExternal: true },
-    { label: 'TikTok', href: 'https://tiktok.com/@lovenrnbfest', isExternal: true },
+    { label: 'TikTok', href: 'https://www.tiktok.com/@offthewallexperience', isExternal: true },
     { label: 'YouTube', href: 'https://youtube.com/@lovenrnbfest?si=HI6TibySNAKN3nml', isExternal: true },
   ],
   Partners: [
@@ -58,7 +58,7 @@ export function Footer() {
             <div className="flex items-center gap-3">
               {[
                 { href: 'https://instagram.com/lovenrnbfest', label: 'Instagram', icon: <Instagram size={15} strokeWidth={1.5} /> },
-                { href: 'https://tiktok.com/@lovenrnbfest', label: 'TikTok', icon: <TikTokIcon size={15} /> },
+                { href: 'https://www.tiktok.com/@offthewallexperience', label: 'TikTok', icon: <TikTokIcon size={15} /> },
                 { href: 'https://youtube.com/@lovenrnbfest?si=HI6TibySNAKN3nml', label: 'YouTube', icon: <Youtube size={15} strokeWidth={1.5} /> },
               ].map(({ href, label, icon }) => (
                 <a
