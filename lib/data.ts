@@ -228,8 +228,9 @@ export const SPONSORS: Sponsor[] = [
   },
   {
     id: 'spon-003',
-    name: 'Sponsor',
+    name: 'HWY6 Studios',
     logo: '/images/sponsors/Logo White.png',
     tier: 'presenting',
+    url: 'https://www.instagram.com/hwy6studios/',
   },
 ]
