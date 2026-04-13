@@ -232,5 +232,6 @@ export const SPONSORS: Sponsor[] = [
     logo: '/images/sponsors/Logo White.png',
     tier: 'presenting',
     url: 'https://www.instagram.com/hwy6studios/',
+    logoSize: 'h-24 lg:h-32 w-60 lg:w-80',
   },
 ]
