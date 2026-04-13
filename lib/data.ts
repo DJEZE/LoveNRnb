@@ -226,11 +226,4 @@ export const SPONSORS: Sponsor[] = [
     tier: 'presenting',
     url: 'https://www.instagram.com/fiftyhospitality/',
   },
-  {
-    id: 'spon-003',
-    name: 'HWY6 Studios',
-    logo: '/images/sponsors/hwy6.png',
-    tier: 'presenting',
-    url: 'https://www.instagram.com/hwy6studios/',
-  },
 ]
