@@ -6,6 +6,34 @@ interface SponsorsProps {
   sponsors: Sponsor[]
 }
 
+function SponsorLogo({ sponsor }: { sponsor: Sponsor }) {
+  return (
+    <a
+      href={sponsor.url ?? '#'}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={sponsor.name}
+      className="relative flex items-center justify-center opacity-90 hover:opacity-100 transition-opacity duration-300"
+    >
+      {sponsor.logo ? (
+        <div className={`relative ${sponsor.logoSize ?? 'h-32 lg:h-40 w-64 lg:w-80'}`}>
+          <Image
+            src={sponsor.logo}
+            alt={sponsor.name}
+            fill
+            className="object-contain object-center"
+            sizes="320px"
+          />
+        </div>
+      ) : (
+        <span className="font-display font-black text-3xl lg:text-4xl text-white uppercase tracking-tight">
+          {sponsor.name}
+        </span>
+      )}
+    </a>
+  )
+}
+
 export function Sponsors({ sponsors }: SponsorsProps) {
   return (
     <section className="bg-black">
@@ -17,35 +45,18 @@ export function Sponsors({ sponsors }: SponsorsProps) {
             Presented By
           </p>
 
-          {/* Sponsor logos */}
-          <div className="flex flex-wrap items-center justify-center gap-12 lg:gap-20 mb-12 lg:mb-16">
-            {sponsors.map((sponsor) => (
-              <a
-                key={sponsor.id}
-                href={sponsor.url ?? '#'}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={sponsor.name}
-                className="relative flex items-center justify-center opacity-90 hover:opacity-100 transition-opacity duration-300"
-              >
-                {sponsor.logo ? (
-                  <div className={`relative ${sponsor.logoSize ?? 'h-32 lg:h-40 w-64 lg:w-80'}`}>
-                    <Image
-                      src={sponsor.logo}
-                      alt={sponsor.name}
-                      fill
-                      className="object-contain object-center"
-                      sizes="176px"
-                    />
-                  </div>
-                ) : (
-                  // Text fallback — used until you add the SVG
-                  <span className="font-display font-black text-3xl lg:text-4xl text-white uppercase tracking-tight">
-                    {sponsor.name}
-                  </span>
-                )}
-              </a>
+          {/* Sponsor logos — Red Bull on top, 5ifity + HWY6 side by side below */}
+          <div className="flex flex-col items-center gap-10 mb-12 lg:mb-16">
+            {/* Row 1: Red Bull */}
+            {sponsors.slice(0, 1).map((sponsor) => (
+              <SponsorLogo key={sponsor.id} sponsor={sponsor} />
             ))}
+            {/* Row 2: 5ifity Boys + HWY6 side by side */}
+            <div className="flex items-center justify-center gap-12 lg:gap-20">
+              {sponsors.slice(1).map((sponsor) => (
+                <SponsorLogo key={sponsor.id} sponsor={sponsor} />
+              ))}
+            </div>
           </div>
 
           <div className="w-full h-px bg-white/10 mb-10" />
