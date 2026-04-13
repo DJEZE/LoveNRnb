@@ -13,18 +13,16 @@ function SponsorLogo({ sponsor }: { sponsor: Sponsor }) {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={sponsor.name}
-      className="relative flex items-center justify-center opacity-90 hover:opacity-100 transition-opacity duration-300"
+      className="flex items-center justify-center opacity-90 hover:opacity-100 transition-opacity duration-300"
     >
       {sponsor.logo ? (
-        <div className={`relative ${sponsor.logoSize ?? 'h-32 lg:h-40 w-64 lg:w-80'}`}>
-          <Image
-            src={sponsor.logo}
-            alt={sponsor.name}
-            fill
-            className="object-contain object-center"
-            sizes="320px"
-          />
-        </div>
+        <Image
+          src={sponsor.logo}
+          alt={sponsor.name}
+          width={320}
+          height={120}
+          className={`object-contain w-auto ${sponsor.logoSize ?? 'h-24 lg:h-32'}`}
+        />
       ) : (
         <span className="font-display font-black text-3xl lg:text-4xl text-white uppercase tracking-tight">
           {sponsor.name}
