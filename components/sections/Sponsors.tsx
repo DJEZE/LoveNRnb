@@ -21,7 +21,7 @@ function SponsorLogo({ sponsor }: { sponsor: Sponsor }) {
           alt={sponsor.name}
           width={320}
           height={120}
-          className={`object-contain w-auto ${sponsor.logoSize ?? 'h-24 lg:h-32'}`}
+          className="object-contain w-auto h-20 lg:h-24"
         />
       ) : (
         <span className="font-display font-black text-3xl lg:text-4xl text-white uppercase tracking-tight">
@@ -43,18 +43,11 @@ export function Sponsors({ sponsors }: SponsorsProps) {
             Presented By
           </p>
 
-          {/* Sponsor logos — Red Bull on top, 5ifity + HWY6 side by side below */}
-          <div className="flex flex-col items-center gap-10 mb-12 lg:mb-16">
-            {/* Row 1: Red Bull */}
-            {sponsors.slice(0, 1).map((sponsor) => (
+          {/* Sponsor logos — all on one row, same size */}
+          <div className="flex flex-wrap items-center justify-center gap-10 lg:gap-16 mb-12 lg:mb-16">
+            {sponsors.map((sponsor) => (
               <SponsorLogo key={sponsor.id} sponsor={sponsor} />
             ))}
-            {/* Row 2: 5ifity Boys + HWY6 side by side */}
-            <div className="flex items-center justify-center gap-12 lg:gap-20">
-              {sponsors.slice(1).map((sponsor) => (
-                <SponsorLogo key={sponsor.id} sponsor={sponsor} />
-              ))}
-            </div>
           </div>
 
           <div className="w-full h-px bg-white/10 mb-10" />
