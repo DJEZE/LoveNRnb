@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Instagram, Youtube } from 'lucide-react'
 
 function TikTokIcon({ size = 16 }: { size?: number }) {
@@ -45,9 +46,13 @@ export function Footer() {
           {/* Brand */}
           <div className="col-span-2 lg:col-span-1">
             <Link href="/" className="inline-block mb-5">
-              <span className="font-display font-black text-3xl uppercase text-white hover:text-gold transition-colors duration-200">
-                LoveN<span className="text-gold">Rnb</span>
-              </span>
+              <Image
+                src="/images/lovenrnb-logo.png"
+                alt="LoveNRnb"
+                width={180}
+                height={90}
+                className="h-16 w-auto object-contain hover:opacity-80 transition-opacity duration-200"
+              />
             </Link>
 
             <p className="font-body text-sm text-white/40 leading-relaxed mb-7 max-w-[220px]">
