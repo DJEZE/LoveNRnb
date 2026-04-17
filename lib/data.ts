@@ -149,6 +149,7 @@ export const UPCOMING_EVENT: Event = {
         'Priority entry — skip the line',
         'Dedicated VIP section',
         'Access to Friday VIP Kickoff Event',
+        'Exclusive VIP merch',
       ],
       available: 75,
       total: 100,
