@@ -37,7 +37,7 @@ const FAQS = [
     questions: [
       {
         q: 'What ticket types are available?',
-        a: 'We offer three tiers: General Admission (GA) at $40, GA+ at $55 which includes early entry and an exclusive wristband, and VIP at $90 which includes priority entry and access to the exclusive VIP section and lounge.',
+        a: 'We offer three tiers: General Admission (GA) at $40, GA+ at $55 which includes priority entry and an exclusive wristband, and VIP at $120 which includes priority entry, dedicated VIP section, and access to the Friday VIP Kickoff Event.',
       },
       {
         q: 'Can I get a refund?',
@@ -45,7 +45,7 @@ const FAQS = [
       },
       {
         q: 'What is included with VIP?',
-        a: 'VIP includes priority entry (skip the line), access to the dedicated VIP section, exclusive VIP lounge access, and cash bar access.',
+        a: 'VIP includes priority entry (skip the line), access to the dedicated VIP section, and access to the Friday VIP Kickoff Event.',
       },
       {
         q: 'What is GA+ and how is it different from GA?',

@@ -117,7 +117,7 @@ export const UPCOMING_EVENT: Event = {
       perks: [
         'General floor access',
         'Live performances',
-        'Photo opportunities',
+        'Vendor Village access',
       ],
       available: 400,
       total: 500,
@@ -144,11 +144,11 @@ export const UPCOMING_EVENT: Event = {
     {
       id: 'tier-vip',
       name: 'VIP Access',
-      price: 90,
+      price: 120,
       perks: [
         'Priority entry — skip the line',
         'Dedicated VIP section',
-        'Exclusive VIP lounge access',
+        'Access to Friday VIP Kickoff Event',
       ],
       available: 75,
       total: 100,
