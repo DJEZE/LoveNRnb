@@ -214,12 +214,6 @@ export const PAST_EVENTS: PastEvent[] = [
 // ---------------------------------------------------------------------------
 export const SPONSORS: Sponsor[] = [
   {
-    id: 'spon-001',
-    name: 'Red Bull',
-    logo: '/images/sponsors/redbull_transparent.png',
-    tier: 'presenting',
-  },
-  {
     id: 'spon-002',
     name: '5ifity Boys',
     logo: '/images/sponsors/5ifity-BOYS.png',
