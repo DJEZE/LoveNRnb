@@ -175,7 +175,7 @@ export function Lineup({ artists, eventName }: LineupProps) {
         <AnimatedSection className="flex items-end justify-between py-10 lg:py-14">
           <div>
             <p className="font-body text-2xs text-gold uppercase tracking-[0.3em] mb-3">
-              {eventName} · Aug 15, 2026
+              {eventName} · Coming Fall 2026
             </p>
             <h2
               className="font-display font-black uppercase text-white leading-none"

@@ -23,7 +23,7 @@ export default function HomePage() {
       <Tickets
         tiers={UPCOMING_EVENT.ticketTiers}
         eventName={UPCOMING_EVENT.name}
-        eventDate={formatEventDate(UPCOMING_EVENT.date)}
+        eventDate="Coming Fall 2026"
         venue={`${UPCOMING_EVENT.venue}, ${UPCOMING_EVENT.city}`}
       />
 

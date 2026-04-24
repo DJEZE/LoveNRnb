@@ -16,7 +16,7 @@ const FAQS = [
       },
       {
         q: 'When and where is the next event?',
-        a: 'The next LoveNRnb event is August 15, 2026 at 9PM Music Hall in Houston, TX. Doors open at 6:00 PM.',
+        a: 'The next LoveNRnb event is coming Fall 2026 at 9PM Music Hall in Houston, TX. Doors open at 5:00 PM. Follow @lovenrnbfest for the official date announcement.',
       },
       {
         q: 'What time do doors open?',

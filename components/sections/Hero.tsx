@@ -104,7 +104,7 @@ export function Hero({ event }: HeroProps) {
           transition={{ duration: 0.6, delay: 0.55 }}
         >
           <span className="font-display font-bold text-xl lg:text-2xl uppercase text-white tracking-wide">
-            {formatEventDate(event.date)}
+            Coming Fall 2026
           </span>
           <span className="text-white/30 hidden sm:block">·</span>
           <div className="flex items-center gap-1.5">
