@@ -53,15 +53,6 @@ export const UPCOMING_EVENT: Event = {
       genre: 'R&B',
       tba: true,
     },
-    {
-      id: 'artist-004',
-      name: 'Aaron Page',
-      role: 'supporting',
-      image: '/images/artists/aaron page.jpeg',
-      genre: 'R&B',
-      instagram: 'https://www.instagram.com/whoisaaronpage/',
-      tba: false,
-    },
     // DJs (3–4)
     {
       id: 'dj-001',
