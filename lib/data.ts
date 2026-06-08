@@ -217,5 +217,6 @@ export const SPONSORS: Sponsor[] = [
     logo: '/images/sponsors/DJEZELogo.png',
     tier: 'presenting',
     url: 'https://www.instagram.com/djeze__/',
+    logoSize: 'h-52 lg:h-72',
   },
 ]

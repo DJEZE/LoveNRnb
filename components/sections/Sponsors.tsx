@@ -21,7 +21,7 @@ function SponsorLogo({ sponsor }: { sponsor: Sponsor }) {
           alt={sponsor.name}
           width={320}
           height={120}
-          className="object-contain w-auto h-40 lg:h-56"
+          className={`object-contain w-auto ${sponsor.logoSize ?? 'h-40 lg:h-56'}`}
         />
       ) : (
         <span className="font-display font-black text-3xl lg:text-4xl text-white uppercase tracking-tight">
