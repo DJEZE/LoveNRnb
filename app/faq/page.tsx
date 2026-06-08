@@ -16,7 +16,7 @@ const FAQS = [
       },
       {
         q: 'When and where is the next event?',
-        a: 'The next LoveNRnb event is coming Fall 2026 at 9PM Music Hall in Houston, TX. Doors open at 5:00 PM. Follow @lovenrnbfest for the official date announcement.',
+        a: 'The next LoveNRnb event is November 14, 2026 at Soho Festival Grounds in Houston, TX. Doors open at 5:00 PM.',
       },
       {
         q: 'What time do doors open?',
@@ -37,7 +37,7 @@ const FAQS = [
     questions: [
       {
         q: 'What ticket types are available?',
-        a: 'We offer three tiers: General Admission (GA) at $40, GA+ at $55 which includes priority entry and an exclusive wristband, and VIP at $120 which includes priority entry, dedicated VIP section, and access to the Friday VIP Kickoff Event.',
+        a: 'We offer three tiers: General Admission (GA) at $85, GA+ at $125 which includes priority entry and an exclusive wristband, and VIP at $200 which includes priority entry, dedicated VIP section, exclusive merch, and access to the Friday VIP Kickoff Event.',
       },
       {
         q: 'Can I get a refund?',
@@ -73,8 +73,8 @@ const FAQS = [
         a: 'Personal phones and small cameras are welcome. Professional cameras with detachable lenses require prior media approval. Contact us at press@lovenrnb.com for media credentials.',
       },
       {
-        q: 'What is the age requirement?',
-        a: 'This is an 18+ event. Valid government-issued ID is required for entry. Guests must be 21+ to purchase or consume alcohol — ID will be checked at the bar.',
+        q: 'Is this an all ages event?',
+        a: 'This is an all ages event. Guests must be 21+ to purchase or consume alcohol — valid government-issued ID will be checked at the bar.',
       },
       {
         q: 'What items are not allowed?',

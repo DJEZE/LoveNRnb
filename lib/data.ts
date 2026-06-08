@@ -24,7 +24,7 @@ export const UPCOMING_EVENT: Event = {
   date: '2026-11-14T21:00:00-06:00',
   doorsOpen: '5:00 PM',
   showTime: '10:00 PM',
-  venue: '9PM Music Hall',
+  venue: 'Soho Festival Grounds',
   address: 'Houston, TX',
   city: 'Houston',
   state: 'TX',
@@ -104,7 +104,7 @@ export const UPCOMING_EVENT: Event = {
     {
       id: 'tier-ga',
       name: 'General Admission',
-      price: 40,
+      price: 85,
       perks: [
         'General floor access',
         'Live performances',
@@ -119,7 +119,7 @@ export const UPCOMING_EVENT: Event = {
     {
       id: 'tier-ga-plus',
       name: 'GA+',
-      price: 55,
+      price: 125,
       perks: [
         'General floor access',
         'Live performances',
@@ -135,7 +135,7 @@ export const UPCOMING_EVENT: Event = {
     {
       id: 'tier-vip',
       name: 'VIP Access',
-      price: 120,
+      price: 200,
       perks: [
         'Priority entry — skip the line',
         'Dedicated VIP section',
