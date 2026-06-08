@@ -20,7 +20,7 @@ const FAQS = [
       },
       {
         q: 'What time do doors open?',
-        a: 'Doors open at 6:00 PM. We recommend arriving early — GA+ and VIP guests receive priority entry.',
+        a: 'Doors open at 4:00 PM. We recommend arriving early — GA+ and VIP guests receive priority entry.',
       },
       {
         q: 'What should I wear?',
@@ -28,7 +28,7 @@ const FAQS = [
       },
       {
         q: 'Is there parking available?',
-        a: 'Yes, parking is available at and around 9PM Music Hall. We recommend arriving early or using rideshare to avoid delays. Full parking details will be sent via email closer to the event.',
+        a: 'Parking is available at and around Soho Festival Grounds. We recommend arriving early or using rideshare to avoid delays. Full parking details will be sent via email closer to the event.',
       },
     ],
   },
@@ -45,11 +45,11 @@ const FAQS = [
       },
       {
         q: 'What is included with VIP?',
-        a: 'VIP includes priority entry (skip the line), access to the dedicated VIP section, and access to the Friday VIP Kickoff Event.',
+        a: 'VIP includes priority entry (skip the line), access to the dedicated VIP section, exclusive VIP merch, and access to the Friday VIP Kickoff Event.',
       },
       {
         q: 'What is GA+ and how is it different from GA?',
-        a: 'GA+ includes everything in General Admission plus early entry before the general GA doors open and an exclusive GA+ wristband. It\'s the best middle-ground for guests who want a step up without full VIP.',
+        a: 'GA+ includes everything in General Admission plus priority entry before general GA and an exclusive GA+ wristband. It\'s the best middle-ground for guests who want a step up without full VIP.',
       },
       {
         q: 'Where do I purchase tickets?',
