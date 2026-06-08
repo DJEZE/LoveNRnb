@@ -12,7 +12,7 @@ const FAQS = [
     questions: [
       {
         q: 'What is LoveNRnb?',
-        a: 'LoveNRnb is an R&B festival based in Houston, TX with one goal — to become the biggest R&B festival in the world. We bring together the best R&B artists, high-energy performances, and a community of fans who live and breathe the music. This is just the beginning.',
+        a: 'LoveNRnb is an R&B festival based in Houston, TX with one goal: to become the biggest R&B festival in the world. We bring together the best R&B artists, high-energy performances, and a community of fans who live and breathe the music. This is just the beginning.',
       },
       {
         q: 'When and where is the next event?',
