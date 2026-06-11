@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import { CountdownTimer } from '@/components/ui/CountdownTimer'
 import type { Event } from '@/lib/types'
 
@@ -59,16 +60,22 @@ export function Hero({ event }: HeroProps) {
           </span>
         </motion.div>
 
-        {/* Big title */}
-        <motion.h1
-          className="font-display font-black uppercase leading-none text-white mb-10 lg:mb-14"
-          style={{ fontSize: 'clamp(5rem, 20vw, 22rem)', letterSpacing: '-0.03em' }}
+        {/* Logo */}
+        <motion.div
+          className="mb-10 lg:mb-14"
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
         >
-          Love<span className="text-gold">N</span>Rnb
-        </motion.h1>
+          <Image
+            src="/images/lovenrnb-logo.png"
+            alt="LoveNRnb"
+            width={900}
+            height={450}
+            className="w-[280px] sm:w-[420px] lg:w-[600px] xl:w-[750px] h-auto object-contain"
+            priority
+          />
+        </motion.div>
 
         {/* Countdown */}
         <motion.div
