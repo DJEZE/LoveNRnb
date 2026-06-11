@@ -10,7 +10,7 @@ interface HeroProps {
 }
 
 export function Hero({ event }: HeroProps) {
-  const confirmedArtists = event.lineup.filter((a) => !a.tba).map((a) => a.name)
+  const confirmedArtists = event.lineup.filter((a) => !a.tba && a.role !== 'dj' && a.role !== 'mc').map((a) => a.name)
   const marqueeItems = [...confirmedArtists, ...confirmedArtists, ...confirmedArtists, ...confirmedArtists]
 
   return (
