@@ -27,29 +27,25 @@ export function CountdownTimer({ targetISO, className }: CountdownTimerProps) {
 
   const units = [
     { value: formatCountdownUnit(parts.days), label: 'Days' },
-    { value: formatCountdownUnit(parts.hours), label: 'Hrs' },
-    { value: formatCountdownUnit(parts.minutes), label: 'Min' },
-    { value: formatCountdownUnit(parts.seconds), label: 'Sec' },
+    { value: formatCountdownUnit(parts.hours), label: 'Hours' },
+    { value: formatCountdownUnit(parts.minutes), label: 'Minutes' },
+    { value: formatCountdownUnit(parts.seconds), label: 'Seconds' },
   ]
 
   return (
-    <div className={cn('flex items-start gap-2 sm:gap-3', className)}>
+    <div className={cn('flex items-start gap-4 sm:gap-6 lg:gap-8', className)}>
       {units.map((unit, i) => (
-        <div key={unit.label} className="flex items-start gap-2 sm:gap-3">
+        <div key={unit.label} className="flex items-start gap-4 sm:gap-6 lg:gap-8">
           <div className="flex flex-col items-center">
-            {/* Number block — Rolling Loud sharp box style */}
-            <div className="relative w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-surface-2 border border-white/10 flex items-center justify-center">
-              <span className="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-white tabular-nums leading-none">
-                {unit.value}
-              </span>
-            </div>
-            <span className="mt-2 font-body text-2xs text-white/30 uppercase tracking-[0.2em]">
+            <span className="font-display font-black text-5xl sm:text-6xl lg:text-7xl text-white tabular-nums leading-none">
+              {unit.value}
+            </span>
+            <span className="mt-2 font-body text-2xs text-white/30 uppercase tracking-[0.25em]">
               {unit.label}
             </span>
           </div>
-
           {i < units.length - 1 && (
-            <span className="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-gold/40 mt-4 sm:mt-5 lg:mt-6 leading-none select-none">
+            <span className="font-display font-black text-4xl sm:text-5xl lg:text-6xl text-gold/30 leading-none select-none mt-0.5">
               :
             </span>
           )}
