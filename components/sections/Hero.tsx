@@ -72,7 +72,7 @@ export function Hero({ event }: HeroProps) {
             alt="LoveNRnb"
             width={900}
             height={450}
-            className="w-[280px] sm:w-[420px] lg:w-[600px] xl:w-[750px] h-auto object-contain"
+            className="w-[220px] sm:w-[340px] lg:w-[480px] xl:w-[600px] h-auto object-contain"
             priority
           />
         </motion.div>
