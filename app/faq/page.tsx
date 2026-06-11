@@ -37,7 +37,7 @@ const FAQS = [
     questions: [
       {
         q: 'What ticket types are available?',
-        a: 'We offer three tiers: General Admission (GA) at $105, GA+ at $160 which includes a dedicated entry lane, complimentary souvenir, and dedicated GA+ bar and food vendor lines, and VIP at $250 which includes VIP section access, premium bar and food access, and a dedicated VIP entry lane.',
+        a: 'We offer three tiers: General Admission (GA) at $105, GA+ at $165 which includes a dedicated entry lane, complimentary souvenir, and dedicated GA+ bar and food vendor lines, and VIP at $250 which includes VIP section access, premium bar and food access, and a dedicated VIP entry lane.',
       },
       {
         q: 'Can I get a refund?',
