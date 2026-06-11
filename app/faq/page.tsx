@@ -37,7 +37,7 @@ const FAQS = [
     questions: [
       {
         q: 'What ticket types are available?',
-        a: 'We offer three tiers: General Admission (GA) at $85, GA+ at $125 which includes priority entry and an exclusive wristband, and VIP at $200 which includes priority entry, dedicated VIP section, exclusive merch, and access to the Friday VIP Kickoff Event.',
+        a: 'We offer three tiers: General Admission (GA) at $105, GA+ at $160 which includes a dedicated entry lane, complimentary souvenir, and dedicated GA+ bar and food vendor lines, and VIP at $250 which includes VIP section access, premium bar and food access, and a dedicated VIP entry lane.',
       },
       {
         q: 'Can I get a refund?',
@@ -45,11 +45,11 @@ const FAQS = [
       },
       {
         q: 'What is included with VIP?',
-        a: 'VIP includes priority entry (skip the line), access to the dedicated VIP section, exclusive VIP merch, and access to the Friday VIP Kickoff Event.',
+        a: 'VIP includes access to the elevated VIP viewing area, premium bar and food access, a dedicated VIP entry lane, and access to all vendor marketplace booths.',
       },
       {
         q: 'What is GA+ and how is it different from GA?',
-        a: 'GA+ includes everything in General Admission plus priority entry before general GA and an exclusive GA+ wristband. It\'s the best middle-ground for guests who want a step up without full VIP.',
+        a: 'GA+ includes everything in General Admission plus a dedicated entry lane with no long lines, a complimentary souvenir, and dedicated GA+ bar and food vendor lines. It\'s the best middle-ground for guests who want a step up without full VIP.',
       },
       {
         q: 'Where do I purchase tickets?',
