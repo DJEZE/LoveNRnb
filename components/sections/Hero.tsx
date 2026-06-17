@@ -77,6 +77,16 @@ export function Hero({ event }: HeroProps) {
           />
         </motion.div>
 
+        {/* Tagline */}
+        <motion.p
+          className="font-display font-bold uppercase text-white/70 tracking-[0.15em] mb-10 lg:mb-14 text-lg lg:text-2xl"
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
+          The South&apos;s Premier <span className="text-gold">R&amp;B</span> Music Festival
+        </motion.p>
+
         {/* Countdown */}
         <motion.div
           className="mb-10 lg:mb-14"
