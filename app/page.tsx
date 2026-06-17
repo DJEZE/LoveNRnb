@@ -1,5 +1,6 @@
 import { Navigation } from '@/components/Navigation'
 import { Hero } from '@/components/sections/Hero'
+import { About } from '@/components/sections/About'
 import { Lineup } from '@/components/sections/Lineup'
 import { Tickets } from '@/components/sections/Tickets'
 import { EmailCapture } from '@/components/sections/EmailCapture'
@@ -14,6 +15,8 @@ export default function HomePage() {
       <Navigation />
 
       <Hero event={UPCOMING_EVENT} />
+
+      <About />
 
       <Lineup
         artists={UPCOMING_EVENT.lineup}
