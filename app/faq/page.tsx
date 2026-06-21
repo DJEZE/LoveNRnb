@@ -66,7 +66,7 @@ const FAQS = [
     questions: [
       {
         q: 'Will there be food and drinks?',
-        a: 'Yes. A full cash bar will be available to all attendees. Food vendors will be on-site — follow @lovenrnbfest for updates.',
+        a: 'Yes. All bars on-site are cashless, card only. Food vendors will be on-site and can accept cash — follow @lovenrnbfest for updates.',
       },
       {
         q: 'Is re-entry allowed?',
