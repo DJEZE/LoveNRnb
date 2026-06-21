@@ -4,7 +4,7 @@ import { Footer } from '@/components/Footer'
 import { EmailCapture } from '@/components/sections/EmailCapture'
 
 export const metadata: Metadata = {
-  title: 'Experience',
+  title: 'Waitlist',
 }
 
 export default function ExperiencePage() {
