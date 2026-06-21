@@ -116,8 +116,6 @@ function TierCard({ tier }: { tier: TicketTier }) {
 }
 
 export function Tickets({ tiers, eventName, eventDate, venue }: TicketsProps) {
-  const vipTier = tiers.find((t) => t.id === 'tier-vip')
-
   return (
     <section id="tickets" className="bg-black">
       <div className="w-full h-px bg-white/10" />
@@ -143,16 +141,6 @@ export function Tickets({ tiers, eventName, eventDate, venue }: TicketsProps) {
         </AnimatedSection>
 
         <div className="w-full h-px bg-white/10 mb-10 lg:mb-14" />
-
-        {/* Urgency banner */}
-        {vipTier && vipTier.available > 0 && (
-          <AnimatedSection className="flex items-center gap-3 border border-amber-500/25 bg-amber-500/5 p-4 mb-8">
-            <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse-dot flex-shrink-0" />
-            <p className="font-body text-xs text-amber-300 uppercase tracking-wide">
-              Only {vipTier.available} VIP spots remaining — selling fast
-            </p>
-          </AnimatedSection>
-        )}
 
         {/* Cards */}
         <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-5 pb-14 lg:pb-20 mt-8">
