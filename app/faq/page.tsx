@@ -45,7 +45,7 @@ const FAQS = [
       },
       {
         q: 'What is included with VIP?',
-        a: 'VIP includes access to the elevated VIP viewing area, premium bar and food access, a dedicated VIP entry lane, and access to all vendor marketplace booths.',
+        a: 'VIP includes access to the elevated VIP viewing area, VIP club access/experience, premium bar and food access, a dedicated VIP entry lane, and access to all vendor marketplace booths.',
       },
       {
         q: 'What is GA+ and how is it different from GA?',

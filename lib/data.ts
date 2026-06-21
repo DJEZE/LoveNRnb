@@ -137,6 +137,7 @@ export const UPCOMING_EVENT: Event = {
       price: 250,
       perks: [
         'VIP section access (elevated viewing area)',
+        'VIP club access/experience',
         'Premium bar & food access',
         'Dedicated VIP entry lane',
         'Access to all vendor marketplace booths',
