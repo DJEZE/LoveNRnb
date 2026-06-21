@@ -24,7 +24,7 @@ const FAQS = [
       },
       {
         q: 'What should I wear?',
-        a: 'This is a premium experience — dress the part. Think elevated, fashion-forward fits. We love to see the people show up and show out.',
+        a: 'This is a premium R&B experience. Come ready to sing, dance, and create unforgettable memories with thousands of music lovers. Bring your best energy and be part of the culture.',
       },
       {
         q: 'Is there parking available?',
