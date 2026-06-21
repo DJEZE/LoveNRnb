@@ -24,7 +24,6 @@ export interface TicketTier {
   soldOut?: boolean
   isHighlighted?: boolean
   ctaLabel: string
-  ticketUrl: string
 }
 
 export type SponsorTier = 'presenting' | 'partner' | 'community'

@@ -153,7 +153,7 @@ export default function FAQPage() {
             LoveN<span className="text-gold">Rnb</span>
           </Link>
           <Link
-            href="/#tickets"
+            href="/experience"
             className="inline-flex items-center h-9 px-5 font-body text-xs font-semibold uppercase tracking-[0.15em] text-black bg-gold hover:bg-gold-light transition-colors"
           >
             Join Waitlist
