@@ -28,7 +28,7 @@ const FAQS = [
       },
       {
         q: 'Is there parking available?',
-        a: 'Parking is available at and around Soho Festival Grounds. We recommend arriving early or using rideshare to avoid delays. Full parking details will be sent via email closer to the event.',
+        a: 'Parking is not available at Soho Festival Grounds. We recommend using rideshare or carpooling to get to the venue.',
       },
     ],
   },
@@ -78,7 +78,7 @@ const FAQS = [
       },
       {
         q: 'What items are not allowed?',
-        a: 'Outside food and beverages, weapons of any kind, professional camera equipment (without credentials), and any items deemed unsafe by venue staff are not permitted.',
+        a: 'Outside food and beverages, weapons of any kind, professional camera equipment (without credentials), and any items deemed unsafe by venue staff are not permitted. Only clear backpacks and small purses or bags are allowed on site.',
       },
     ],
   },
