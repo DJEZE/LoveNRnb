@@ -80,7 +80,8 @@ export function EmailCapture() {
           <div className="w-16 h-0.5 bg-gold mb-8" />
 
           <p className="font-body text-base text-white/50 mb-12 max-w-md leading-relaxed">
-            Get presale access, VIP drops, and lineup reveals before the public.
+            Join the waitlist for early access to tickets, VIP experiences, lineup announcements, and special offers.
+            <br /><br />
             No spam. Just the culture.
           </p>
 
