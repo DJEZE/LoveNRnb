@@ -55,6 +55,10 @@ const FAQS = [
         q: 'Where do I purchase tickets?',
         a: 'Tickets are not yet on sale. Join the waitlist from the Tickets section on this site to be the first to know when they drop.',
       },
+      {
+        q: 'Is there a payment plan option?',
+        a: 'Yes. Payment plans will be available at checkout once tickets go on sale, letting you split your purchase into smaller payments.',
+      },
     ],
   },
   {
