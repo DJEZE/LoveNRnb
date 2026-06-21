@@ -12,7 +12,7 @@ const FAQS = [
     questions: [
       {
         q: 'What is LoveNRnb?',
-        a: 'LoveNRnb is an R&B festival based in Houston, TX with one goal: to become the biggest R&B festival in the world. We bring together the best R&B artists, high-energy performances, and a community of fans who live and breathe the music. This is just the beginning.',
+        a: 'LoveNRnB is a premier R&B music festival based in Houston, Texas with one goal: to become the biggest R&B festival in the world.\n\nWe bring together the most exciting artists in R&B, unforgettable live performances, and a community of fans who truly live and breathe the culture. More than a festival, LoveNRnB is a celebration of the music, the people, and the moments that bring us together.\n\nThis is just the beginning.',
       },
       {
         q: 'When and where is the next event?',
@@ -137,7 +137,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
             className="overflow-hidden"
           >
-            <p className="font-body text-base text-white/50 leading-relaxed pb-6 max-w-3xl">
+            <p className="font-body text-base text-white/50 leading-relaxed pb-6 max-w-3xl whitespace-pre-line">
               {a}
             </p>
           </motion.div>
