@@ -110,7 +110,7 @@ export function Hero({ event }: HeroProps) {
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center h-14 px-10 font-body text-sm font-bold uppercase tracking-[0.2em] text-black bg-gold hover:bg-gold-light transition-colors duration-200"
           >
-            Get Tickets
+            Join Waitlist
           </a>
           <button
             onClick={() => document.querySelector('#lineup')?.scrollIntoView({ behavior: 'smooth' })}

@@ -37,7 +37,7 @@ const FAQS = [
     questions: [
       {
         q: 'What ticket types are available?',
-        a: 'We offer three tiers: General Admission (GA) at $105, GA+ at $165 which includes a dedicated entry lane, complimentary souvenir, and dedicated GA+ bar and food vendor lines, and VIP at $250 which includes VIP section access, premium bar and food access, and a dedicated VIP entry lane.',
+        a: 'We offer three tiers: General Admission (GA), GA+ which includes a dedicated entry lane, complimentary souvenir, and dedicated GA+ bar and food vendor lines, and VIP which includes VIP section access, premium bar and food access, and a dedicated VIP entry lane. Pricing will be announced soon. Join the waitlist to be notified first.',
       },
       {
         q: 'Can I get a refund?',
@@ -53,7 +53,7 @@ const FAQS = [
       },
       {
         q: 'Where do I purchase tickets?',
-        a: 'Tickets are available through Gatekeepers. You can purchase directly from the Tickets section on this site or at gatekeepers.app. Make sure to buy from official links only.',
+        a: 'Tickets are not yet on sale. Join the waitlist from the Tickets section on this site to be the first to know when they drop.',
       },
     ],
   },
@@ -156,7 +156,7 @@ export default function FAQPage() {
             href="/#tickets"
             className="inline-flex items-center h-9 px-5 font-body text-xs font-semibold uppercase tracking-[0.15em] text-black bg-gold hover:bg-gold-light transition-colors"
           >
-            Get Tickets
+            Join Waitlist
           </Link>
         </div>
       </div>

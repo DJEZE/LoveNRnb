@@ -51,16 +51,9 @@ function TierCard({ tier }: { tier: TicketTier }) {
           </p>
 
           <div className="flex items-baseline gap-1">
-            {tier.priceLabel ? (
-              <p className="font-display font-black text-4xl text-white uppercase">{tier.priceLabel}</p>
-            ) : (
-              <>
-                <span className="font-display font-black text-5xl lg:text-6xl text-white leading-none">
-                  ${tier.price}
-                </span>
-                <span className="font-body text-xs text-white/40 uppercase tracking-wide ml-1">/ person</span>
-              </>
-            )}
+            <span className="font-display font-black text-3xl lg:text-4xl text-gold uppercase leading-none">
+              Pricing TBA
+            </span>
           </div>
         </div>
 

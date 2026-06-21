@@ -86,7 +86,7 @@ export function Navigation() {
                 href="/tickets"
                 className="inline-flex items-center h-9 px-5 font-body text-xs font-semibold uppercase tracking-[0.15em] text-black bg-gold hover:bg-gold-light transition-colors duration-200"
               >
-                Get Tickets
+                Join Waitlist
               </a>
             </div>
 
@@ -146,7 +146,7 @@ export function Navigation() {
             onClick={() => setMobileOpen(false)}
             className="inline-flex items-center h-12 px-8 font-body text-sm font-semibold uppercase tracking-widest text-black bg-gold hover:bg-gold-light transition-colors"
           >
-            Get Tickets
+            Join Waitlist
           </a>
         </div>
       </div>

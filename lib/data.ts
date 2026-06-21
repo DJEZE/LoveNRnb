@@ -113,7 +113,7 @@ export const UPCOMING_EVENT: Event = {
       available: 400,
       total: 500,
       isHighlighted: false,
-      ctaLabel: 'Get GA Tickets',
+      ctaLabel: 'Join Waitlist',
       ticketUrl: 'https://www.gatekeepers.app/events/lovenrnb-concert-vol-1',
     },
     {
@@ -130,7 +130,7 @@ export const UPCOMING_EVENT: Event = {
       available: 200,
       total: 250,
       isHighlighted: true,
-      ctaLabel: 'Get GA+ Tickets',
+      ctaLabel: 'Join Waitlist',
       ticketUrl: 'https://www.gatekeepers.app/events/lovenrnb-concert-vol-1',
     },
     {
@@ -146,7 +146,7 @@ export const UPCOMING_EVENT: Event = {
       available: 75,
       total: 100,
       isHighlighted: false,
-      ctaLabel: 'Secure VIP',
+      ctaLabel: 'Join Waitlist',
       ticketUrl: 'https://www.gatekeepers.app/events/lovenrnb-concert-vol-1',
     },
   ],
