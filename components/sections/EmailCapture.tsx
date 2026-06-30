@@ -10,6 +10,7 @@ import { cn } from '@/lib/utils'
 interface FormValues {
   name: string
   email: string
+  phone: string
 }
 
 // Rolling Loud style marquee ticker content
@@ -33,7 +34,7 @@ export function EmailCapture() {
       const res = await fetch('/api/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: data.email, name: data.name }),
+        body: JSON.stringify({ email: data.email, name: data.name, phone: data.phone }),
       })
       if (!res.ok) throw new Error('Failed')
       setSubmitted(true)
@@ -129,6 +130,29 @@ export function EmailCapture() {
                     {errors.name && (
                       <p className="absolute -bottom-5 left-0 font-body text-xs text-red-400">
                         {errors.name.message}
+                      </p>
+                    )}
+                  </div>
+
+                  {/* Phone */}
+                  <div className="relative mb-3">
+                    <input
+                      {...register('phone', { required: 'Phone number is required' })}
+                      type="tel"
+                      placeholder="Phone number"
+                      autoComplete="tel"
+                      className={cn(
+                        'w-full h-12 lg:h-14 px-5',
+                        'font-body text-sm text-white placeholder:text-white/25',
+                        'bg-surface-2 border',
+                        'focus:outline-none focus:border-gold',
+                        'transition-colors duration-200',
+                        errors.phone ? 'border-red-500/60' : 'border-white/15'
+                      )}
+                    />
+                    {errors.phone && (
+                      <p className="absolute -bottom-5 left-0 font-body text-xs text-red-400">
+                        {errors.phone.message}
                       </p>
                     )}
                   </div>
