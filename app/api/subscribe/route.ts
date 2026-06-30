@@ -39,9 +39,9 @@ export async function POST(req: NextRequest) {
       }),
     })
 
-    // 204 = success, 400 with code "duplicate_parameter" = already subscribed (still fine)
     if (!res.ok) {
       const err = await res.json()
+      console.error('Brevo API error:', JSON.stringify(err))
       const alreadyExists = err?.code === 'duplicate_parameter'
       if (!alreadyExists) throw new Error(err?.message ?? 'Brevo error')
     }

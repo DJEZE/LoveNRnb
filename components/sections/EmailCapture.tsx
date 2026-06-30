@@ -21,11 +21,13 @@ const TICKER_ITEMS = [
 export function EmailCapture() {
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [serverError, setServerError] = useState(false)
 
   const { register, handleSubmit, formState: { errors }, reset } = useForm<FormValues>()
 
   const onSubmit = async (data: FormValues) => {
     setLoading(true)
+    setServerError(false)
     try {
       const res = await fetch('/api/subscribe', {
         method: 'POST',
@@ -36,7 +38,7 @@ export function EmailCapture() {
       setSubmitted(true)
       reset()
     } catch {
-      // silently fail — user sees no error, you see it in Vercel logs
+      setServerError(true)
     } finally {
       setLoading(false)
     }
@@ -85,54 +87,9 @@ export function EmailCapture() {
             No spam. Just the culture.
           </p>
 
-          {/* Form */}
+          {/* Form / Success */}
           <AnimatePresence mode="wait">
-            {!submitted ? (
-              <motion.form
-                key="form"
-                onSubmit={handleSubmit(onSubmit)}
-                exit={{ opacity: 0, y: -8 }}
-                transition={{ duration: 0.25 }}
-                className="flex flex-col sm:flex-row gap-0 max-w-lg"
-              >
-                <div className="flex-1 relative">
-                  <input
-                    {...register('email', {
-                      required: 'Email is required',
-                      pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: 'Enter a valid email' },
-                    })}
-                    type="email"
-                    placeholder="your@email.com"
-                    autoComplete="email"
-                    className={cn(
-                      'w-full h-12 lg:h-14 px-5',
-                      'font-body text-sm text-white placeholder:text-white/25',
-                      'bg-surface-2 border-y border-l',
-                      'focus:outline-none focus:border-gold',
-                      'transition-colors duration-200',
-                      errors.email ? 'border-red-500/60' : 'border-white/15'
-                    )}
-                  />
-                  {errors.email && (
-                    <p className="absolute -bottom-5 left-0 font-body text-xs text-red-400">
-                      {errors.email.message}
-                    </p>
-                  )}
-                </div>
-
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className="h-12 lg:h-14 px-6 lg:px-8 inline-flex items-center justify-center gap-2 font-body text-xs font-semibold uppercase tracking-[0.15em] text-black bg-gold hover:bg-gold-light transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap flex-shrink-0"
-                >
-                  {loading ? (
-                    <span className="w-4 h-4 border-2 border-black/30 border-t-black rounded-full animate-spin" />
-                  ) : (
-                    <>Join the List <ArrowRight size={14} /></>
-                  )}
-                </button>
-              </motion.form>
-            ) : (
+            {submitted ? (
               <motion.div
                 key="success"
                 initial={{ opacity: 0, y: 10 }}
@@ -145,6 +102,56 @@ export function EmailCapture() {
                   <p className="font-display font-black text-2xl uppercase text-white">You&apos;re in.</p>
                   <p className="font-body text-sm text-white/40 mt-0.5">Welcome to the inner circle.</p>
                 </div>
+              </motion.div>
+            ) : (
+              <motion.div key="form" exit={{ opacity: 0, y: -8 }} transition={{ duration: 0.25 }}>
+                <form
+                  onSubmit={handleSubmit(onSubmit)}
+                  className="flex flex-col sm:flex-row gap-0 max-w-lg"
+                >
+                  <div className="flex-1 relative">
+                    <input
+                      {...register('email', {
+                        required: 'Email is required',
+                        pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: 'Enter a valid email' },
+                      })}
+                      type="email"
+                      placeholder="your@email.com"
+                      autoComplete="email"
+                      className={cn(
+                        'w-full h-12 lg:h-14 px-5',
+                        'font-body text-sm text-white placeholder:text-white/25',
+                        'bg-surface-2 border-y border-l',
+                        'focus:outline-none focus:border-gold',
+                        'transition-colors duration-200',
+                        errors.email ? 'border-red-500/60' : 'border-white/15'
+                      )}
+                    />
+                    {errors.email && (
+                      <p className="absolute -bottom-5 left-0 font-body text-xs text-red-400">
+                        {errors.email.message}
+                      </p>
+                    )}
+                  </div>
+
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className="h-12 lg:h-14 px-6 lg:px-8 inline-flex items-center justify-center gap-2 font-body text-xs font-semibold uppercase tracking-[0.15em] text-black bg-gold hover:bg-gold-light transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap flex-shrink-0"
+                  >
+                    {loading ? (
+                      <span className="w-4 h-4 border-2 border-black/30 border-t-black rounded-full animate-spin" />
+                    ) : (
+                      <>Join the List <ArrowRight size={14} /></>
+                    )}
+                  </button>
+                </form>
+
+                {serverError && (
+                  <p className="font-body text-xs text-red-400 mt-4">
+                    Something went wrong — please try again or email info@lovenrnb.com.
+                  </p>
+                )}
               </motion.div>
             )}
           </AnimatePresence>
