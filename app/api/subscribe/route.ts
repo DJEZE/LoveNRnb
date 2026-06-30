@@ -40,11 +40,12 @@ export async function POST(req: NextRequest) {
       }),
     })
 
+    const body = res.status !== 204 ? await res.json().catch(() => null) : null
+    console.log('Brevo response:', res.status, JSON.stringify(body))
+
     if (!res.ok) {
-      const err = await res.json()
-      console.error('Brevo API error:', JSON.stringify(err))
-      const alreadyExists = err?.code === 'duplicate_parameter'
-      if (!alreadyExists) throw new Error(err?.message ?? 'Brevo error')
+      const alreadyExists = body?.code === 'duplicate_parameter'
+      if (!alreadyExists) throw new Error(body?.message ?? 'Brevo error')
     }
 
     return NextResponse.json({ success: true })
