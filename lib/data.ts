@@ -106,9 +106,11 @@ export const UPCOMING_EVENT: Event = {
       name: 'General Admission',
       price: 105,
       perks: [
-        'General admission festival access',
-        'Access to all vendor marketplace booths',
+        'Full festival access',
+        'Access to all food vendors',
         'Access to all bar areas',
+        'Access to all vendor marketplace booths',
+        'Access to games & activations',
       ],
       available: 400,
       total: 500,

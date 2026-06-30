@@ -37,7 +37,7 @@ const FAQS = [
     questions: [
       {
         q: 'What ticket types are available?',
-        a: 'We offer three tiers: General Admission (GA), GA+ which includes a dedicated entry lane, complimentary souvenir, and dedicated GA+ bar and food vendor lines, and VIP which includes VIP section access, premium bar and food access, and a dedicated VIP entry lane. Pricing will be announced soon. Join the waitlist to be notified first.',
+        a: 'We offer three tiers: General Admission (GA) which includes full festival access, all food vendors, all bar areas, all vendor marketplace booths, and games & activations. GA+ adds a dedicated entry lane, complimentary souvenir, and dedicated GA+ bar and food vendor lines. VIP includes all of the above plus an elevated VIP viewing area, VIP club access, premium bar & food access, and a dedicated VIP entry lane. Pricing will be announced soon — join the waitlist to be notified first.',
       },
       {
         q: 'Can I get a refund?',
