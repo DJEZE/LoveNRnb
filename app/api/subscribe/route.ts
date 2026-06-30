@@ -10,7 +10,7 @@ import { NextRequest, NextResponse } from 'next/server'
 // ---------------------------------------------------------------------------
 
 export async function POST(req: NextRequest) {
-  const { email } = await req.json()
+  const { email, name } = await req.json()
 
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return NextResponse.json({ error: 'Invalid email' }, { status: 400 })
@@ -34,8 +34,9 @@ export async function POST(req: NextRequest) {
       },
       body: JSON.stringify({
         email,
+        attributes: { FIRSTNAME: name ?? '' },
         listIds: [Number(listId)],
-        updateEnabled: true, // update existing contact instead of throwing error
+        updateEnabled: true,
       }),
     })
 
