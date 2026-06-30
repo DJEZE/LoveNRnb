@@ -21,7 +21,7 @@ export const UPCOMING_EVENT: Event = {
   slug: 'lovenrnb-houston-2026',
   name: 'LoveNRnb Houston',
   tagline: 'An Evening of Soul & Desire',
-  date: '2026-11-14T21:00:00-06:00',
+  date: '2026-11-21T21:00:00-06:00',
   doorsOpen: '2:00 PM',
   showTime: '10:00 PM',
   venue: 'Soho Festival Grounds',

@@ -56,7 +56,7 @@ export function Hero({ event }: HeroProps) {
         >
           <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse-dot flex-shrink-0" />
           <span className="font-body text-2xs text-gold uppercase tracking-[0.25em]">
-            Nov 14, 2026 &nbsp;·&nbsp; Soho Festival Grounds &nbsp;·&nbsp; Houston, TX
+            Nov 21, 2026 &nbsp;·&nbsp; Soho Festival Grounds &nbsp;·&nbsp; Houston, TX
           </span>
         </motion.div>
 
