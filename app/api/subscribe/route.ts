@@ -9,6 +9,14 @@ import { NextRequest, NextResponse } from 'next/server'
 //   BREVO_LIST_ID   — Brevo dashboard → Contacts → Lists → pick your list → ID in the URL
 // ---------------------------------------------------------------------------
 
+function toE164(phone: string | undefined): string {
+  if (!phone) return ''
+  const digits = phone.replace(/\D/g, '')
+  if (digits.length === 10) return `+1${digits}`
+  if (digits.length === 11 && digits.startsWith('1')) return `+${digits}`
+  return `+${digits}`
+}
+
 export async function POST(req: NextRequest) {
   const { email, name, phone } = await req.json()
 
@@ -34,7 +42,7 @@ export async function POST(req: NextRequest) {
       },
       body: JSON.stringify({
         email,
-        attributes: { FIRSTNAME: name ?? '', SMS: phone ?? '' },
+        attributes: { FIRSTNAME: name ?? '', SMS: toE164(phone) },
         listIds: [Number(listId)],
         updateEnabled: true,
       }),
