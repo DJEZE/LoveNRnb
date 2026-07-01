@@ -14,6 +14,7 @@ interface FooterLink {
   label: string
   href: string
   isExternal?: boolean
+  highlight?: boolean
 }
 
 const FOOTER_LINKS: Record<string, FooterLink[]> = {
@@ -30,7 +31,7 @@ const FOOTER_LINKS: Record<string, FooterLink[]> = {
   ],
   Partners: [
     { label: 'Become a Sponsor', href: 'mailto:partnerships@lovenrnb.com', isExternal: true },
-    { label: 'Vendor Inquiry', href: 'mailto:vendors@lovenrnb.com', isExternal: true },
+    { label: 'Vendor Inquiry', href: 'https://docs.google.com/forms/d/e/1FAIpQLSevxsrSzvEGXMIaWvsXwQ7shRLtt-OK_Of8aJcFi4QX56x4ig/viewform?usp=preview', isExternal: true, highlight: true },
     { label: 'Press & Media', href: 'mailto:press@lovenrnb.com', isExternal: true },
   ],
 }
@@ -93,7 +94,7 @@ export function Footer() {
                       href={link.href}
                       target={link.isExternal ? '_blank' : undefined}
                       rel={link.isExternal ? 'noopener noreferrer' : undefined}
-                      className="font-body text-sm text-white/40 hover:text-white transition-colors duration-150"
+                      className={link.highlight ? "font-body text-sm text-red-500 hover:text-red-400 font-semibold transition-colors duration-150" : "font-body text-sm text-white/40 hover:text-white transition-colors duration-150"}
                     >
                       {link.label}
                     </a>
