@@ -16,7 +16,7 @@ const FAQS = [
       },
       {
         q: 'When and where is the next event?',
-        a: 'The next LoveNRnb event is November 21, 2026 at Soho Festival Grounds in Houston, TX. Doors open at 2:00 PM.',
+        a: 'The next LoveNRnb event is November 21, 2026 in Houston, TX. Doors open at 2:00 PM. Venue details coming soon.',
       },
       {
         q: 'What time do doors open?',
@@ -28,7 +28,7 @@ const FAQS = [
       },
       {
         q: 'Is there parking available?',
-        a: 'Parking is not available at Soho Festival Grounds. We recommend using rideshare or carpooling to get to the venue.',
+        a: 'Parking will not be available at the venue. We recommend using rideshare or carpooling to get to the event.',
       },
     ],
   },

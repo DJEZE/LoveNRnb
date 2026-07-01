@@ -18,7 +18,7 @@ export default function TicketsPage() {
           tiers={UPCOMING_EVENT.ticketTiers}
           eventName={UPCOMING_EVENT.name}
           eventDate="November 21, 2026"
-          venue={UPCOMING_EVENT.venue}
+          venue={UPCOMING_EVENT.city}
         />
       </main>
       <Footer />
