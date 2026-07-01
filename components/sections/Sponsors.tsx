@@ -61,7 +61,7 @@ export function Sponsors({ sponsors }: SponsorsProps) {
               href="mailto:partnerships@lovenrnb.com"
               className="inline-flex items-center h-9 px-5 font-body text-xs font-semibold uppercase tracking-[0.15em] text-gold border border-gold/40 hover:bg-gold/10 transition-colors duration-200"
             >
-              Get Partnership Deck
+              Become a Partner
             </a>
           </div>
         </AnimatedSection>
