@@ -57,7 +57,7 @@ export function Footer() {
             </Link>
 
             <p className="font-body text-sm text-white/40 leading-relaxed mb-7 max-w-[220px]">
-              Houston&apos;s premium R&B concert series. Curated lineups. Elevated culture.
+              The South&apos;s premier R&amp;B music festival. Curated lineups. Unforgettable experiences.
             </p>
 
             {/* Social icons */}
