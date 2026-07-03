@@ -95,7 +95,8 @@ const FAQS = [
       },
       {
         q: 'How do I apply as a vendor?',
-        a: 'We welcome curated vendors who fit the LoveNRnb aesthetic. Send your vendor inquiry to vendors@lovenrnb.com with details about your brand and what you\'d like to bring to the event.',
+        a: 'We welcome curated vendors who fit the LoveNRnb aesthetic. Fill out the form below and our team will be in touch.',
+        cta: { label: 'Submit Vendor Application', href: 'https://docs.google.com/forms/d/e/1FAIpQLSevxsrSzvEGXMIaWvsXwQ7shRLtt-OK_Of8aJcFi4QX56x4ig/viewform?usp=preview' },
       },
       {
         q: 'How do I submit for press coverage?',
@@ -105,7 +106,7 @@ const FAQS = [
   },
 ]
 
-function FAQItem({ q, a }: { q: string; a: string }) {
+function FAQItem({ q, a, cta }: { q: string; a: string; cta?: { label: string; href: string } }) {
   const [open, setOpen] = useState(false)
 
   return (
@@ -137,9 +138,19 @@ function FAQItem({ q, a }: { q: string; a: string }) {
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
             className="overflow-hidden"
           >
-            <p className="font-body text-base text-white/50 leading-relaxed pb-6 max-w-3xl whitespace-pre-line">
+            <p className="font-body text-base text-white/50 leading-relaxed mb-5 max-w-3xl whitespace-pre-line">
               {a}
             </p>
+            {cta && (
+              <a
+                href={cta.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center h-10 px-6 mb-6 font-body text-xs font-semibold uppercase tracking-[0.15em] text-black bg-gold hover:bg-gold-light transition-colors duration-200"
+              >
+                {cta.label}
+              </a>
+            )}
           </motion.div>
         )}
       </AnimatePresence>
@@ -190,7 +201,7 @@ export default function FAQPage() {
               {/* Questions */}
               <div>
                 {section.questions.map((item) => (
-                  <FAQItem key={item.q} q={item.q} a={item.a} />
+                  <FAQItem key={item.q} q={item.q} a={item.a} cta={'cta' in item ? item.cta : undefined} />
                 ))}
               </div>
             </div>
