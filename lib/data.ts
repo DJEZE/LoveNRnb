@@ -149,7 +149,7 @@ export const UPCOMING_EVENT: Event = {
       total: 100,
       isHighlighted: false,
       ctaLabel: 'Join Waitlist',
-      stripePriceId: '', // TODO: paste Stripe Price ID (price_xxx) when ready
+      stripePriceId: 'price_1TwtwMDfa6xjnJVQe8soeG7c',
     },
   ],
 }
