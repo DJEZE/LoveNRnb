@@ -1,5 +1,6 @@
 'use client'
 
+import { useState } from 'react'
 import { Check, AlertCircle } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { AnimatedSection, StaggerContainer, staggerChild } from '@/components/ui/AnimatedSection'
@@ -13,10 +14,31 @@ interface TicketsProps {
   venue: string
 }
 
+const TICKETS_LIVE = process.env.NEXT_PUBLIC_TICKETS_LIVE === 'true'
+
 function TierCard({ tier }: { tier: TicketTier }) {
   const { label: availLabel, urgent } = getAvailabilityLabel(tier.available, tier.total)
   const soldOut = tier.soldOut || tier.available === 0
   const fillPct = Math.round(((tier.total - tier.available) / tier.total) * 100)
+  const [loading, setLoading] = useState(false)
+
+  const handleBuy = async () => {
+    if (!tier.stripePriceId || loading) return
+    setLoading(true)
+    try {
+      const res = await fetch('/api/checkout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ priceId: tier.stripePriceId }),
+      })
+      const { url, error } = await res.json()
+      if (error) throw new Error(error)
+      window.location.href = url
+    } catch (err) {
+      console.error('Checkout error:', err)
+      setLoading(false)
+    }
+  }
 
   return (
     <motion.div
@@ -51,9 +73,18 @@ function TierCard({ tier }: { tier: TicketTier }) {
           </p>
 
           <div className="flex items-baseline gap-1">
-            <span className="font-display font-black text-3xl lg:text-4xl text-gold uppercase leading-none">
-              Pricing TBA
-            </span>
+            {TICKETS_LIVE ? (
+              <>
+                <span className="font-display font-black text-3xl lg:text-4xl text-white leading-none">
+                  ${tier.price}
+                </span>
+                <span className="font-body text-sm text-white/30">/ person</span>
+              </>
+            ) : (
+              <span className="font-display font-black text-3xl lg:text-4xl text-gold uppercase leading-none">
+                Pricing TBA
+              </span>
+            )}
           </div>
         </div>
 
@@ -97,19 +128,38 @@ function TierCard({ tier }: { tier: TicketTier }) {
         </div>
 
         {/* CTA */}
-        <a
-          href={soldOut ? undefined : '/experience'}
-          className={cn(
-            'flex items-center justify-center h-12 font-body text-xs font-semibold uppercase tracking-[0.15em] transition-all duration-200',
-            soldOut
-              ? 'border border-white/10 text-white/20 cursor-not-allowed pointer-events-none'
-              : tier.isHighlighted
-              ? 'bg-gold text-black hover:bg-gold-light'
-              : 'border border-white/20 text-white hover:bg-white/5 hover:border-white/40'
-          )}
-        >
-          {soldOut ? 'Sold Out' : tier.ctaLabel}
-        </a>
+        {TICKETS_LIVE && tier.stripePriceId ? (
+          <button
+            onClick={handleBuy}
+            disabled={soldOut || loading}
+            className={cn(
+              'flex items-center justify-center h-12 font-body text-xs font-semibold uppercase tracking-[0.15em] transition-all duration-200',
+              soldOut
+                ? 'border border-white/10 text-white/20 cursor-not-allowed'
+                : tier.isHighlighted
+                ? 'bg-gold text-black hover:bg-gold-light'
+                : 'border border-white/20 text-white hover:bg-white/5 hover:border-white/40'
+            )}
+          >
+            {loading ? (
+              <span className="w-4 h-4 border-2 border-current/30 border-t-current rounded-full animate-spin" />
+            ) : soldOut ? 'Sold Out' : 'Buy Tickets'}
+          </button>
+        ) : (
+          <a
+            href={soldOut ? undefined : '/experience'}
+            className={cn(
+              'flex items-center justify-center h-12 font-body text-xs font-semibold uppercase tracking-[0.15em] transition-all duration-200',
+              soldOut
+                ? 'border border-white/10 text-white/20 cursor-not-allowed pointer-events-none'
+                : tier.isHighlighted
+                ? 'bg-gold text-black hover:bg-gold-light'
+                : 'border border-white/20 text-white hover:bg-white/5 hover:border-white/40'
+            )}
+          >
+            {soldOut ? 'Sold Out' : tier.ctaLabel}
+          </a>
+        )}
       </div>
     </motion.div>
   )
