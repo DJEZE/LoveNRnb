@@ -115,7 +115,7 @@ export const UPCOMING_EVENT: Event = {
       total: 500,
       isHighlighted: false,
       ctaLabel: 'Join Waitlist',
-      stripePriceId: '', // TODO: paste Stripe Price ID (price_xxx) when ready
+      stripePriceId: 'price_1TwtvcDfa6xjnJVQyFzjYDXB',
     },
     {
       id: 'tier-ga-plus',
