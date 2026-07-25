@@ -38,6 +38,7 @@ export async function POST(req: NextRequest) {
       cancel_url: `${siteUrl}/tickets?canceled=1`,
       billing_address_collection: 'required',
       phone_number_collection: { enabled: true },
+      payment_method_types: ['card', 'afterpay_clearpay', 'klarna'],
     })
 
     return NextResponse.json({ url: session.url })
