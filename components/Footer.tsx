@@ -32,6 +32,7 @@ const FOOTER_LINKS: Record<string, FooterLink[]> = {
   Partners: [
     { label: 'Become a Sponsor', href: 'mailto:partnerships@lovenrnb.com', isExternal: true },
     { label: 'Vendor Inquiry', href: 'https://docs.google.com/forms/d/e/1FAIpQLSevxsrSzvEGXMIaWvsXwQ7shRLtt-OK_Of8aJcFi4QX56x4ig/viewform?usp=preview', isExternal: true, highlight: true },
+    { label: 'Campus Ambassador', href: 'https://forms.gle/2iDK6xdAbVshWvu59', isExternal: true, highlight: true },
     { label: 'Press & Media', href: 'mailto:press@lovenrnb.com', isExternal: true },
   ],
 }
