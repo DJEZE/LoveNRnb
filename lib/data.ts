@@ -12,9 +12,6 @@ export const NAV_LINKS: NavLink[] = [
     children: [
       { label: 'Campus Ambassadors', href: 'https://forms.gle/2iDK6xdAbVshWvu59' },
       { label: 'Creator Program', href: 'https://forms.gle/1W9mX2PjVmkfGNx36' },
-      { label: 'Vendors', href: 'https://docs.google.com/forms/d/e/1FAIpQLSevxsrSzvEGXMIaWvsXwQ7shRLtt-OK_Of8aJcFi4QX56x4ig/viewform?usp=preview' },
-      { label: 'Sponsors', href: 'mailto:partnerships@lovenrnb.com' },
-      { label: 'Press & Media', href: 'mailto:press@lovenrnb.com' },
     ],
   },
   { label: 'Waitlist', href: '/experience' },
