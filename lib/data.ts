@@ -17,6 +17,7 @@ export const NAV_LINKS: NavLink[] = [
       { label: 'Press & Media', href: 'mailto:press@lovenrnb.com' },
     ],
   },
+  { label: 'Waitlist', href: '/experience' },
   { label: 'FAQ', href: '/faq' },
 ]
 
