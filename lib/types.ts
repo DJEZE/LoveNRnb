@@ -72,8 +72,14 @@ export interface Event {
   ageRestriction: string
 }
 
+export interface NavChild {
+  label: string
+  href: string
+}
+
 export interface NavLink {
   label: string
   href: string
   isExternal?: boolean
+  children?: NavChild[]
 }

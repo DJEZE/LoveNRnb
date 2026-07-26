@@ -50,19 +50,38 @@ export function Sponsors({ sponsors }: SponsorsProps) {
             ))}
           </div>
 
-          <div className="w-full h-px bg-white/10 mb-10" />
+          <div className="w-full h-px bg-white/10 mb-12" />
 
           {/* Partnership CTA */}
-          <div className="flex flex-col sm:flex-row items-center gap-6">
-            <p className="font-body text-sm text-white/40">
-              Interested in being a part of LoveNRnb?
-            </p>
-            <a
-              href="mailto:partnerships@lovenrnb.com"
-              className="inline-flex items-center h-9 px-5 font-body text-xs font-semibold uppercase tracking-[0.15em] text-gold border border-gold/40 hover:bg-gold/10 transition-colors duration-200"
+          <div className="w-full max-w-2xl text-center">
+            <p className="font-body text-2xs text-gold uppercase tracking-[0.3em] mb-4">Get Involved</p>
+            <h3
+              className="font-display font-black uppercase text-white leading-none mb-4"
+              style={{ fontSize: 'clamp(2.5rem, 6vw, 5rem)', letterSpacing: '-0.03em' }}
             >
-              Become a Partner
-            </a>
+              Partner With LoveNRnB
+            </h3>
+            <p className="font-body text-sm text-white/40 mb-10 max-w-md mx-auto leading-relaxed">
+              Whether you&apos;re a brand, creator, student leader, vendor, or media outlet — we&apos;d love to work with you.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-lg mx-auto">
+              {[
+                { label: 'Become a Sponsor', href: 'mailto:partnerships@lovenrnb.com' },
+                { label: 'Become a Vendor', href: 'https://docs.google.com/forms/d/e/1FAIpQLSevxsrSzvEGXMIaWvsXwQ7shRLtt-OK_Of8aJcFi4QX56x4ig/viewform?usp=preview' },
+                { label: 'Ambassador Program', href: 'https://forms.gle/2iDK6xdAbVshWvu59' },
+                { label: 'Creator Program', href: 'https://forms.gle/1W9mX2PjVmkfGNx36' },
+              ].map(({ label, href }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target={href.startsWith('http') ? '_blank' : undefined}
+                  rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                  className="inline-flex items-center justify-center h-11 px-5 font-body text-xs font-semibold uppercase tracking-[0.15em] text-gold border border-gold/40 hover:bg-gold/10 transition-colors duration-200"
+                >
+                  {label}
+                </a>
+              ))}
+            </div>
           </div>
         </AnimatedSection>
       </div>
