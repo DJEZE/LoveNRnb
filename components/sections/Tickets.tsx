@@ -14,7 +14,7 @@ interface TicketsProps {
   venue: string
 }
 
-const TICKETS_LIVE = process.env.NEXT_PUBLIC_TICKETS_LIVE === 'true'
+const TICKETS_LIVE = true
 
 function TierCard({ tier }: { tier: TicketTier }) {
   const { label: availLabel, urgent } = getAvailabilityLabel(tier.available, tier.total)
