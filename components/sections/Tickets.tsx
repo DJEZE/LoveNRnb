@@ -147,7 +147,7 @@ function TierCard({ tier }: { tier: TicketTier }) {
           </button>
         ) : (
           <a
-            href={soldOut ? undefined : '/experience'}
+            href={soldOut ? undefined : '/tickets'}
             className={cn(
               'flex items-center justify-center h-12 font-body text-xs font-semibold uppercase tracking-[0.15em] transition-all duration-200',
               soldOut
