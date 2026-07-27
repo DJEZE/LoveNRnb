@@ -105,10 +105,10 @@ export function Hero({ event }: HeroProps) {
           transition={{ duration: 0.6, delay: 0.65 }}
         >
           <a
-            href="/experience"
+            href="https://posh.vip/e/lovenrnb-festival"
             className="inline-flex items-center justify-center h-14 px-10 font-body text-sm font-bold uppercase tracking-[0.2em] text-black bg-gold hover:bg-gold-light transition-colors duration-200"
           >
-            Join Waitlist
+            Get Tickets
           </a>
           <button
             onClick={() => document.querySelector('#lineup')?.scrollIntoView({ behavior: 'smooth' })}

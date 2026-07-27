@@ -122,7 +122,7 @@ export const UPCOMING_EVENT: Event = {
       available: 400,
       total: 500,
       isHighlighted: false,
-      ctaLabel: 'Join Waitlist',
+      ctaLabel: 'Get Tickets',
       stripePriceId: 'price_1TwtvcDfa6xjnJVQyFzjYDXB',
     },
     {
@@ -139,7 +139,7 @@ export const UPCOMING_EVENT: Event = {
       available: 200,
       total: 250,
       isHighlighted: true,
-      ctaLabel: 'Join Waitlist',
+      ctaLabel: 'Get Tickets',
       stripePriceId: 'price_1Twtw3Dfa6xjnJVQlsY6e79s',
     },
     {
@@ -156,7 +156,7 @@ export const UPCOMING_EVENT: Event = {
       available: 75,
       total: 100,
       isHighlighted: false,
-      ctaLabel: 'Join Waitlist',
+      ctaLabel: 'Get Tickets',
       stripePriceId: 'price_1TwtwMDfa6xjnJVQe8soeG7c',
     },
   ],

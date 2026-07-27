@@ -129,10 +129,10 @@ export function Navigation() {
             {/* Desktop CTA */}
             <div className="hidden md:block">
               <a
-                href="/experience"
+                href="https://posh.vip/e/lovenrnb-festival"
                 className="inline-flex items-center h-9 px-5 font-body text-xs font-semibold uppercase tracking-[0.15em] text-black bg-gold hover:bg-gold-light transition-colors duration-200"
               >
-                Join Waitlist
+                Get Tickets
               </a>
             </div>
 
@@ -214,11 +214,11 @@ export function Navigation() {
           </nav>
 
           <a
-            href="/experience"
+            href="https://posh.vip/e/lovenrnb-festival"
             onClick={() => setMobileOpen(false)}
             className="inline-flex items-center h-12 px-8 font-body text-sm font-semibold uppercase tracking-widest text-black bg-gold hover:bg-gold-light transition-colors"
           >
-            Join Waitlist
+            Get Tickets
           </a>
         </div>
       </div>
