@@ -1,11 +1,12 @@
 'use client'
 
-import { useState } from 'react'
 import { Check, AlertCircle } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { AnimatedSection, StaggerContainer, staggerChild } from '@/components/ui/AnimatedSection'
 import { getAvailabilityLabel, cn } from '@/lib/utils'
 import type { TicketTier } from '@/lib/types'
+
+const POSH_URL = 'https://posh.vip/e/lovenrnb-festival'
 
 interface TicketsProps {
   tiers: TicketTier[]
@@ -14,31 +15,10 @@ interface TicketsProps {
   venue: string
 }
 
-const TICKETS_LIVE = true
-
 function TierCard({ tier }: { tier: TicketTier }) {
   const { label: availLabel, urgent } = getAvailabilityLabel(tier.available, tier.total)
   const soldOut = tier.soldOut || tier.available === 0
   const fillPct = Math.round(((tier.total - tier.available) / tier.total) * 100)
-  const [loading, setLoading] = useState(false)
-
-  const handleBuy = async () => {
-    if (!tier.stripePriceId || loading) return
-    setLoading(true)
-    try {
-      const res = await fetch('/api/checkout', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ priceId: tier.stripePriceId }),
-      })
-      const { url, error } = await res.json()
-      if (error) throw new Error(error)
-      window.location.href = url
-    } catch (err) {
-      console.error('Checkout error:', err)
-      setLoading(false)
-    }
-  }
 
   return (
     <motion.div
@@ -50,7 +30,6 @@ function TierCard({ tier }: { tier: TicketTier }) {
           : 'border-white/10 bg-surface hover:border-white/25'
       )}
     >
-      {/* Popular badge */}
       {tier.isHighlighted && (
         <div className="absolute -top-px left-0 right-0 h-0.5 bg-gold" />
       )}
@@ -63,7 +42,6 @@ function TierCard({ tier }: { tier: TicketTier }) {
       )}
 
       <div className="p-7 lg:p-8 flex flex-col flex-1">
-        {/* Header */}
         <div className="mb-7">
           <p className={cn(
             'font-body text-2xs uppercase tracking-[0.25em] font-medium mb-3',
@@ -71,27 +49,16 @@ function TierCard({ tier }: { tier: TicketTier }) {
           )}>
             {tier.name}
           </p>
-
           <div className="flex items-baseline gap-1">
-            {TICKETS_LIVE ? (
-              <>
-                <span className="font-display font-black text-3xl lg:text-4xl text-white leading-none">
-                  ${tier.price}
-                </span>
-                <span className="font-body text-sm text-white/30">/ person</span>
-              </>
-            ) : (
-              <span className="font-display font-black text-3xl lg:text-4xl text-gold uppercase leading-none">
-                Pricing TBA
-              </span>
-            )}
+            <span className="font-display font-black text-3xl lg:text-4xl text-white leading-none">
+              ${tier.price}
+            </span>
+            <span className="font-body text-sm text-white/30">/ person</span>
           </div>
         </div>
 
-        {/* Rule */}
         <div className={cn('h-px mb-6', tier.isHighlighted ? 'bg-gold/30' : 'bg-white/10')} />
 
-        {/* Perks */}
         <ul className="flex flex-col gap-3 mb-8 flex-1">
           {tier.perks.map((perk) => (
             <li key={perk} className="flex items-start gap-3">
@@ -105,7 +72,6 @@ function TierCard({ tier }: { tier: TicketTier }) {
           ))}
         </ul>
 
-        {/* Availability bar */}
         <div className="mb-6">
           <div className="flex items-center justify-between mb-2">
             <span className="font-body text-2xs text-white/30 uppercase tracking-widest">Availability</span>
@@ -127,39 +93,21 @@ function TierCard({ tier }: { tier: TicketTier }) {
           </div>
         </div>
 
-        {/* CTA */}
-        {TICKETS_LIVE && tier.stripePriceId ? (
-          <button
-            onClick={handleBuy}
-            disabled={soldOut || loading}
-            className={cn(
-              'flex items-center justify-center h-12 font-body text-xs font-semibold uppercase tracking-[0.15em] transition-all duration-200',
-              soldOut
-                ? 'border border-white/10 text-white/20 cursor-not-allowed'
-                : tier.isHighlighted
-                ? 'bg-gold text-black hover:bg-gold-light'
-                : 'border border-white/20 text-white hover:bg-white/5 hover:border-white/40'
-            )}
-          >
-            {loading ? (
-              <span className="w-4 h-4 border-2 border-current/30 border-t-current rounded-full animate-spin" />
-            ) : soldOut ? 'Sold Out' : 'Buy Tickets'}
-          </button>
-        ) : (
-          <a
-            href={soldOut ? undefined : '/tickets'}
-            className={cn(
-              'flex items-center justify-center h-12 font-body text-xs font-semibold uppercase tracking-[0.15em] transition-all duration-200',
-              soldOut
-                ? 'border border-white/10 text-white/20 cursor-not-allowed pointer-events-none'
-                : tier.isHighlighted
-                ? 'bg-gold text-black hover:bg-gold-light'
-                : 'border border-white/20 text-white hover:bg-white/5 hover:border-white/40'
-            )}
-          >
-            {soldOut ? 'Sold Out' : tier.ctaLabel}
-          </a>
-        )}
+        <a
+          href={soldOut ? undefined : POSH_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={cn(
+            'flex items-center justify-center h-12 font-body text-xs font-semibold uppercase tracking-[0.15em] transition-all duration-200',
+            soldOut
+              ? 'border border-white/10 text-white/20 cursor-not-allowed pointer-events-none'
+              : tier.isHighlighted
+              ? 'bg-gold text-black hover:bg-gold-light'
+              : 'border border-white/20 text-white hover:bg-white/5 hover:border-white/40'
+          )}
+        >
+          {soldOut ? 'Sold Out' : 'Get Tickets'}
+        </a>
       </div>
     </motion.div>
   )
@@ -171,7 +119,6 @@ export function Tickets({ tiers, eventName, eventDate, venue }: TicketsProps) {
       <div className="w-full h-px bg-white/10" />
 
       <div className="container mx-auto px-6">
-        {/* Header */}
         <AnimatedSection className="py-10 lg:py-14">
           <p className="font-body text-2xs text-gold uppercase tracking-[0.3em] mb-3">
             Secure Your Spot
@@ -192,14 +139,12 @@ export function Tickets({ tiers, eventName, eventDate, venue }: TicketsProps) {
 
         <div className="w-full h-px bg-white/10 mb-10 lg:mb-14" />
 
-        {/* Cards */}
         <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-5 pb-14 lg:pb-20 mt-8">
           {tiers.map((tier) => (
             <TierCard key={tier.id} tier={tier} />
           ))}
         </StaggerContainer>
 
-        {/* Fine print */}
         <AnimatedSection className="pb-10 lg:pb-14" delay={0.2}>
           <div className="w-full h-px bg-white/10 mb-6" />
           <p className="font-body text-xs text-white/25 max-w-lg">
