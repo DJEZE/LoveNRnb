@@ -34,7 +34,7 @@ const FOOTER_LINKS: Record<string, FooterLink[]> = {
     { label: 'Vendor Inquiry', href: 'https://docs.google.com/forms/d/e/1FAIpQLSevxsrSzvEGXMIaWvsXwQ7shRLtt-OK_Of8aJcFi4QX56x4ig/viewform?usp=preview', isExternal: true, highlight: true },
     { label: 'Campus Ambassador', href: 'https://forms.gle/2iDK6xdAbVshWvu59', isExternal: true, highlight: true },
     { label: 'Creator Program', href: 'https://forms.gle/1W9mX2PjVmkfGNx36', isExternal: true, highlight: true },
-    { label: 'Press & Media', href: 'mailto:press@lovenrnb.com', isExternal: true },
+    { label: 'Press & Media', href: '/press' },
   ],
 }
 
