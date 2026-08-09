@@ -76,8 +76,12 @@ export default function PressPage() {
           <div>
             <div className="w-full h-px bg-white/10 mb-8" />
             <p className="font-body text-2xs text-gold uppercase tracking-[0.3em] mb-5">How to Apply</p>
-            <p className="font-body text-base text-white/60 leading-relaxed mb-5">
-              Email our Media &amp; Press team with the following:
+            <p className="font-body text-base text-white/60 leading-relaxed mb-2">
+              Email our Media &amp; Press team at{' '}
+              <a href="mailto:press@lovenrnb.com" className="text-gold hover:text-gold-light transition-colors">
+                press@lovenrnb.com
+              </a>{' '}
+              with the following:
             </p>
             <ul className="space-y-3 mb-6">
               {[
