@@ -90,11 +90,11 @@ export const UPCOMING_EVENT: Event = {
     },
     {
       id: 'dj-004',
-      name: 'TBA',
+      name: 'FreeOhso',
       role: 'dj',
-      image: '',
+      image: '/images/artists/FreeOhso.JPG',
       genre: 'DJ Set',
-      tba: true,
+      tba: false,
     },
     // MC
     {
