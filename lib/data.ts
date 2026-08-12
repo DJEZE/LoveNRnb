@@ -94,6 +94,7 @@ export const UPCOMING_EVENT: Event = {
       role: 'dj',
       image: '/images/artists/FreeOhso.JPG',
       genre: 'DJ Set',
+      instagram: 'https://www.instagram.com/freeohso',
       tba: false,
     },
     // MC
