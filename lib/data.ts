@@ -85,7 +85,7 @@ export const UPCOMING_EVENT: Event = {
       role: 'dj',
       image: '/images/artists/alist.JPG',
       genre: 'DJ Set',
-      instagram: 'https://www.instagram.com/alistsounds/',
+      instagram: 'https://www.instagram.com/makealistt',
       tba: false,
     },
     {
