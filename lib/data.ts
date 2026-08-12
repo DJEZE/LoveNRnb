@@ -71,6 +71,15 @@ export const UPCOMING_EVENT: Event = {
       tba: false,
     },
     {
+      id: 'dj-004',
+      name: 'FreeOhso',
+      role: 'dj',
+      image: '/images/artists/FreeOhso.JPG',
+      genre: 'DJ Set',
+      instagram: 'https://www.instagram.com/freeohso',
+      tba: false,
+    },
+    {
       id: 'dj-002',
       name: 'ALIST',
       role: 'dj',
@@ -86,15 +95,6 @@ export const UPCOMING_EVENT: Event = {
       image: '/images/artists/djA.y.jpg',
       genre: 'DJ Set',
       instagram: 'https://www.instagram.com/dja.y_/',
-      tba: false,
-    },
-    {
-      id: 'dj-004',
-      name: 'FreeOhso',
-      role: 'dj',
-      image: '/images/artists/FreeOhso.JPG',
-      genre: 'DJ Set',
-      instagram: 'https://www.instagram.com/freeohso',
       tba: false,
     },
     // MC
