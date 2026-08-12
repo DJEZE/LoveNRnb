@@ -13,7 +13,7 @@ export default function LineupPage() {
     <>
       <Navigation />
       <main className="bg-black min-h-screen pt-20">
-        <Lineup artists={UPCOMING_EVENT.lineup} eventName={UPCOMING_EVENT.name} />
+        <Lineup artists={UPCOMING_EVENT.lineup} eventName={UPCOMING_EVENT.name} showAll />
       </main>
       <Footer />
     </>

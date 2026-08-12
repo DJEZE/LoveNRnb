@@ -11,6 +11,7 @@ import type { Artist } from '@/lib/types'
 interface LineupProps {
   artists: Artist[]
   eventName: string
+  showAll?: boolean
 }
 
 function HeadlinerCard({ artist }: { artist: Artist }) {
@@ -160,8 +161,10 @@ function ArtistCard({ artist }: { artist: Artist }) {
   )
 }
 
-export function Lineup({ artists, eventName }: LineupProps) {
+export function Lineup({ artists, eventName, showAll = false }: LineupProps) {
   const headliner = artists.find((a) => a.role === 'headliner')
+  const djs = artists.filter((a) => a.role === 'dj')
+  const mcs = artists.filter((a) => a.role === 'mc')
 
   return (
     <section id="lineup" className="bg-black">
@@ -189,7 +192,7 @@ export function Lineup({ artists, eventName }: LineupProps) {
 
       <div className="w-full h-px bg-white/10" />
 
-      {/* ── Artists ── */}
+      {/* ── Headliner ── */}
       <StaggerContainer className="container mx-auto px-6 pt-8 lg:pt-10 pb-8 lg:pb-12">
         <p className="font-body text-2xs text-gold uppercase tracking-[0.3em] mb-6">
           Artists
@@ -198,6 +201,28 @@ export function Lineup({ artists, eventName }: LineupProps) {
           {headliner && <HeadlinerCard artist={headliner} />}
         </div>
       </StaggerContainer>
+
+      {/* ── DJs ── (lineup page only) */}
+      {showAll && djs.length > 0 && (
+        <StaggerContainer className="container mx-auto px-6 pb-8 lg:pb-12">
+          <div className="w-full h-px bg-white/10 mb-8" />
+          <p className="font-body text-2xs text-gold uppercase tracking-[0.3em] mb-6">DJs</p>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-5">
+            {djs.map((dj) => <ArtistCard key={dj.id} artist={dj} />)}
+          </div>
+        </StaggerContainer>
+      )}
+
+      {/* ── MCs ── (lineup page only) */}
+      {showAll && mcs.length > 0 && (
+        <StaggerContainer className="container mx-auto px-6 pb-8 lg:pb-12">
+          <div className="w-full h-px bg-white/10 mb-8" />
+          <p className="font-body text-2xs text-gold uppercase tracking-[0.3em] mb-6">MC</p>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-5">
+            {mcs.map((mc) => <ArtistCard key={mc.id} artist={mc} />)}
+          </div>
+        </StaggerContainer>
+      )}
 
       {/* Footer note */}
       <div className="container mx-auto px-6 pb-10">
