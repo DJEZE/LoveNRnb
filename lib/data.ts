@@ -72,7 +72,7 @@ export const UPCOMING_EVENT: Event = {
     },
     {
       id: 'dj-004',
-      name: 'FreeOhso',
+      name: 'Free Ohso',
       role: 'dj',
       image: '/images/artists/FreeOhso.JPG',
       genre: 'DJ Set',
