@@ -29,6 +29,13 @@ export default function TicketsPage() {
             width="100%"
             style={{ border: 'none' }}
           />
+
+          <div className="mt-10 border border-white/10 p-6 lg:p-8 max-w-3xl">
+            <p className="font-body text-2xs text-gold uppercase tracking-[0.3em] mb-3">Payment Plans Available</p>
+            <p className="font-body text-sm text-white/50 leading-relaxed">
+              Payment plans are available through <span className="text-white/80 font-semibold">Affirm!</span> Secure your LoveNRnB Fest ticket today and pay over time with flexible payment options at checkout. Simply select Affirm during checkout to view the payment options available to you. Get your ticket now and make payments on a schedule that works for you. Payment options are subject to eligibility and approval through Affirm.
+            </p>
+          </div>
         </div>
       </main>
       <Footer />
