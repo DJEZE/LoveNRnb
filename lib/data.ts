@@ -80,6 +80,15 @@ export const UPCOMING_EVENT: Event = {
       tba: false,
     },
     {
+      id: 'dj-005',
+      name: 'Sound Orientation',
+      role: 'dj',
+      image: '/images/artists/Sound Orientation.JPG',
+      genre: 'DJ Set',
+      instagram: 'https://www.instagram.com/soundorientation/',
+      tba: false,
+    },
+    {
       id: 'dj-002',
       name: 'ALIST',
       role: 'dj',
