@@ -62,14 +62,13 @@ export function Sponsors({ sponsors }: SponsorsProps) {
               Partner With LoveNRnB
             </h3>
             <p className="font-body text-sm text-white/40 mb-10 max-w-md mx-auto leading-relaxed">
-              Whether you&apos;re a brand, creator, student leader, vendor, or media outlet — we&apos;d love to work with you.
+              Whether you&apos;re a brand, student leader, vendor, or media outlet — we&apos;d love to work with you.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-lg mx-auto">
               {[
                 { label: 'Become a Sponsor', href: 'mailto:partnerships@lovenrnb.com' },
                 { label: 'Become a Vendor', href: 'https://docs.google.com/forms/d/e/1FAIpQLSevxsrSzvEGXMIaWvsXwQ7shRLtt-OK_Of8aJcFi4QX56x4ig/viewform?usp=preview' },
                 { label: 'Ambassador Program', href: 'https://forms.gle/2iDK6xdAbVshWvu59' },
-                { label: 'Creator Program', href: 'https://forms.gle/1W9mX2PjVmkfGNx36' },
               ].map(({ label, href }) => (
                 <a
                   key={label}

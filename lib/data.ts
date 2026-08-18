@@ -13,7 +13,6 @@ export const NAV_LINKS: NavLink[] = [
     href: '#',
     children: [
       { label: 'Campus Ambassadors', href: 'https://forms.gle/2iDK6xdAbVshWvu59' },
-      { label: 'Creator Program', href: 'https://forms.gle/1W9mX2PjVmkfGNx36' },
     ],
   },
 ]
