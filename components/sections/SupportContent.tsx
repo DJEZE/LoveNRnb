@@ -433,7 +433,6 @@ function ImpactStatement({ text, delay = 0 }: { text: string; delay?: number }) 
 export function SupportContent() {
   const [showSponsorForm, setShowSponsorForm] = useState(false)
   const [showInvestorForm, setShowInvestorForm] = useState(false)
-  const [supportClicked, setSupportClicked] = useState(false)
 
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
@@ -486,12 +485,14 @@ export function SupportContent() {
 
           <AnimatedSection delay={0.2}>
             <div className="flex flex-col gap-3 lg:pt-2">
-              <button
-                onClick={() => scrollTo('support')}
+              <a
+                href="https://donate.stripe.com/bJeaEX3dxdYj7g46ac9sk00"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center h-12 px-8 font-body text-xs font-semibold uppercase tracking-[0.15em] text-black bg-gold hover:bg-gold-light transition-colors duration-200"
               >
                 Support the Festival
-              </button>
+              </a>
               <button
                 onClick={() => scrollTo('sponsor')}
                 className="inline-flex items-center justify-center h-12 px-8 font-body text-xs font-semibold uppercase tracking-[0.15em] text-gold border border-gold/40 hover:bg-gold/10 transition-colors duration-200"
@@ -566,36 +567,14 @@ export function SupportContent() {
                 </p>
                 <p className="font-body text-sm text-white/30 mb-8">Minimum contribution</p>
 
-                <div className="space-y-2">
-                  {/* Stripe-ready CTA — connect Stripe here in the next step */}
-                  <button
-                    id="support-stripe-cta"
-                    data-action="stripe-support"
-                    onClick={() => setSupportClicked(true)}
-                    className="w-full inline-flex items-center justify-center h-12 px-8 font-body text-xs font-semibold uppercase tracking-[0.15em] text-black bg-gold hover:bg-gold-light transition-colors duration-200"
-                  >
-                    Support LoveNRnB
-                  </button>
-
-                  <AnimatePresence>
-                    {supportClicked && (
-                      <motion.p
-                        initial={{ opacity: 0, y: 4 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0 }}
-                        className="font-body text-xs text-white/40 pt-2 leading-relaxed"
-                      >
-                        Payment support is coming very soon. To contribute now, reach out at{' '}
-                        <a
-                          href="mailto:info@lovenrnb.com"
-                          className="text-gold hover:text-gold-light transition-colors"
-                        >
-                          info@lovenrnb.com
-                        </a>
-                      </motion.p>
-                    )}
-                  </AnimatePresence>
-                </div>
+                <a
+                  href="https://donate.stripe.com/bJeaEX3dxdYj7g46ac9sk00"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full inline-flex items-center justify-center h-12 px-8 font-body text-xs font-semibold uppercase tracking-[0.15em] text-black bg-gold hover:bg-gold-light transition-colors duration-200"
+                >
+                  Support LoveNRnB
+                </a>
               </div>
             </AnimatedSection>
           </div>
@@ -1001,15 +980,14 @@ export function SupportContent() {
                 Help us continue building LoveNRnB from the ground up. Community support begins
                 at $50.
               </p>
-              <button
-                onClick={() => {
-                  scrollTo('support')
-                  setSupportClicked(true)
-                }}
+              <a
+                href="https://donate.stripe.com/bJeaEX3dxdYj7g46ac9sk00"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center h-11 px-6 font-body text-xs font-semibold uppercase tracking-[0.15em] text-black bg-gold hover:bg-gold-light transition-colors duration-200"
               >
                 Support the Festival
-              </button>
+              </a>
             </motion.div>
 
             {/* Sponsor */}
