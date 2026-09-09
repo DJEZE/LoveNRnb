@@ -9,13 +9,6 @@ export const NAV_LINKS: NavLink[] = [
   { label: 'Waitlist', href: '/experience' },
   { label: 'FAQ', href: '/faq' },
   { label: 'Support & Partner', href: '/support' },
-  {
-    label: 'Get Involved',
-    href: '#',
-    children: [
-      { label: 'Campus Ambassadors', href: 'https://forms.gle/2iDK6xdAbVshWvu59' },
-    ],
-  },
 ]
 
 // ---------------------------------------------------------------------------
