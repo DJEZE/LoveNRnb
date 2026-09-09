@@ -539,7 +539,7 @@ export function SupportContent() {
                   Now we are taking the next step and building a full scale independent festival.
                 </p>
                 <p>
-                  Community support starts at $50. Every contribution helps us keep pushing the
+                  Community support starts at $100. Every contribution helps us keep pushing the
                   festival forward.
                 </p>
                 <p>
@@ -563,7 +563,7 @@ export function SupportContent() {
                   className="font-display font-black uppercase text-white leading-none mb-1"
                   style={{ fontSize: 'clamp(3rem, 6vw, 5rem)', letterSpacing: '-0.02em' }}
                 >
-                  $50
+                  $100
                 </p>
                 <p className="font-body text-sm text-white/30 mb-8">Minimum contribution</p>
 
@@ -978,7 +978,7 @@ export function SupportContent() {
               </h3>
               <p className="font-body text-sm text-white/50 leading-relaxed mb-8 flex-1">
                 Help us continue building LoveNRnB from the ground up. Community support begins
-                at $50.
+                at $100.
               </p>
               <a
                 href="https://donate.stripe.com/bJeaEX3dxdYj7g46ac9sk00"
