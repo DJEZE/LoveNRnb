@@ -132,9 +132,9 @@ function ArtistCard({ artist }: { artist: Artist }) {
       <div className="absolute bottom-0 left-0 right-0 p-5 lg:p-6">
         <p className={cn(
           'font-body text-2xs uppercase tracking-[0.25em] mb-1.5',
-          artist.role === 'featured' ? 'text-gold' : 'text-white/50'
+          artist.role === 'featured' || artist.role === 'rising' ? 'text-gold' : 'text-white/50'
         )}>
-          {artist.role === 'featured' ? 'Featured' : artist.role === 'dj' ? 'DJ' : artist.role === 'mc' ? 'MC' : 'Supporting'}
+          {artist.role === 'featured' ? 'Featured' : artist.role === 'rising' ? 'Houston Rising Star' : artist.role === 'dj' ? 'DJ' : artist.role === 'mc' ? 'MC' : 'Supporting'}
         </p>
         <h3 className="font-display font-black uppercase text-white leading-none text-2xl lg:text-3xl">
           {artist.name}
@@ -163,7 +163,7 @@ function ArtistCard({ artist }: { artist: Artist }) {
 
 export function Lineup({ artists, eventName, showAll = false }: LineupProps) {
   const headliner = artists.find((a) => a.role === 'headliner')
-  const featured = artists.filter((a) => a.role === 'featured')
+  const rising = artists.filter((a) => a.role === 'rising')
   const djs = artists.filter((a) => a.role === 'dj')
   const mcs = artists.filter((a) => a.role === 'mc')
 
@@ -200,9 +200,19 @@ export function Lineup({ artists, eventName, showAll = false }: LineupProps) {
         </p>
         <div className="grid grid-cols-1 gap-4 lg:gap-5">
           {headliner && <HeadlinerCard artist={headliner} />}
-          {featured.map((artist) => <ArtistCard key={artist.id} artist={artist} />)}
         </div>
       </StaggerContainer>
+
+      {/* ── Houston Rising Stars ── */}
+      {rising.length > 0 && (
+        <StaggerContainer className="container mx-auto px-6 pb-8 lg:pb-12">
+          <div className="w-full h-px bg-white/10 mb-8" />
+          <p className="font-body text-2xs text-gold uppercase tracking-[0.3em] mb-6">Houston Rising Stars</p>
+          <div className="grid grid-cols-1 gap-4 lg:gap-5">
+            {rising.map((artist) => <ArtistCard key={artist.id} artist={artist} />)}
+          </div>
+        </StaggerContainer>
+      )}
 
       {/* ── DJs ── (lineup page only) */}
       {showAll && djs.length > 0 && (
