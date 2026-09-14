@@ -203,8 +203,8 @@ export function Lineup({ artists, eventName, showAll = false }: LineupProps) {
         </div>
       </StaggerContainer>
 
-      {/* ── Houston Rising Stars ── */}
-      {rising.length > 0 && (
+      {/* ── Houston Rising Stars ── (lineup page only) */}
+      {showAll && rising.length > 0 && (
         <StaggerContainer className="container mx-auto px-6 pb-8 lg:pb-12">
           <div className="w-full h-px bg-white/10 mb-8" />
           <p className="font-body text-2xs text-gold uppercase tracking-[0.3em] mb-6">Houston Rising Stars</p>
