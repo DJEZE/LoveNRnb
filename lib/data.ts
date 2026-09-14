@@ -68,6 +68,7 @@ export const UPCOMING_EVENT: Event = {
       role: 'rising',
       image: '/images/artists/Bolaji.jpeg',
       genre: 'R&B',
+      spotify: '0Dw8cYZ9ZIYIsVszVP1oLW',
       tba: false,
     },
     // DJs (3–4)
