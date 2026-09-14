@@ -39,19 +39,19 @@ export const UPCOMING_EVENT: Event = {
     // Artists (3–4)
     {
       id: 'artist-001',
-      name: 'TBA',
+      name: 'Aaron Page',
       role: 'headliner',
-      image: '',
+      image: '/images/artists/AAron Page.jpg',
       genre: 'R&B',
-      tba: true,
+      tba: false,
     },
     {
       id: 'artist-002',
-      name: 'TBA',
+      name: 'Bolaji',
       role: 'featured',
-      image: '',
+      image: '/images/artists/Bolaji.jpg',
       genre: 'R&B',
-      tba: true,
+      tba: false,
     },
     // DJs (3–4)
     {

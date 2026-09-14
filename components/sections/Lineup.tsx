@@ -163,6 +163,7 @@ function ArtistCard({ artist }: { artist: Artist }) {
 
 export function Lineup({ artists, eventName, showAll = false }: LineupProps) {
   const headliner = artists.find((a) => a.role === 'headliner')
+  const featured = artists.filter((a) => a.role === 'featured')
   const djs = artists.filter((a) => a.role === 'dj')
   const mcs = artists.filter((a) => a.role === 'mc')
 
@@ -199,6 +200,7 @@ export function Lineup({ artists, eventName, showAll = false }: LineupProps) {
         </p>
         <div className="grid grid-cols-1 gap-4 lg:gap-5">
           {headliner && <HeadlinerCard artist={headliner} />}
+          {featured.map((artist) => <ArtistCard key={artist.id} artist={artist} />)}
         </div>
       </StaggerContainer>
 
