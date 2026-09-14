@@ -85,7 +85,7 @@ function HeadlinerCard({ artist }: { artist: Artist }) {
   )
 }
 
-function RisingStarCard({ artist }: { artist: Artist }) {
+function RisingStarCard({ artist, showSpotify }: { artist: Artist; showSpotify?: boolean }) {
   return (
     <motion.div variants={staggerChild} className="flex flex-col gap-4">
       {/* Photo */}
@@ -132,7 +132,7 @@ function RisingStarCard({ artist }: { artist: Artist }) {
       </div>
 
       {/* Spotify embed */}
-      {artist.spotify && (
+      {showSpotify && artist.spotify && (
         <iframe
           src={`https://open.spotify.com/embed/artist/${artist.spotify}?utm_source=generator`}
           width="100%"
@@ -271,7 +271,7 @@ export function Lineup({ artists, eventName, showAll = false }: LineupProps) {
           <div className="w-full h-px bg-white/10 mb-8" />
           <p className="font-body text-2xs text-gold uppercase tracking-[0.3em] mb-8">Houston Rising Stars</p>
           <div className="grid grid-cols-3 gap-4 lg:gap-8 max-w-4xl">
-            {rising.map((artist) => <RisingStarCard key={artist.id} artist={artist} />)}
+            {rising.map((artist) => <RisingStarCard key={artist.id} artist={artist} showSpotify={showAll} />)}
           </div>
         </StaggerContainer>
       )}
