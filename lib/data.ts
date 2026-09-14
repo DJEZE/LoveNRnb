@@ -60,6 +60,7 @@ export const UPCOMING_EVENT: Event = {
       role: 'rising',
       image: '/images/artists/Aaron Page.jpg',
       genre: 'R&B',
+      spotify: '3VDL2INkcXTUD91WQ5qqEJ',
       tba: false,
     },
     {
