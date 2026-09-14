@@ -85,6 +85,68 @@ function HeadlinerCard({ artist }: { artist: Artist }) {
   )
 }
 
+function RisingStarCard({ artist }: { artist: Artist }) {
+  return (
+    <motion.div variants={staggerChild} className="flex flex-col gap-4">
+      {/* Photo */}
+      <div className="relative overflow-hidden group" style={{ aspectRatio: '4/5' }}>
+        <Image
+          src={artist.image}
+          alt={artist.name}
+          fill
+          className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
+          sizes="(max-width: 768px) 50vw, 33vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+        <div className="absolute bottom-0 left-0 w-0 group-hover:w-full h-0.5 bg-gold transition-all duration-500" />
+        {artist.instagram && (
+          <a
+            href={artist.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="absolute top-3 right-3 w-8 h-8 flex items-center justify-center bg-black/60 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-200 hover:text-gold"
+          >
+            <Instagram size={13} strokeWidth={1.5} />
+          </a>
+        )}
+      </div>
+
+      {/* Info */}
+      <div className="flex items-start justify-between gap-2">
+        <div>
+          <p className="font-body text-2xs text-gold uppercase tracking-[0.25em] mb-1">Houston Rising Star</p>
+          <h3 className="font-display font-black uppercase text-white leading-none text-xl lg:text-2xl">
+            {artist.name}
+          </h3>
+        </div>
+        {artist.instagram && (
+          <a
+            href={artist.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-1 text-white/30 hover:text-gold transition-colors flex-shrink-0"
+          >
+            <Instagram size={15} strokeWidth={1.5} />
+          </a>
+        )}
+      </div>
+
+      {/* Spotify embed */}
+      {artist.spotify && (
+        <iframe
+          src={`https://open.spotify.com/embed/artist/${artist.spotify}?utm_source=generator`}
+          width="100%"
+          height="152"
+          frameBorder="0"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+          style={{ borderRadius: '8px' }}
+        />
+      )}
+    </motion.div>
+  )
+}
+
 function ArtistCard({ artist }: { artist: Artist }) {
   if (artist.tba) {
     return (
@@ -207,30 +269,10 @@ export function Lineup({ artists, eventName, showAll = false }: LineupProps) {
       {showAll && rising.length > 0 && (
         <StaggerContainer className="container mx-auto px-6 pb-8 lg:pb-12">
           <div className="w-full h-px bg-white/10 mb-8" />
-          <p className="font-body text-2xs text-gold uppercase tracking-[0.3em] mb-6">Houston Rising Stars</p>
-          <div className="grid grid-cols-1 gap-4 lg:gap-5">
-            {rising.map((artist) => <ArtistCard key={artist.id} artist={artist} />)}
+          <p className="font-body text-2xs text-gold uppercase tracking-[0.3em] mb-8">Houston Rising Stars</p>
+          <div className="grid grid-cols-2 gap-6 lg:gap-10 max-w-2xl">
+            {rising.map((artist) => <RisingStarCard key={artist.id} artist={artist} />)}
           </div>
-          {rising.some((a) => a.spotify) && (
-            <div className="mt-8 flex flex-col gap-5">
-              {rising.filter((a) => a.spotify).map((artist) => (
-                <div key={artist.id}>
-                  <p className="font-body text-2xs text-white/30 uppercase tracking-[0.2em] mb-3">
-                    Listen · {artist.name}
-                  </p>
-                  <iframe
-                    src={`https://open.spotify.com/embed/artist/${artist.spotify}?utm_source=generator`}
-                    width="100%"
-                    height="152"
-                    frameBorder="0"
-                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                    loading="lazy"
-                    style={{ borderRadius: '12px' }}
-                  />
-                </div>
-              ))}
-            </div>
-          )}
         </StaggerContainer>
       )}
 
