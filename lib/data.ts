@@ -135,7 +135,7 @@ export const UPCOMING_EVENT: Event = {
     {
       id: 'tier-ga',
       name: 'General Admission',
-      price: 75,
+      price: 50,
       perks: [
         'Full festival access',
         'Access to all food vendors',
@@ -152,7 +152,7 @@ export const UPCOMING_EVENT: Event = {
     {
       id: 'tier-ga-plus',
       name: 'GA+',
-      price: 115,
+      price: 75,
       perks: [
         'General admission festival access',
         'Dedicated entry lane (no long lines)',
