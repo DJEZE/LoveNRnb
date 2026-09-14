@@ -78,7 +78,7 @@ export const UPCOMING_EVENT: Event = {
       id: 'rising-003',
       name: 'Shelby Ruger',
       role: 'rising',
-      image: '/images/artists/shelby ruger.jpeg',
+      image: '/images/artists/shelby ruger.PNG',
       genre: 'R&B',
       instagram: 'https://www.instagram.com/realshelbyruger/',
       spotify: '5wuTCMXCmLGpOk5eVnKBsx',
