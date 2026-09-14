@@ -78,7 +78,7 @@ export const UPCOMING_EVENT: Event = {
       id: 'rising-003',
       name: 'Sunnyside',
       role: 'rising',
-      image: '/images/artists/sunnyside.jpeg',
+      image: '/images/artists/SunnySide.jpeg',
       genre: 'R&B',
       instagram: 'https://www.instagram.com/sunnyside.offcl/',
       spotify: '62Rii7Xj5Zbdws2nj7iVxw',
