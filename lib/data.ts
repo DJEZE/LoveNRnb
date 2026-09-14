@@ -69,6 +69,7 @@ export const UPCOMING_EVENT: Event = {
       role: 'rising',
       image: '/images/artists/Bolaji.jpeg',
       genre: 'R&B',
+      instagram: 'https://www.instagram.com/bolajiswrld/',
       spotify: '0Dw8cYZ9ZIYIsVszVP1oLW',
       tba: false,
     },
