@@ -280,6 +280,6 @@ export const SPONSORS: Sponsor[] = [
     logo: '/images/sponsors/Zane Weeks.PNG',
     tier: 'presenting',
     url: 'https://zweekslaw.com/',
-    logoSize: 'h-24 lg:h-32',
+    logoSize: 'h-16 lg:h-24',
   },
 ]
