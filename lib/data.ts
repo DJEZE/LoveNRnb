@@ -274,4 +274,10 @@ export const SPONSORS: Sponsor[] = [
     url: 'https://www.instagram.com/djeze__/',
     logoSize: 'h-52 lg:h-72',
   },
+  {
+    id: 'spon-004',
+    name: 'Zane Weeks',
+    logo: '/images/sponsors/Zane Weeks.PNG',
+    tier: 'presenting',
+  },
 ]
