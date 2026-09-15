@@ -279,5 +279,6 @@ export const SPONSORS: Sponsor[] = [
     name: 'Zane Weeks',
     logo: '/images/sponsors/Zane Weeks.PNG',
     tier: 'presenting',
+    url: 'https://zweekslaw.com/',
   },
 ]
