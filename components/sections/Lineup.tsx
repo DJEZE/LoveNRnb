@@ -270,7 +270,7 @@ export function Lineup({ artists, eventName, showAll = false }: LineupProps) {
         <StaggerContainer className="container mx-auto px-6 pb-8 lg:pb-12">
           <div className="w-full h-px bg-white/10 mb-8" />
           <p className="font-body text-2xs text-gold uppercase tracking-[0.3em] mb-8">Houston Rising Stars</p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-6 max-w-5xl">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 lg:gap-6 max-w-6xl">
             {rising.map((artist) => <RisingStarCard key={artist.id} artist={artist} showSpotify={showAll} />)}
           </div>
         </StaggerContainer>

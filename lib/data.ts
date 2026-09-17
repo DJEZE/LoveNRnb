@@ -94,6 +94,16 @@ export const UPCOMING_EVENT: Event = {
       spotify: '62Rii7Xj5Zbdws2nj7iVxw',
       tba: false,
     },
+    {
+      id: 'rising-005',
+      name: 'Carro',
+      role: 'rising',
+      image: '/images/artists/CARRO.JPG',
+      genre: 'R&B',
+      instagram: 'https://www.instagram.com/rockstarcarro/',
+      spotify: '5wiu17ewKd2PQ7nEIrFe4P',
+      tba: false,
+    },
     // DJs (3–4)
     {
       id: 'dj-001',
