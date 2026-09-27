@@ -225,6 +225,7 @@ function ArtistCard({ artist }: { artist: Artist }) {
 
 export function Lineup({ artists, eventName, showAll = false }: LineupProps) {
   const headliner = artists.find((a) => a.role === 'headliner')
+  const featured = artists.filter((a) => a.role === 'featured')
   const rising = artists.filter((a) => a.role === 'rising')
   const djs = artists.filter((a) => a.role === 'dj')
   const mcs = artists.filter((a) => a.role === 'mc')
@@ -263,6 +264,26 @@ export function Lineup({ artists, eventName, showAll = false }: LineupProps) {
         <div className="grid grid-cols-1 gap-4 lg:gap-5">
           {headliner && <HeadlinerCard artist={headliner} />}
         </div>
+        {featured.filter((a) => !a.tba).length > 0 && (
+          <div className="mt-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-5">
+            {featured.filter((a) => !a.tba).map((artist) => (
+              <div key={artist.id} className="flex flex-col gap-3">
+                <ArtistCard artist={artist} />
+                {showAll && artist.spotify && (
+                  <iframe
+                    src={`https://open.spotify.com/embed/artist/${artist.spotify}?utm_source=generator`}
+                    width="100%"
+                    height="152"
+                    frameBorder="0"
+                    allowFullScreen
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    style={{ borderRadius: '8px' }}
+                  />
+                )}
+              </div>
+            ))}
+          </div>
+        )}
       </StaggerContainer>
 
       {/* ── Houston Rising Stars ── */}

@@ -47,11 +47,13 @@ export const UPCOMING_EVENT: Event = {
     },
     {
       id: 'artist-002',
-      name: 'TBA',
+      name: 'Kaash Paige',
       role: 'featured',
-      image: '',
+      image: '/images/artists/Kaash.jpg',
       genre: 'R&B',
-      tba: true,
+      instagram: 'https://www.instagram.com/kaashpaige/',
+      spotify: '0f2YkMXwFNJNSX7MymevKE',
+      tba: false,
     },
     // Houston Rising Stars
     {
