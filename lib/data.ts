@@ -144,6 +144,14 @@ export const UPCOMING_EVENT: Event = {
       tba: false,
     },
     {
+      id: 'dj-006',
+      name: 'Yobi',
+      role: 'dj',
+      image: '/images/artists/Yobi.jpeg',
+      genre: 'DJ Set',
+      tba: false,
+    },
+    {
       id: 'dj-003',
       name: 'DJ A.Y.',
       role: 'dj',
