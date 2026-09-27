@@ -149,6 +149,7 @@ export const UPCOMING_EVENT: Event = {
       role: 'dj',
       image: '/images/artists/Yobi.jpeg',
       genre: 'DJ Set',
+      instagram: 'https://www.instagram.com/omgitsyobi/',
       tba: false,
     },
     {
