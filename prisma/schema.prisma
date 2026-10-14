@@ -1,0 +1,761 @@
+// LoveNRnB Platform — Prisma Schema
+// Database: PostgreSQL (Neon or Vercel Postgres)
+// Set DATABASE_URL in environment variables
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// IDENTITY & AUTH
+// ─────────────────────────────────────────────────────────────────────────────
+
+model User {
+  id            String    @id @default(cuid())
+  email         String    @unique
+  emailVerified DateTime?
+  name          String?
+  phone         String?
+  passwordHash  String?
+  image         String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  // Auth.js / NextAuth relations
+  accounts Account[]
+  sessions Session[]
+
+  // Platform relations
+  roles            UserRole[]
+  vendorBusiness   VendorBusiness[]
+  orders           MerchandiseOrder[]
+  marketingPrefs   MarketingPreference?
+  auditLogs        AuditLog[]
+  ambassadorRecord Ambassador?
+  scannerSessions  ScannerSession[]
+
+  @@index([email])
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+enum Role {
+  SUPER_ADMIN
+  FINANCE_ADMIN
+  VENDOR_MANAGER
+  MERCH_MANAGER
+  CUSTOMER_SUPPORT
+  EVENT_OPS
+  SCANNER_STAFF
+  ANALYST
+  VENDOR
+  AMBASSADOR
+  CUSTOMER
+}
+
+model UserRole {
+  id        String   @id @default(cuid())
+  userId    String
+  role      Role
+  grantedAt DateTime @default(now())
+  grantedBy String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, role])
+}
+
+model MarketingPreference {
+  id                String   @id @default(cuid())
+  userId            String   @unique
+  emailMarketing    Boolean  @default(false)
+  smsMarketing      Boolean  @default(false)
+  consentRecordedAt DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// EVENTS
+// ─────────────────────────────────────────────────────────────────────────────
+
+model Event {
+  id          String      @id @default(cuid())
+  slug        String      @unique
+  name        String
+  tagline     String?
+  description String?
+  date        DateTime
+  doorsOpen   String?
+  venue       String?
+  address     String?
+  city        String?
+  state       String?
+  capacity    Int?
+  heroImage   String?
+  isPublished Boolean     @default(false)
+  isSoldOut   Boolean     @default(false)
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+
+  vendorApplications VendorApplication[]
+  ticketTypes        TicketType[]
+  featureFlags       FeatureFlag[]
+
+  @@index([slug])
+  @@index([date])
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// VENDORS
+// ─────────────────────────────────────────────────────────────────────────────
+
+enum VendorCategory {
+  FOOD
+  RETAIL
+  MERCHANDISE
+  LIFESTYLE
+  BRAND_ACTIVATION
+  PREMIUM_ACTIVATION
+  OTHER
+}
+
+enum ApplicationStatus {
+  DRAFT
+  SUBMITTED
+  UNDER_REVIEW
+  INFO_REQUESTED
+  APPROVED
+  WAITLISTED
+  REJECTED
+  WITHDRAWN
+  CANCELLED
+}
+
+enum VendorPaymentStatus {
+  UNPAID
+  DEPOSIT_PAID
+  PARTIALLY_PAID
+  PAID_IN_FULL
+  REFUNDED
+  DISPUTED
+  OVERDUE
+}
+
+model VendorBusiness {
+  id             String    @id @default(cuid())
+  userId         String
+  businessName   String
+  contactName    String
+  email          String
+  phone          String?
+  website        String?
+  instagram      String?
+  twitter        String?
+  logoUrl        String?
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+
+  user         User                @relation(fields: [userId], references: [id])
+  applications VendorApplication[]
+
+  @@index([userId])
+  @@index([email])
+}
+
+model VendorCategory_Config {
+  id           String         @id @default(cuid())
+  category     VendorCategory @unique
+  label        String
+  basePrice    Int            // cents
+  description  String?
+  isActive     Boolean        @default(true)
+  updatedAt    DateTime       @updatedAt
+  updatedById  String?
+}
+
+model VendorApplication {
+  id              String            @id @default(cuid())
+  eventId         String
+  businessId      String
+  category        VendorCategory
+  status          ApplicationStatus @default(DRAFT)
+  description     String
+  boothRequirements String?
+  spaceRequirements String?
+  electricityNeeded Boolean         @default(false)
+  equipmentNotes  String?
+  activationDesc  String?
+  permitInfo      String?
+  insuranceInfo   String?
+  additionalNotes String?
+  boothIdentifier String?
+  assignedFeeAmount Int?            // cents — admin set, not client-provided
+  submittedAt     DateTime?
+  reviewedAt      DateTime?
+  reviewedById    String?
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
+
+  event       Event              @relation(fields: [eventId], references: [id])
+  business    VendorBusiness     @relation(fields: [businessId], references: [id])
+  documents   VendorDocument[]
+  invoices    VendorInvoice[]
+  statusLogs  VendorStatusLog[]
+  agreement   VendorAgreement?
+
+  @@index([eventId])
+  @@index([businessId])
+  @@index([status])
+}
+
+model VendorStatusLog {
+  id            String            @id @default(cuid())
+  applicationId String
+  fromStatus    ApplicationStatus?
+  toStatus      ApplicationStatus
+  changedById   String
+  note          String?
+  changedAt     DateTime          @default(now())
+
+  application VendorApplication @relation(fields: [applicationId], references: [id])
+
+  @@index([applicationId])
+}
+
+model VendorDocument {
+  id            String   @id @default(cuid())
+  applicationId String
+  fileName      String
+  fileUrl       String
+  fileType      String
+  fileSize      Int
+  uploadedAt    DateTime @default(now())
+
+  application VendorApplication @relation(fields: [applicationId], references: [id])
+}
+
+model VendorAgreement {
+  id              String   @id @default(cuid())
+  applicationId   String   @unique
+  agreementVersion String
+  acceptedAt      DateTime @default(now())
+  ipAddress       String?
+  userAgent       String?
+
+  application VendorApplication @relation(fields: [applicationId], references: [id])
+}
+
+model VendorInvoice {
+  id             String              @id @default(cuid())
+  applicationId  String
+  invoiceNumber  String              @unique
+  amountDue      Int                 // cents
+  depositAmount  Int                 @default(0)  // cents
+  amountPaid     Int                 @default(0)  // cents
+  dueDate        DateTime?
+  status         VendorPaymentStatus @default(UNPAID)
+  notes          String?
+  createdAt      DateTime            @default(now())
+  updatedAt      DateTime            @updatedAt
+
+  application VendorApplication @relation(fields: [applicationId], references: [id])
+  payments    VendorPayment[]
+
+  @@index([applicationId])
+  @@index([status])
+}
+
+model VendorPayment {
+  id                    String   @id @default(cuid())
+  invoiceId             String
+  stripePaymentIntentId String   @unique
+  stripeSessionId       String?
+  amountPaid            Int      // cents
+  currency              String   @default("usd")
+  status                String   // succeeded | failed | pending
+  receiptUrl            String?
+  paidAt                DateTime?
+  createdAt             DateTime @default(now())
+
+  invoice VendorInvoice @relation(fields: [invoiceId], references: [id])
+
+  @@index([invoiceId])
+  @@index([stripePaymentIntentId])
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// MERCHANDISE
+// ─────────────────────────────────────────────────────────────────────────────
+
+enum ProductStatus {
+  DRAFT
+  ACTIVE
+  ARCHIVED
+}
+
+enum FulfillmentMethod {
+  SHIPPING
+  LOCAL_PICKUP
+  FESTIVAL_PICKUP
+  PREORDER
+}
+
+enum OrderStatus {
+  PENDING_PAYMENT
+  PAID
+  PROCESSING
+  READY_FOR_PICKUP
+  SHIPPED
+  DELIVERED
+  CANCELLED
+  REFUNDED
+  PARTIALLY_REFUNDED
+}
+
+model Product {
+  id              String        @id @default(cuid())
+  name            String
+  slug            String        @unique
+  description     String?
+  price           Int           // cents
+  compareAtPrice  Int?          // cents — for showing sale
+  category        String?
+  status          ProductStatus @default(DRAFT)
+  fulfillmentMethod FulfillmentMethod @default(SHIPPING)
+  images          ProductImage[]
+  variants        ProductVariant[]
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+
+  @@index([slug])
+  @@index([status])
+}
+
+model ProductImage {
+  id        String   @id @default(cuid())
+  productId String
+  url       String
+  altText   String?
+  position  Int      @default(0)
+  createdAt DateTime @default(now())
+
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+}
+
+model ProductVariant {
+  id        String   @id @default(cuid())
+  productId String
+  sku       String   @unique
+  size      String?
+  color     String?
+  price     Int?     // cents — overrides product price if set
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  product        Product         @relation(fields: [productId], references: [id], onDelete: Cascade)
+  inventory      Inventory?
+  cartItems      CartItem[]
+  orderItems     OrderItem[]
+
+  @@index([productId])
+}
+
+model Inventory {
+  id          String   @id @default(cuid())
+  variantId   String   @unique
+  quantity    Int      @default(0)
+  reserved    Int      @default(0) // held during active checkouts
+  updatedAt   DateTime @updatedAt
+
+  variant   ProductVariant    @relation(fields: [variantId], references: [id], onDelete: Cascade)
+  movements InventoryMovement[]
+}
+
+model InventoryMovement {
+  id          String   @id @default(cuid())
+  inventoryId String
+  delta       Int      // positive = add, negative = remove
+  reason      String   // sale | restock | adjustment | refund | reservation | release
+  referenceId String?  // orderId or adminUserId
+  createdAt   DateTime @default(now())
+
+  inventory Inventory @relation(fields: [inventoryId], references: [id])
+
+  @@index([inventoryId])
+}
+
+model Cart {
+  id        String     @id @default(cuid())
+  sessionId String     @unique
+  userId    String?
+  expiresAt DateTime
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+
+  items CartItem[]
+}
+
+model CartItem {
+  id        String   @id @default(cuid())
+  cartId    String
+  variantId String
+  quantity  Int
+  addedAt   DateTime @default(now())
+
+  cart    Cart           @relation(fields: [cartId], references: [id], onDelete: Cascade)
+  variant ProductVariant @relation(fields: [variantId], references: [id])
+
+  @@unique([cartId, variantId])
+}
+
+model MerchandiseOrder {
+  id                    String      @id @default(cuid())
+  orderNumber           String      @unique
+  userId                String?
+  guestEmail            String?
+  guestName             String?
+  status                OrderStatus @default(PENDING_PAYMENT)
+  subtotalAmount        Int         // cents
+  shippingAmount        Int         @default(0)
+  taxAmount             Int         @default(0)
+  totalAmount           Int         // cents
+  discountAmount        Int         @default(0)
+  promoCode             String?
+  stripePaymentIntentId String?     @unique
+  stripeSessionId       String?
+  shippingName          String?
+  shippingAddress1      String?
+  shippingAddress2      String?
+  shippingCity          String?
+  shippingState         String?
+  shippingZip           String?
+  shippingCountry       String?
+  fulfillmentMethod     FulfillmentMethod @default(SHIPPING)
+  trackingNumber        String?
+  receiptEmailSentAt    DateTime?
+  createdAt             DateTime    @default(now())
+  updatedAt             DateTime    @updatedAt
+
+  user  User?       @relation(fields: [userId], references: [id])
+  items OrderItem[]
+  refunds MerchandiseRefund[]
+
+  @@index([userId])
+  @@index([guestEmail])
+  @@index([status])
+  @@index([stripePaymentIntentId])
+}
+
+model OrderItem {
+  id        String   @id @default(cuid())
+  orderId   String
+  variantId String
+  quantity  Int
+  unitPrice Int      // cents — locked at time of order
+
+  order   MerchandiseOrder @relation(fields: [orderId], references: [id])
+  variant ProductVariant   @relation(fields: [variantId], references: [id])
+
+  @@index([orderId])
+}
+
+model MerchandiseRefund {
+  id                 String   @id @default(cuid())
+  orderId            String
+  stripeRefundId     String   @unique
+  amountRefunded     Int      // cents
+  reason             String?
+  authorizedById     String?
+  createdAt          DateTime @default(now())
+
+  order MerchandiseOrder @relation(fields: [orderId], references: [id])
+
+  @@index([orderId])
+}
+
+model PromoCode {
+  id              String    @id @default(cuid())
+  code            String    @unique
+  discountType    String    // percent | fixed
+  discountValue   Int       // percent 0-100 or cents
+  maxUses         Int?
+  usedCount       Int       @default(0)
+  expiresAt       DateTime?
+  isActive        Boolean   @default(true)
+  createdAt       DateTime  @default(now())
+
+  @@index([code])
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// FUTURE TICKETING (Phase 2 — disabled in production until 2027)
+// ─────────────────────────────────────────────────────────────────────────────
+
+enum TicketTierType {
+  GENERAL_ADMISSION
+  GA_PLUS
+  VIP
+  VIP_TABLE
+  EARLY_BIRD
+  COMPLIMENTARY
+  STAFF
+  ARTIST
+  SPONSOR
+  AMBASSADOR
+}
+
+enum TicketStatus {
+  RESERVED
+  ISSUED
+  TRANSFERRED
+  CANCELLED
+  REFUNDED
+  CHECKED_IN
+}
+
+model TicketType {
+  id           String         @id @default(cuid())
+  eventId      String
+  name         String
+  tierType     TicketTierType
+  price        Int            // cents
+  capacity     Int
+  sold         Int            @default(0)
+  reserved     Int            @default(0)
+  salesStart   DateTime?
+  salesEnd     DateTime?
+  maxPerOrder  Int            @default(10)
+  isActive     Boolean        @default(false) // feature-flagged off for 2026
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+
+  event   Event    @relation(fields: [eventId], references: [id])
+  tickets Ticket[]
+
+  @@index([eventId])
+}
+
+model TicketOrder {
+  id                    String      @id @default(cuid())
+  orderNumber           String      @unique
+  buyerUserId           String?
+  guestEmail            String?
+  guestName             String?
+  totalAmount           Int         // cents
+  stripePaymentIntentId String?     @unique
+  status                OrderStatus @default(PENDING_PAYMENT)
+  createdAt             DateTime    @default(now())
+  updatedAt             DateTime    @updatedAt
+
+  tickets Ticket[]
+
+  @@index([buyerUserId])
+  @@index([guestEmail])
+}
+
+model Ticket {
+  id               String       @id @default(cuid())
+  ticketTypeId     String
+  orderId          String
+  ownerUserId      String?
+  ownerEmail       String?
+  ownerName        String?
+  status           TicketStatus @default(ISSUED)
+  admissionSecret  String       @unique // cryptographically random, never sequential
+  issuedAt         DateTime     @default(now())
+  cancelledAt      DateTime?
+  updatedAt        DateTime     @updatedAt
+
+  ticketType  TicketType    @relation(fields: [ticketTypeId], references: [id])
+  order       TicketOrder   @relation(fields: [orderId], references: [id])
+  checkIns    CheckInEvent[]
+  transfers   TicketTransfer[]
+
+  @@index([admissionSecret])
+  @@index([orderId])
+  @@index([ownerUserId])
+}
+
+model TicketTransfer {
+  id           String   @id @default(cuid())
+  ticketId     String
+  fromEmail    String
+  toEmail      String
+  transferredAt DateTime @default(now())
+
+  ticket Ticket @relation(fields: [ticketId], references: [id])
+
+  @@index([ticketId])
+}
+
+model ScannerDevice {
+  id          String   @id @default(cuid())
+  deviceName  String
+  gateId      String?
+  gateName    String?
+  isActive    Boolean  @default(true)
+  registeredAt DateTime @default(now())
+
+  checkIns     CheckInEvent[]
+  scannerSessions ScannerSession[]
+}
+
+model ScannerSession {
+  id          String   @id @default(cuid())
+  deviceId    String
+  staffUserId String
+  startedAt   DateTime @default(now())
+  endedAt     DateTime?
+
+  device ScannerDevice @relation(fields: [deviceId], references: [id])
+  staff  User          @relation(fields: [staffUserId], references: [id])
+
+  @@index([deviceId])
+}
+
+model CheckInEvent {
+  id              String    @id @default(cuid())
+  ticketId        String
+  deviceId        String
+  staffUserId     String?
+  gateId          String?
+  attemptedAt     DateTime  @default(now())
+  succeeded       Boolean
+  rejectionReason String?
+  isOverride      Boolean   @default(false)
+  overrideNote    String?
+
+  ticket Ticket        @relation(fields: [ticketId], references: [id])
+  device ScannerDevice @relation(fields: [deviceId], references: [id])
+
+  @@index([ticketId])
+  @@index([deviceId])
+  @@index([attemptedAt])
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// AMBASSADORS & PROMOTERS
+// ─────────────────────────────────────────────────────────────────────────────
+
+model Ambassador {
+  id           String   @id @default(cuid())
+  userId       String   @unique
+  referralCode String   @unique
+  isApproved   Boolean  @default(false)
+  totalSales   Int      @default(0)
+  totalEarned  Int      @default(0) // cents
+  createdAt    DateTime @default(now())
+
+  user      User              @relation(fields: [userId], references: [id])
+  referrals AmbassadorReferral[]
+
+  @@index([referralCode])
+}
+
+model AmbassadorReferral {
+  id           String   @id @default(cuid())
+  ambassadorId String
+  referenceId  String   // orderId
+  referenceType String  // merch | ticket
+  saleAmount   Int      // cents
+  commission   Int      // cents
+  isPaid       Boolean  @default(false)
+  createdAt    DateTime @default(now())
+
+  ambassador Ambassador @relation(fields: [ambassadorId], references: [id])
+
+  @@index([ambassadorId])
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// OPERATIONS
+// ─────────────────────────────────────────────────────────────────────────────
+
+model FeatureFlag {
+  id          String   @id @default(cuid())
+  key         String
+  eventId     String?
+  enabled     Boolean  @default(false)
+  description String?
+  updatedAt   DateTime @updatedAt
+  updatedById String?
+
+  event Event? @relation(fields: [eventId], references: [id])
+
+  @@unique([key, eventId])
+}
+
+model AuditLog {
+  id           String   @id @default(cuid())
+  actorId      String?
+  action       String
+  resource     String
+  resourceId   String?
+  beforeValue  Json?
+  afterValue   Json?
+  ipAddress    String?
+  userAgent    String?
+  createdAt    DateTime @default(now())
+
+  actor User? @relation(fields: [actorId], references: [id])
+
+  @@index([actorId])
+  @@index([resource, resourceId])
+  @@index([createdAt])
+}
+
+model WebhookEvent {
+  id          String   @id @default(cuid())
+  provider    String   // stripe | brevo
+  eventType   String
+  eventId     String   @unique // provider's event ID for idempotency
+  payload     Json
+  processed   Boolean  @default(false)
+  processedAt DateTime?
+  error       String?
+  createdAt   DateTime @default(now())
+
+  @@index([eventId])
+  @@index([processed])
+}
