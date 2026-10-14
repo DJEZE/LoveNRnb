@@ -1,21 +1,21 @@
-import admin from 'firebase-admin'
+import { getApps, initializeApp, cert } from 'firebase-admin/app'
+import { getMessaging } from 'firebase-admin/messaging'
 import { db } from './db'
 import { PushAudience } from '@prisma/client'
 
-function getApp() {
-  if (admin.apps.length) return admin.apps[0]!
+function getMessagingInstance() {
+  if (!getApps().length) {
+    const projectId = process.env.FIREBASE_PROJECT_ID
+    const clientEmail = process.env.FIREBASE_CLIENT_EMAIL
+    const privateKey = process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, '\n')
 
-  const projectId = process.env.FIREBASE_PROJECT_ID
-  const clientEmail = process.env.FIREBASE_CLIENT_EMAIL
-  const privateKey = process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, '\n')
+    if (!projectId || !clientEmail || !privateKey) {
+      throw new Error('Firebase credentials not configured. Set FIREBASE_PROJECT_ID, FIREBASE_CLIENT_EMAIL, FIREBASE_PRIVATE_KEY.')
+    }
 
-  if (!projectId || !clientEmail || !privateKey) {
-    throw new Error('Firebase credentials not configured. Set FIREBASE_PROJECT_ID, FIREBASE_CLIENT_EMAIL, FIREBASE_PRIVATE_KEY.')
+    initializeApp({ credential: cert({ projectId, clientEmail, privateKey }) })
   }
-
-  return admin.initializeApp({
-    credential: admin.credential.cert({ projectId, clientEmail, privateKey }),
-  })
+  return getMessaging()
 }
 
 export interface PushPayload {
@@ -29,8 +29,7 @@ export interface PushPayload {
 // Send to a single FCM token
 export async function sendToToken(token: string, payload: PushPayload): Promise<boolean> {
   try {
-    const app = getApp()
-    await admin.messaging(app).send({
+    await getMessagingInstance().send({
       token,
       notification: {
         title: payload.title,
@@ -66,7 +65,6 @@ export async function sendToTokens(
 ): Promise<{ success: number; failure: number }> {
   if (!tokens.length) return { success: 0, failure: 0 }
 
-  const app = getApp()
   // FCM sendEachForMulticast allows up to 500 tokens per call
   const chunks: string[][] = []
   for (let i = 0; i < tokens.length; i += 500) chunks.push(tokens.slice(i, i + 500))
@@ -76,7 +74,7 @@ export async function sendToTokens(
   const staleTokens: string[] = []
 
   for (const chunk of chunks) {
-    const response = await admin.messaging(app).sendEachForMulticast({
+    const response = await getMessagingInstance().sendEachForMulticast({
       tokens: chunk,
       notification: {
         title: payload.title,
