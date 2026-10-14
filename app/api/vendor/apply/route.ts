@@ -18,7 +18,7 @@ const schema = z.object({
   activationDesc: z.string().max(5000).optional(),
   permitInfo: z.string().max(2000).optional(),
   additionalNotes: z.string().max(5000).optional(),
-  agreeToTerms: z.literal(true, { errorMap: () => ({ message: 'Terms must be accepted' }) }),
+  agreeToTerms: z.literal(true, { message: 'Terms must be accepted' }),
 })
 
 export async function POST(req: NextRequest) {
