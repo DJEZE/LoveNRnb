@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { z } from 'zod'
 import { db } from '@/lib/server/db'
 import { VendorCategory } from '@prisma/client'
+import { notifyVendorApplicationReceived } from '@/lib/server/notifications'
 
 const schema = z.object({
   businessName: z.string().min(2).max(200),
@@ -125,6 +126,9 @@ export async function POST(req: NextRequest) {
 
     // Send notification email via Brevo if configured
     await sendVendorNotification(data.email, data.contactName, data.businessName, data.category)
+
+    // Fire-and-forget push notification
+    notifyVendorApplicationReceived(application.id, user.id)
 
     return NextResponse.json({ success: true, applicationId: application.id }, { status: 201 })
   } catch (err) {
