@@ -32,16 +32,13 @@ model User {
   sessions Session[]
 
   // Platform relations
-  roles              UserRole[]
-  vendorBusiness     VendorBusiness[]
-  orders             MerchandiseOrder[]
-  marketingPrefs     MarketingPreference?
-  auditLogs          AuditLog[]
-  ambassadorRecord   Ambassador?
-  scannerSessions    ScannerSession[]
-  pushSubscriptions  PushSubscription[]
-  notificationPrefs  NotificationPreference?
-  campaignsCreated   NotificationCampaign[] @relation("CampaignCreator")
+  roles            UserRole[]
+  vendorBusiness   VendorBusiness[]
+  orders           MerchandiseOrder[]
+  marketingPrefs   MarketingPreference?
+  auditLogs        AuditLog[]
+  ambassadorRecord Ambassador?
+  scannerSessions  ScannerSession[]
 
   @@index([email])
 }
@@ -750,7 +747,7 @@ model AuditLog {
 
 model WebhookEvent {
   id          String   @id @default(cuid())
-  provider    String   // stripe | brevo | onesignal
+  provider    String   // stripe | brevo
   eventType   String
   eventId     String   @unique // provider's event ID for idempotency
   payload     Json
@@ -761,141 +758,4 @@ model WebhookEvent {
 
   @@index([eventId])
   @@index([processed])
-}
-
-// ─────────────────────────────────────────────────────────────────────────────
-// PUSH NOTIFICATIONS
-// ─────────────────────────────────────────────────────────────────────────────
-
-enum NotificationAudience {
-  ALL_SUBSCRIBERS
-  MERCH_CUSTOMERS
-  ABANDONED_CART
-  APPROVED_VENDORS
-  VENDORS_OUTSTANDING_BALANCE
-  ARTIST_ANNOUNCEMENTS
-  FUTURE_EVENTS
-  HOUSTON_AREA
-  VIP_TICKET_HOLDERS
-  GA_TICKET_HOLDERS
-  TEST_ONLY
-}
-
-enum NotificationCategory {
-  MARKETING
-  VENDOR_OPS
-  MERCH_TRANSACTIONAL
-  FESTIVAL_UPDATE
-  TICKETING
-  SYSTEM
-}
-
-enum CampaignStatus {
-  DRAFT
-  SCHEDULED
-  SENDING
-  SENT
-  CANCELLED
-  FAILED
-}
-
-model PushSubscription {
-  id            String   @id @default(cuid())
-  userId        String?
-  oneSignalId   String   @unique  // OneSignal player/subscription ID
-  deviceType    String?           // web_chrome | web_firefox | web_safari | android | ios
-  browserName   String?
-  platform      String?           // desktop | mobile | tablet
-  isActive      Boolean  @default(true)
-  subscribedAt  DateTime @default(now())
-  unsubscribedAt DateTime?
-  lastSeenAt    DateTime?
-
-  user User? @relation(fields: [userId], references: [id], onDelete: SetNull)
-
-  @@index([userId])
-  @@index([oneSignalId])
-  @@index([isActive])
-}
-
-model NotificationPreference {
-  id                  String   @id @default(cuid())
-  userId              String   @unique
-  pushEnabled         Boolean  @default(true)
-  marketingPush       Boolean  @default(true)
-  vendorOpsPush       Boolean  @default(true)
-  festivalUpdatePush  Boolean  @default(true)
-  artistAnnouncePush  Boolean  @default(true)
-  consentRecordedAt   DateTime @default(now())
-  updatedAt           DateTime @updatedAt
-
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
-}
-
-model NotificationCampaign {
-  id               String               @id @default(cuid())
-  title            String               // notification title shown to user
-  body             String               // notification body text
-  imageUrl         String?              // optional image for notification
-  destinationUrl   String?              // click destination
-  category         NotificationCategory @default(MARKETING)
-  audience         NotificationAudience @default(ALL_SUBSCRIBERS)
-  status           CampaignStatus       @default(DRAFT)
-  scheduledAt      DateTime?            // null = send immediately
-  sentAt           DateTime?
-  cancelledAt      DateTime?
-  oneSignalId      String?              // returned by OneSignal after send
-  createdBy        String
-  updatedBy        String?
-  notes            String?              // internal admin notes
-  createdAt        DateTime             @default(now())
-  updatedAt        DateTime             @updatedAt
-
-  // estimated at compose time, actual after send
-  estimatedRecipients Int?
-  actualRecipients    Int?
-
-  sends NotificationSend[]
-  creator User @relation("CampaignCreator", fields: [createdBy], references: [id])
-
-  @@index([status])
-  @@index([scheduledAt])
-  @@index([createdAt])
-}
-
-model NotificationSend {
-  id           String   @id @default(cuid())
-  campaignId   String
-  userId       String?
-  oneSignalId  String?  // OneSignal notification ID
-  status       String   @default("queued") // queued | sent | delivered | clicked | failed
-  sentAt       DateTime?
-  deliveredAt  DateTime?
-  clickedAt    DateTime?
-  error        String?
-  createdAt    DateTime @default(now())
-
-  campaign NotificationCampaign @relation(fields: [campaignId], references: [id])
-
-  @@index([campaignId])
-  @@index([userId])
-  @@index([status])
-}
-
-model AutomatedNotificationLog {
-  id         String               @id @default(cuid())
-  trigger    String               // e.g. vendor_approved | order_shipped
-  category   NotificationCategory
-  userId     String?
-  resourceId String?              // vendorApplicationId, orderId, etc.
-  title      String
-  body       String
-  oneSignalId String?
-  status     String               @default("sent")
-  error      String?
-  sentAt     DateTime             @default(now())
-
-  @@index([trigger])
-  @@index([userId])
-  @@index([sentAt])
 }

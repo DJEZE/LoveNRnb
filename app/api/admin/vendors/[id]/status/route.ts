@@ -3,7 +3,6 @@ import { auth } from '@/auth'
 import { db } from '@/lib/server/db'
 import { ApplicationStatus } from '@prisma/client'
 import { z } from 'zod'
-import { notifyVendorApproved } from '@/lib/server/notifications'
 
 const body = z.object({
   toStatus: z.nativeEnum(ApplicationStatus),
@@ -22,11 +21,6 @@ export async function POST(req: NextRequest, { params }: { params: { id: string 
 
   const { toStatus, note } = parsed.data
 
-  const fullApp = await db.vendorApplication.findUnique({
-    where: { id: params.id },
-    include: { business: { select: { businessName: true, userId: true } } },
-  })
-
   await db.$transaction([
     db.vendorApplication.update({
       where: { id: params.id },
@@ -42,11 +36,6 @@ export async function POST(req: NextRequest, { params }: { params: { id: string 
       },
     }),
   ])
-
-  // Push notification for key status changes
-  if (toStatus === 'APPROVED' && fullApp?.business) {
-    notifyVendorApproved(params.id, fullApp.business.userId, fullApp.business.businessName)
-  }
 
   return NextResponse.json({ ok: true })
 }

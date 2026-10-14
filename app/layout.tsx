@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from 'next'
 import Script from 'next/script'
-import { OneSignalInit } from '@/components/notifications/OneSignalInit'
 import './globals.css'
 
 // ─── Metadata ─────────────────────────────────────────────────────────────
@@ -143,9 +142,6 @@ export default function RootLayout({
             alt=""
           />
         </noscript>
-
-        {/* OneSignal web push */}
-        <OneSignalInit />
       </body>
     </html>
   )

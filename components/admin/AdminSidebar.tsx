@@ -17,7 +17,6 @@ import {
   Tag,
   QrCode,
   ClipboardList,
-  Bell,
 } from 'lucide-react'
 
 const NAV = [
@@ -27,7 +26,6 @@ const NAV = [
   { label: 'Products', href: '/admin/products', icon: Package },
   { label: 'Customers', href: '/admin/customers', icon: Users },
   { label: 'Finance', href: '/admin/finance', icon: DollarSign },
-  { label: 'Notifications', href: '/admin/notifications', icon: Bell },
   { label: 'Promo Codes', href: '/admin/promos', icon: Tag },
   { label: 'Reports', href: '/admin/reports', icon: BarChart3 },
   { label: 'Audit Log', href: '/admin/audit', icon: FileText },
