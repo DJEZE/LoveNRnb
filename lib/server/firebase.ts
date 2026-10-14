@@ -166,7 +166,7 @@ export async function getTokensForAudience(audience: PushAudience): Promise<stri
       where: { status: 'UNPAID' },
       include: { application: { include: { business: { select: { userId: true } } } } },
     })
-    const ids = [...new Set(invoices.map((i) => i.application.business.userId))]
+    const ids = Array.from(new Set(invoices.map((i) => i.application.business.userId)))
     const tokens = await db.devicePushToken.findMany({
       where: { isActive: true, userId: { in: ids } },
       select: { fcmToken: true },
