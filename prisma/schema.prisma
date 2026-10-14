@@ -32,13 +32,15 @@ model User {
   sessions Session[]
 
   // Platform relations
-  roles            UserRole[]
-  vendorBusiness   VendorBusiness[]
-  orders           MerchandiseOrder[]
-  marketingPrefs   MarketingPreference?
-  auditLogs        AuditLog[]
-  ambassadorRecord Ambassador?
-  scannerSessions  ScannerSession[]
+  roles              UserRole[]
+  vendorBusiness     VendorBusiness[]
+  orders             MerchandiseOrder[]
+  marketingPrefs     MarketingPreference?
+  auditLogs          AuditLog[]
+  ambassadorRecord   Ambassador?
+  scannerSessions    ScannerSession[]
+  deviceTokens       DevicePushToken[]
+  pushCampaigns      PushCampaign[] @relation("PushCampaignCreator")
 
   @@index([email])
 }
@@ -758,4 +760,103 @@ model WebhookEvent {
 
   @@index([eventId])
   @@index([processed])
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// MOBILE PUSH NOTIFICATIONS (FCM — iOS & Android native app)
+// ─────────────────────────────────────────────────────────────────────────────
+
+enum DevicePlatform {
+  IOS
+  ANDROID
+}
+
+enum PushCampaignStatus {
+  DRAFT
+  SCHEDULED
+  SENT
+  CANCELLED
+  FAILED
+}
+
+enum PushAudience {
+  ALL
+  MERCH_CUSTOMERS
+  APPROVED_VENDORS
+  VENDORS_OUTSTANDING_BALANCE
+  ARTIST_ANNOUNCEMENTS
+  HOUSTON_AREA
+  TEST_ONLY
+}
+
+model DevicePushToken {
+  id         String         @id @default(cuid())
+  userId     String?
+  fcmToken   String         @unique
+  platform   DevicePlatform
+  appVersion String?
+  isActive   Boolean        @default(true)
+  createdAt  DateTime       @default(now())
+  updatedAt  DateTime       @updatedAt
+
+  user User? @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@index([userId])
+  @@index([platform])
+  @@index([isActive])
+}
+
+model PushCampaign {
+  id               String             @id @default(cuid())
+  title            String
+  body             String
+  imageUrl         String?
+  destinationUrl   String?
+  audience         PushAudience       @default(ALL)
+  status           PushCampaignStatus @default(DRAFT)
+  scheduledAt      DateTime?
+  sentAt           DateTime?
+  createdBy        String
+  notes            String?
+  recipientCount   Int?
+  successCount     Int?
+  failureCount     Int?
+  createdAt        DateTime           @default(now())
+  updatedAt        DateTime           @updatedAt
+
+  creator User   @relation("PushCampaignCreator", fields: [createdBy], references: [id])
+  sends   PushSend[]
+
+  @@index([status])
+  @@index([createdAt])
+}
+
+model PushSend {
+  id         String   @id @default(cuid())
+  campaignId String
+  userId     String?
+  fcmToken   String
+  status     String   @default("sent") // sent | failed
+  error      String?
+  sentAt     DateTime @default(now())
+
+  campaign PushCampaign @relation(fields: [campaignId], references: [id])
+
+  @@index([campaignId])
+}
+
+model PushTransactionLog {
+  id         String   @id @default(cuid())
+  trigger    String
+  userId     String?
+  resourceId String?
+  title      String
+  body       String
+  platform   String?
+  status     String   @default("sent")
+  error      String?
+  sentAt     DateTime @default(now())
+
+  @@index([trigger])
+  @@index([userId])
 }
