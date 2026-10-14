@@ -32,7 +32,7 @@ export async function POST(req: NextRequest, { params }: { params: { id: string 
         fromStatus: application.status,
         toStatus,
         note: note ?? null,
-        changedBy: session.user?.id ?? 'admin',
+        changedById: session.user?.id ?? 'admin',
       },
     }),
   ])
