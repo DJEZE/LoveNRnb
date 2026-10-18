@@ -93,6 +93,9 @@ export function Hero({ event }: HeroProps) {
           >
             Kaash Paige
           </p>
+          <p className="font-display font-bold uppercase text-white/40 tracking-[0.12em] text-sm lg:text-base mt-2">
+            &amp; Special Guest
+          </p>
           <p className="font-display font-bold uppercase text-white/50 tracking-[0.12em] text-sm lg:text-base mt-3">
             Houston, This One&apos;s for the <span className="text-gold">R&amp;B</span> Lovers.
           </p>

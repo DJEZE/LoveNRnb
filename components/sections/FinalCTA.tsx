@@ -24,10 +24,16 @@ export function FinalCTA() {
           </h2>
 
           <p
-            className="font-display font-bold uppercase text-gold mb-8"
+            className="font-display font-bold uppercase text-gold mb-2"
             style={{ fontSize: 'clamp(1.25rem, 3.5vw, 2.5rem)', letterSpacing: '-0.01em' }}
           >
             Headlined by Kaash Paige
+          </p>
+          <p
+            className="font-display font-bold uppercase text-white/40 mb-8"
+            style={{ fontSize: 'clamp(0.9rem, 2vw, 1.5rem)', letterSpacing: '0.05em' }}
+          >
+            &amp; Special Guest
           </p>
 
           <p className="font-body text-base text-white/50 mb-3">
