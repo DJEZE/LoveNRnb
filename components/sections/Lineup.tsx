@@ -19,7 +19,7 @@ function HeadlinerCard({ artist }: { artist: Artist }) {
     <motion.div
       variants={staggerChild}
       className="relative col-span-full overflow-hidden group"
-      style={{ aspectRatio: '21/9' }}
+      style={{ aspectRatio: '16/9' }}
     >
       {artist.tba ? (
         // TBA headliner — pure black with gold treatment
@@ -53,7 +53,7 @@ function HeadlinerCard({ artist }: { artist: Artist }) {
             src={artist.image}
             alt={artist.name}
             fill
-            className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
+            className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
             priority
             sizes="100vw"
           />
