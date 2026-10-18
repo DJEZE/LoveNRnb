@@ -7,6 +7,7 @@ import { getAvailabilityLabel, cn } from '@/lib/utils'
 import type { TicketTier } from '@/lib/types'
 
 const POSH_URL = 'https://posh.vip/e/lovenrnb-festival'
+const VIP_URL = 'https://wl.eventim.us/event/kaash-paige/708839?afflky=RichsHouston'
 
 interface TicketsProps {
   tiers: TicketTier[]
@@ -94,7 +95,7 @@ function TierCard({ tier }: { tier: TicketTier }) {
         </div>
 
         <a
-          href={soldOut ? undefined : POSH_URL}
+          href={soldOut ? undefined : (tier.id === 'tier-vip' ? VIP_URL : POSH_URL)}
           target="_blank"
           rel="noopener noreferrer"
           className={cn(
