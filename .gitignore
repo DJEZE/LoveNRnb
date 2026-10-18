@@ -40,3 +40,9 @@ next-env.d.ts
 .vscode/
 *.swp
 *.swo
+
+# AI tooling
+.agents/
+.claude/
+.cursor/
+.devin/
