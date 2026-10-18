@@ -55,14 +55,6 @@ export const UPCOMING_EVENT: Event = {
       tba: true,
     },
     {
-      id: 'rising-000',
-      name: 'K2Icyy',
-      role: 'rising',
-      image: '/images/artists/K2Icyy.jpg',
-      genre: 'R&B',
-      tba: false,
-    },
-    {
       id: 'rising-001',
       name: 'Aaron Page',
       role: 'rising',
