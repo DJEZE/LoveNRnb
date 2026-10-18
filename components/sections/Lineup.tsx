@@ -239,7 +239,7 @@ export function Lineup({ artists, eventName, showAll = false }: LineupProps) {
         <AnimatedSection className="flex items-end justify-between py-10 lg:py-14">
           <div>
             <p className="font-body text-2xs text-gold uppercase tracking-[0.3em] mb-3">
-              {eventName} · Nov 21, 2026
+              The Sound of {eventName}
             </p>
             <h2
               className="font-display font-black uppercase text-white leading-none"
@@ -249,7 +249,7 @@ export function Lineup({ artists, eventName, showAll = false }: LineupProps) {
             </h2>
           </div>
           <p className="font-body text-xs text-white/40 uppercase tracking-[0.2em] hidden lg:block pb-3">
-            Announcements Coming
+            More Artists Coming Soon
           </p>
         </AnimatedSection>
       </div>
@@ -259,7 +259,7 @@ export function Lineup({ artists, eventName, showAll = false }: LineupProps) {
       {/* ── Headliner ── */}
       <StaggerContainer className="container mx-auto px-6 pt-8 lg:pt-10 pb-8 lg:pb-12">
         <p className="font-body text-2xs text-gold uppercase tracking-[0.3em] mb-6">
-          Artists
+          Headlining Live
         </p>
         <div className="grid grid-cols-1 gap-4 lg:gap-5">
           {headliner && <HeadlinerCard artist={headliner} />}
@@ -319,8 +319,25 @@ export function Lineup({ artists, eventName, showAll = false }: LineupProps) {
         </StaggerContainer>
       )}
 
-      {/* Footer note */}
+      {/* More announcements CTA */}
       <div className="container mx-auto px-6 pb-10">
+        <div className="w-full h-px bg-white/10 mb-10" />
+        <div className="text-center max-w-2xl mx-auto mb-10">
+          <p className="font-body text-2xs text-gold uppercase tracking-[0.3em] mb-4">
+            More Artist Announcements Coming Soon
+          </p>
+          <p className="font-body text-sm text-white/40 leading-relaxed mb-8">
+            Get ready for a night celebrating the sounds of R&amp;B — established talent, emerging voices, and artists representing the next generation of music. From unforgettable live performances to the DJs setting the mood, every moment is designed for the R&amp;B lovers.
+          </p>
+          <a
+            href="https://posh.vip/e/lovenrnb-festival"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center h-12 px-10 font-body text-xs font-semibold uppercase tracking-[0.2em] text-black bg-gold hover:bg-gold-light transition-colors duration-200"
+          >
+            Get Tickets
+          </a>
+        </div>
         <div className="w-full h-px bg-white/10 mb-6" />
         <p className="font-body text-xs text-white/30 uppercase tracking-[0.2em] text-center">
           Lineup subject to change · Follow{' '}
@@ -328,7 +345,7 @@ export function Lineup({ artists, eventName, showAll = false }: LineupProps) {
             className="text-gold hover:text-gold-light transition-colors">
             @lovenrnbfest
           </a>{' '}
-          for announcements
+          for official announcements
         </p>
       </div>
 

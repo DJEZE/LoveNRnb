@@ -56,7 +56,7 @@ export function Hero({ event }: HeroProps) {
         >
           <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse-dot flex-shrink-0" />
           <span className="font-body text-2xs text-gold uppercase tracking-[0.25em]">
-            Nov 21, 2026 &nbsp;·&nbsp; Houston, TX
+            Nov 21, 2026 &nbsp;·&nbsp; Rich&apos;s Houston
           </span>
         </motion.div>
 
@@ -78,14 +78,25 @@ export function Hero({ event }: HeroProps) {
         </motion.div>
 
         {/* Tagline */}
-        <motion.p
-          className="font-display font-bold uppercase text-white/70 tracking-[0.15em] mb-10 lg:mb-14 text-lg lg:text-2xl"
+        <motion.div
+          className="mb-10 lg:mb-14 text-center"
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          The South&apos;s Premier <span className="text-gold">R&amp;B</span> Music Festival
-        </motion.p>
+          <p className="font-display font-bold uppercase text-white/50 tracking-[0.12em] text-sm lg:text-base mb-2">
+            Headlined By
+          </p>
+          <p
+            className="font-display font-black uppercase text-gold leading-none tracking-tight"
+            style={{ fontSize: 'clamp(2rem, 6vw, 4.5rem)', letterSpacing: '-0.02em' }}
+          >
+            Kaash Paige
+          </p>
+          <p className="font-display font-bold uppercase text-white/50 tracking-[0.12em] text-sm lg:text-base mt-3">
+            Houston, This One&apos;s for the <span className="text-gold">R&amp;B</span> Lovers.
+          </p>
+        </motion.div>
 
         {/* Countdown */}
         <motion.div
@@ -114,7 +125,7 @@ export function Hero({ event }: HeroProps) {
             onClick={() => document.querySelector('#lineup')?.scrollIntoView({ behavior: 'smooth' })}
             className="inline-flex items-center justify-center h-14 px-10 font-body text-sm font-bold uppercase tracking-[0.2em] text-gold border border-gold/50 hover:border-gold hover:bg-gold/5 transition-all duration-200"
           >
-            Full Lineup
+            View Lineup
           </button>
         </motion.div>
       </div>

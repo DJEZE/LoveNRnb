@@ -15,15 +15,19 @@ export function About() {
             className="font-display font-black uppercase text-white leading-none mb-10"
             style={{ fontSize: 'clamp(3rem, 7vw, 6rem)', letterSpacing: '-0.03em' }}
           >
-            Our Story
+            More Than a Concert.<br />It&apos;s a Celebration of <span className="text-gold">R&amp;B.</span>
           </h2>
 
           <p className="font-body text-base lg:text-lg text-white/60 leading-relaxed mb-6">
-            LoveNRnB is Houston&apos;s premier R&amp;B music festival, created to give one of the world&apos;s most influential genres the stage it deserves. From rising stars to chart topping headliners, LoveNRnB delivers a festival experience centered around exceptional live performances and a deep appreciation for R&amp;B music and culture.
+            LoveNRnB Fest is bringing Houston&apos;s R&amp;B community together for an unforgettable night of live music, incredible energy, and shared experiences. From the songs we know word for word to the artists shaping the future of R&amp;B, this is a celebration of the music and culture that connects us.
+          </p>
+
+          <p className="font-body text-base lg:text-lg text-white/60 leading-relaxed mb-6">
+            Headlined by R&amp;B sensation Kaash Paige, LoveNRnB Fest will feature incredible live performances, rising talent, and DJs bringing your favorite sounds to life.
           </p>
 
           <p className="font-body text-base lg:text-lg text-white/60 leading-relaxed">
-            Our vision is to become the premier R&amp;B festival in the South and one of the leading music festivals in North America.
+            Whether you&apos;re coming to sing your heart out, discover your next favorite artist, or experience R&amp;B with people who love it just as much as you do — this is where you belong. One night. One love. One unforgettable R&amp;B experience.
           </p>
         </AnimatedSection>
       </div>

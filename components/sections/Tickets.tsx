@@ -106,7 +106,7 @@ function TierCard({ tier }: { tier: TicketTier }) {
               : 'border border-white/20 text-white hover:bg-white/5 hover:border-white/40'
           )}
         >
-          {soldOut ? 'Sold Out' : 'Get Tickets'}
+          {soldOut ? 'Sold Out' : (tier.ctaLabel ?? 'Get Tickets')}
         </a>
       </div>
     </motion.div>

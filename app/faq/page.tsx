@@ -11,24 +11,24 @@ const FAQS = [
     category: 'The Event',
     questions: [
       {
-        q: 'What is LoveNRnb?',
-        a: 'LoveNRnB is a premier R&B music festival based in Houston, Texas with one goal: to become the biggest R&B festival in the world.\n\nWe bring together the most exciting artists in R&B, unforgettable live performances, and a community of fans who truly live and breathe the culture. More than a festival, LoveNRnB is a celebration of the music, the people, and the moments that bring us together.\n\nThis is just the beginning.',
+        q: 'Where is LoveNRnB Fest 2026 taking place?',
+        a: "LoveNRnB Fest 2026 will take place at Rich's Houston in Houston, Texas.",
       },
       {
-        q: 'When and where is the next event?',
-        a: 'The next LoveNRnb event is November 21, 2026 in Houston, TX. Doors open at 2:00 PM. Venue details coming soon.',
+        q: 'When is LoveNRnB Fest?',
+        a: 'Saturday, November 21, 2026. Doors open at 6:30 PM, with live performances beginning at 7:30 PM.',
       },
       {
-        q: 'What time do doors open?',
-        a: 'Doors open at 2:00 PM. We recommend arriving early — GA+ and VIP guests receive priority entry.',
+        q: 'Who is headlining LoveNRnB Fest?',
+        a: 'R&B artist Kaash Paige is the official headliner for LoveNRnB Fest 2026, with more artists and special guests to be announced.',
       },
       {
-        q: 'What should I wear?',
-        a: 'This is a premium R&B experience. Come ready to sing, dance, and create unforgettable memories with thousands of music lovers. Bring your best energy and be part of the culture.',
+        q: 'Is there an age requirement?',
+        a: 'Yes. LoveNRnB Fest is an 18+ event. All attendees must present a valid government-issued ID. You must be 21 or older to purchase alcohol.',
       },
       {
-        q: 'Is there parking available?',
-        a: 'Parking will not be available at the venue. We recommend using rideshare or carpooling to get to the event.',
+        q: 'Will more artists be announced?',
+        a: 'Yes! Additional artists and special guests will be announced leading up to the event. Follow @lovenrnbfest on Instagram for official updates.',
       },
     ],
   },
@@ -37,27 +37,28 @@ const FAQS = [
     questions: [
       {
         q: 'What ticket types are available?',
-        a: 'We offer three tiers: General Admission (GA) which includes full festival access, all food vendors, all bar areas, all vendor marketplace booths, and games & activations. GA+ adds a dedicated entry lane, complimentary souvenir, and dedicated GA+ bar and food vendor lines. VIP includes all of the above plus an elevated VIP viewing area, VIP club access, premium bar & food access, and a dedicated VIP entry lane. Pricing will be announced soon — join the waitlist to be notified first.',
+        a: 'General Admission gives you full access to LoveNRnB Fest 2026, featuring live performances, incredible DJs, and an unforgettable R&B concert atmosphere.\n\nVIP Table Reservations are also available for guests looking to elevate their experience with reserved seating and exclusive table experiences. Limited availability — bottle service minimums may apply.',
       },
       {
-        q: 'Can I get a refund?',
-        a: 'All ticket sales are final and non-refundable. Tickets are non-transferable. In the event of a cancellation or postponement, details will be communicated directly to ticket holders.',
+        q: 'Are VIP tables available?',
+        a: 'Yes. Limited VIP table reservations are available. Bottle service minimums may apply. Purchase through the official ticket link.',
       },
       {
-        q: 'What is included with VIP?',
-        a: 'VIP includes access to the elevated VIP viewing area, VIP club access/experience, premium bar and food access, a dedicated VIP entry lane, and access to all vendor marketplace booths.',
+        q: 'Are payment plans available?',
+        a: 'Yes! Eligible guests can select Affirm at checkout to view available payment options. Payment plans are subject to eligibility and applicable terms.',
       },
       {
-        q: 'What is GA+ and how is it different from GA?',
-        a: 'GA+ includes everything in General Admission plus a dedicated entry lane with no long lines, a complimentary souvenir, and dedicated GA+ bar and food vendor lines. It\'s the best middle-ground for guests who want a step up without full VIP.',
+        q: 'Will tickets be available at the door?',
+        a: 'Door tickets may be available depending on capacity. We strongly encourage purchasing your tickets in advance to guarantee admission.',
+      },
+      {
+        q: 'Are tickets refundable?',
+        a: 'All ticket sales are final except where required by law or otherwise stated by the organizer.',
       },
       {
         q: 'Where do I purchase tickets?',
-        a: 'Tickets are not yet on sale. Join the waitlist from the Tickets section on this site to be the first to know when they drop.',
-      },
-      {
-        q: 'Is there a payment plan option?',
-        a: 'Yes. Payment plans will be available at checkout once tickets go on sale, letting you split your purchase into smaller payments.',
+        a: 'Tickets are available now through our official ticketing page. Click the Get Tickets button on this site.',
+        cta: { label: 'Get Tickets Now', href: 'https://posh.vip/e/lovenrnb-festival' },
       },
     ],
   },
@@ -65,24 +66,24 @@ const FAQS = [
     category: 'Venue & Experience',
     questions: [
       {
-        q: 'Will there be food and drinks?',
-        a: 'Yes. All bars on-site are cashless, card only. Food vendors will be on-site and can accept cash — follow @lovenrnbfest for updates.',
+        q: 'Does VIP include meeting the artists?',
+        a: 'No. VIP purchases do not include backstage access or artist meet and greets unless explicitly stated.',
       },
       {
-        q: 'Is re-entry allowed?',
-        a: 'Re-entry policy will be communicated at the event. We generally do not allow re-entry once you exit the venue, so plan accordingly.',
+        q: 'Can I leave and come back?',
+        a: 'Reentry is subject to venue policy.',
       },
       {
         q: 'Can I bring a camera?',
         a: 'Personal phones and small cameras are welcome. Professional cameras with detachable lenses require prior media approval. Contact us at press@lovenrnb.com for media credentials.',
       },
       {
-        q: 'Is this an all ages event?',
-        a: 'This is an all ages event. Guests must be 21+ to purchase or consume alcohol — valid government-issued ID will be checked at the bar.',
+        q: 'What items are not allowed?',
+        a: 'Outside food and beverages, weapons of any kind, professional camera equipment (without credentials), and any items deemed unsafe by venue staff are not permitted. All guests must comply with venue security procedures and event policies.',
       },
       {
-        q: 'What items are not allowed?',
-        a: 'Outside food and beverages, weapons of any kind, professional camera equipment (without credentials), and any items deemed unsafe by venue staff are not permitted. Only clear backpacks and small purses or bags are allowed on site.',
+        q: 'How can I stay updated?',
+        a: 'Follow @lovenrnbfest on Instagram and visit www.lovenrnb.com for event announcements and updates.',
       },
     ],
   },
@@ -95,12 +96,12 @@ const FAQS = [
       },
       {
         q: 'How do I apply as a vendor?',
-        a: 'We welcome curated vendors who fit the LoveNRnb aesthetic. Fill out the form below and our team will be in touch.',
+        a: 'For sponsorship, media, and partnership inquiries, please use our official contact form or reach out directly.',
         cta: { label: 'Submit Vendor Application', href: 'https://docs.google.com/forms/d/e/1FAIpQLSevxsrSzvEGXMIaWvsXwQ7shRLtt-OK_Of8aJcFi4QX56x4ig/viewform?usp=preview' },
       },
       {
         q: 'How do I submit for press coverage?',
-        a: 'For press and media inquiries, reach out to press@lovenrnb.com. Include your publication, portfolio, and the type of coverage you\'re looking to do.',
+        a: "For press and media inquiries, reach out to press@lovenrnb.com. Include your publication, portfolio, and the type of coverage you're looking to do.",
       },
     ],
   },
