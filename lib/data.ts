@@ -159,6 +159,14 @@ export const UPCOMING_EVENT: Event = {
       instagram: 'https://www.instagram.com/dja.y_/',
       tba: false,
     },
+    {
+      id: 'dj-007',
+      name: 'Thomas The Square',
+      role: 'dj',
+      image: '/images/artists/thomas-the-square.jpg',
+      genre: 'DJ Set',
+      tba: false,
+    },
     // MC
     {
       id: 'mc-001',
