@@ -165,6 +165,7 @@ export const UPCOMING_EVENT: Event = {
       role: 'dj',
       image: '/images/artists/ThomasTheSquare .jpeg',
       genre: 'DJ Set',
+      instagram: 'https://www.instagram.com/thomasthesquare',
       tba: false,
     },
     // MC
