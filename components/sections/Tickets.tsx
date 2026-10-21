@@ -95,7 +95,7 @@ function TierCard({ tier }: { tier: TicketTier }) {
         </div>
 
         <a
-          href={soldOut ? undefined : (tier.id === 'tier-vip' || tier.id === 'tier-vip-table' ? VIP_URL : POSH_URL)}
+          href={soldOut ? undefined : (tier.id === 'tier-vip-table' ? VIP_URL : POSH_URL)}
           target="_blank"
           rel="noopener noreferrer"
           className={cn(
