@@ -183,7 +183,7 @@ export const UPCOMING_EVENT: Event = {
     {
       id: 'tier-ga',
       name: 'General Admission',
-      price: 50,
+      price: 30,
       perks: [
         'Full concert access',
         'Live performances & incredible DJs',
@@ -199,7 +199,7 @@ export const UPCOMING_EVENT: Event = {
     {
       id: 'tier-vip',
       name: 'VIP Table Reservation',
-      price: 100,
+      price: 75,
       perks: [
         'Reserved VIP table seating',
         'Exclusive table experience',
