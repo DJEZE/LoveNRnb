@@ -214,7 +214,7 @@ export const UPCOMING_EVENT: Event = {
     {
       id: 'tier-vip-table',
       name: 'VIP Table',
-      price: 360,
+      price: 300,
       perks: [
         'Admission for 8 guests',
         'Reserved VIP table and seating',
