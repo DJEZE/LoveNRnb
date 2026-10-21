@@ -30,7 +30,7 @@ export const UPCOMING_EVENT: Event = {
   state: 'TX',
   heroImage: '/images/hero-placeholder.jpg',
   description:
-    "LoveNRnB Fest is bringing Houston's R&B community together for an unforgettable night of live music, incredible energy, and shared experiences. Headlined by Kaash Paige, featuring rising talent and DJs bringing your favorite sounds to life.",
+    "LoveNRnB Fest is bringing Houston's R&B community together for an unforgettable night of live music, incredible energy, and shared experiences. Featuring Kaash Paige, rising talent, and DJs bringing your favorite sounds to life.",
   ageRestriction: '18+',
   isUpcoming: true,
   isSoldOut: false,

@@ -30,7 +30,7 @@ function HeadlinerCard({ artist }: { artist: Artist }) {
               backgroundImage: `repeating-linear-gradient(-45deg, #CC0000 0px, #CC0000 1px, transparent 1px, transparent 50px)`,
             }}
           />
-          <p className="font-body text-xs text-gold uppercase tracking-[0.3em] relative z-10">Headliner</p>
+          <p className="font-body text-xs text-gold uppercase tracking-[0.3em] relative z-10">Performing Live</p>
           <p
             className="font-display font-black uppercase text-white/20 relative z-10"
             style={{ fontSize: 'clamp(4rem, 12vw, 12rem)', lineHeight: '0.9', letterSpacing: '-0.03em' }}
@@ -60,7 +60,7 @@ function HeadlinerCard({ artist }: { artist: Artist }) {
           <div className="absolute inset-0 artist-overlay" />
           <div className="absolute bottom-0 left-0 right-0 p-8 lg:p-12 flex items-end justify-between">
             <div>
-              <p className="font-body text-xs text-gold uppercase tracking-[0.3em] mb-2">Headliner</p>
+              <p className="font-body text-xs text-gold uppercase tracking-[0.3em] mb-2">Performing Live</p>
               <h3
                 className="font-display font-black uppercase text-white leading-none"
                 style={{ fontSize: 'clamp(3.5rem, 9vw, 9rem)', letterSpacing: '-0.03em' }}
@@ -259,7 +259,7 @@ export function Lineup({ artists, eventName, showAll = false }: LineupProps) {
       {/* ── Headliner ── */}
       <StaggerContainer className="container mx-auto px-6 pt-8 lg:pt-10 pb-8 lg:pb-12">
         <p className="font-body text-2xs text-gold uppercase tracking-[0.3em] mb-6">
-          Headlining Live
+          Performing Live
         </p>
         <div className="grid grid-cols-1 gap-4 lg:gap-5">
           {headliner && <HeadlinerCard artist={headliner} />}

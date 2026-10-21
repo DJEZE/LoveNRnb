@@ -27,7 +27,7 @@ export function FinalCTA() {
             className="font-display font-bold uppercase text-gold mb-2"
             style={{ fontSize: 'clamp(1.25rem, 3.5vw, 2.5rem)', letterSpacing: '-0.01em' }}
           >
-            Headlined by Kaash Paige
+            Kaash Paige
           </p>
           <p
             className="font-display font-bold uppercase text-white/40 mb-8"

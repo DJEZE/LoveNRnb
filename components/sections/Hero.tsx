@@ -84,9 +84,6 @@ export function Hero({ event }: HeroProps) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <p className="font-display font-bold uppercase text-white/50 tracking-[0.12em] text-sm lg:text-base mb-2">
-            Headlined By
-          </p>
           <p
             className="font-display font-black uppercase text-gold leading-none tracking-tight"
             style={{ fontSize: 'clamp(2rem, 6vw, 4.5rem)', letterSpacing: '-0.02em' }}
