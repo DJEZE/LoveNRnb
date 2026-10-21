@@ -163,7 +163,7 @@ export const UPCOMING_EVENT: Event = {
       id: 'dj-007',
       name: 'Thomas The Square',
       role: 'dj',
-      image: '/images/artists/thomas-the-square.jpg',
+      image: '/images/artists/ThomasTheSquare .jpeg',
       genre: 'DJ Set',
       tba: false,
     },
