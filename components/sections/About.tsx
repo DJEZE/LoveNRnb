@@ -15,19 +15,15 @@ export function About() {
             className="font-display font-black uppercase text-white leading-none mb-10"
             style={{ fontSize: 'clamp(3rem, 7vw, 6rem)', letterSpacing: '-0.03em' }}
           >
-            More Than a Concert.<br />It&apos;s a Celebration of <span className="text-gold">R&amp;B.</span>
+            Where <span className="text-gold">R&amp;B</span><br />Comes Alive.
           </h2>
 
           <p className="font-body text-base lg:text-lg text-white/60 leading-relaxed mb-6">
-            LoveNRnB Fest is bringing Houston&apos;s R&amp;B community together for an unforgettable night of live music, incredible energy, and shared experiences. From the songs we know word for word to the artists shaping the future of R&amp;B, this is a celebration of the music and culture that connects us.
-          </p>
-
-          <p className="font-body text-base lg:text-lg text-white/60 leading-relaxed mb-6">
-            Headlined by R&amp;B sensation Kaash Paige, LoveNRnB Fest will feature incredible live performances, rising talent, and DJs bringing your favorite sounds to life.
+            A live R&amp;B experience bringing together the artists you love, the next generation of R&amp;B talent, and the DJs who keep the culture moving.
           </p>
 
           <p className="font-body text-base lg:text-lg text-white/60 leading-relaxed">
-            Whether you&apos;re coming to sing your heart out, discover your next favorite artist, or experience R&amp;B with people who love it just as much as you do — this is where you belong. One night. One love. One unforgettable R&amp;B experience.
+            Whether you&apos;re coming to sing your heart out, discover your next favorite artist, or experience R&amp;B with people who love it just as much as you do — this is where you belong.
           </p>
         </AnimatedSection>
       </div>

@@ -20,7 +20,7 @@ export const UPCOMING_EVENT: Event = {
   id: 'evt-001',
   slug: 'lovenrnb-fest-2026',
   name: 'LoveNRnB Fest 2026',
-  tagline: 'One Night. One Love. One Unforgettable R&B Experience.',
+  tagline: 'Where R&B Comes Alive.',
   date: '2026-11-21T19:30:00-06:00',
   doorsOpen: '6:30 PM',
   showTime: '7:30 PM',

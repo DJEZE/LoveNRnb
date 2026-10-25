@@ -53,7 +53,7 @@ export function FinalCTA() {
           </a>
 
           <p className="font-display font-bold uppercase text-white/20 text-sm tracking-[0.15em] mt-16">
-            One Night. One Love. One Unforgettable R&amp;B Experience. ❤️
+            LoveNRnB. Where R&amp;B Comes Alive. ❤️
           </p>
         </AnimatedSection>
       </div>

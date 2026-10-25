@@ -58,7 +58,7 @@ export function Footer() {
             </Link>
 
             <p className="font-body text-sm text-white/40 leading-relaxed mb-7 max-w-[220px]">
-              Houston&apos;s R&amp;B experience. Curated artists. Unforgettable performances.
+              Where R&amp;B Comes Alive.
             </p>
 
             {/* Social icons */}
