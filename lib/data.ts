@@ -313,5 +313,6 @@ export const SPONSORS: Sponsor[] = [
     logo: '/images/sponsors/parlor-social-club.png',
     tier: 'presenting',
     url: 'https://parlor.social/',
+    logoSize: 'h-16 lg:h-20',
   },
 ]
