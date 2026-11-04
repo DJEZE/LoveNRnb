@@ -307,4 +307,11 @@ export const SPONSORS: Sponsor[] = [
     url: 'https://zweekslaw.com/',
     logoSize: 'h-20 lg:h-28',
   },
+  {
+    id: 'spon-005',
+    name: 'Parlor Social Club',
+    logo: '/images/sponsors/Parlor social club.png',
+    tier: 'presenting',
+    url: 'https://www.instagram.com/parlorsocialclub/',
+  },
 ]
