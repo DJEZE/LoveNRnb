@@ -310,7 +310,7 @@ export const SPONSORS: Sponsor[] = [
   {
     id: 'spon-005',
     name: 'Parlor Social Club',
-    logo: '/images/sponsors/Parlor social club.png',
+    logo: '/images/sponsors/Parlor%20social%20club.png',
     tier: 'presenting',
     url: 'https://parlor.social/',
   },
