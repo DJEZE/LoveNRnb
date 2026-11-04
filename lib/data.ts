@@ -312,6 +312,6 @@ export const SPONSORS: Sponsor[] = [
     name: 'Parlor Social Club',
     logo: '/images/sponsors/Parlor social club.png',
     tier: 'presenting',
-    url: 'https://www.instagram.com/parlorsocialclub/',
+    url: 'https://parlor.social/',
   },
 ]
