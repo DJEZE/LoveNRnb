@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import { Navigation } from '@/components/Navigation'
 import { Footer } from '@/components/Footer'
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
@@ -47,6 +48,17 @@ export default function EventsPage() {
         <section className="bg-black">
           <div className="container mx-auto px-6 py-16 lg:py-24">
             <AnimatedSection className="max-w-3xl mx-auto">
+              {/* SXSW Logo */}
+              <div className="mb-10">
+                <Image
+                  src="/images/sxsw-logo.png"
+                  alt="SXSW"
+                  width={2000}
+                  height={461}
+                  className="w-auto h-10 lg:h-14 object-contain"
+                />
+              </div>
+
               {/* Badge */}
               <div className="inline-flex items-center gap-2 border border-gold/40 px-4 py-2 mb-10">
                 <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse-dot flex-shrink-0" />
