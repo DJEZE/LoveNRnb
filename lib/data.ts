@@ -312,7 +312,7 @@ export const SPONSORS: Sponsor[] = [
     name: 'elMusico',
     logo: '/images/sponsors/elMusico.png',
     tier: 'presenting',
-    url: 'https://www.instagram.com/elmusico/',
+    url: 'https://www.elmusicotequila.com/',
   },
   {
     id: 'spon-005',
