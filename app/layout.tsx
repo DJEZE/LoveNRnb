@@ -8,15 +8,13 @@ export const metadata: Metadata = {
     process.env.NEXT_PUBLIC_SITE_URL ?? 'https://lovenrnb.com'
   ),
   title: {
-    default: 'LoveNRnB Fest 2026 | Kaash Paige Live in Houston | November 21',
+    default: 'LoveNRnB Fest 2026 | Live R&B Experience | November 21 | Houston',
     template: '%s | LoveNRnB Fest 2026',
   },
   description:
-    "LoveNRnB Fest 2026 is coming to Rich's Houston on November 21! Experience an unforgettable night of live R&B headlined by Kaash Paige, featuring rising artists and incredible DJs. Get your tickets today!",
+    "LoveNRnB Fest 2026 is coming to Rich's Houston on November 21! Experience an unforgettable night of live R&B featuring Kaash Paige, rising artists, and incredible DJs. Get your tickets today!",
   keywords: [
     'LoveNRnB Fest 2026',
-    'Kaash Paige Houston',
-    'Kaash Paige Concert 2026',
     'Houston R&B Concert',
     'Houston R&B Events',
     "Rich's Houston",
@@ -30,21 +28,21 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     siteName: 'LoveNRnB',
-    title: "LoveNRnB Fest 2026 ❤️ | Kaash Paige Live in Houston",
+    title: "LoveNRnB Fest 2026 ❤️ | Live R&B Experience | Houston",
     description:
-      "Houston, this one's for the R&B lovers! Experience LoveNRnB Fest 2026, headlined by Kaash Paige, November 21 at Rich's Houston. Tickets available now.",
+      "Houston, this one's for the R&B lovers! Experience LoveNRnB Fest 2026 featuring Kaash Paige, November 21 at Rich's Houston. Tickets available now.",
     images: [
       {
         url: '/eze-back-lovernb.jpg',
         width: 1200,
         height: 630,
-        alt: 'LoveNRnB Fest 2026 — Kaash Paige Live in Houston',
+        alt: 'LoveNRnB Fest 2026 — Live R&B Experience in Houston',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: "LoveNRnB Fest 2026 ❤️ | Kaash Paige Live in Houston",
+    title: "LoveNRnB Fest 2026 ❤️ | Live R&B Experience | Houston",
     description: "Houston, this one's for the R&B lovers! November 21 at Rich's Houston. Tickets available now.",
     images: ['/eze-back-lovernb.jpg'],
     creator: '@lovenrnbfest',

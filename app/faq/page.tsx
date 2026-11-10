@@ -20,7 +20,7 @@ const FAQS = [
       },
       {
         q: 'Who is headlining LoveNRnB Fest?',
-        a: 'R&B artist Kaash Paige is the official headliner for LoveNRnB Fest 2026, with more artists and special guests to be announced.',
+        a: 'LoveNRnB Fest 2026 features R&B artist Kaash Paige, with more artists and special guests to be announced.',
       },
       {
         q: 'Is there an age requirement?',
