@@ -308,6 +308,13 @@ export const SPONSORS: Sponsor[] = [
     logoSize: 'h-20 lg:h-28',
   },
   {
+    id: 'spon-006',
+    name: 'elMusico',
+    logo: '/images/sponsors/elMusico.png',
+    tier: 'presenting',
+    url: 'https://www.instagram.com/elmusico/',
+  },
+  {
     id: 'spon-005',
     name: 'Parlor Social Club',
     logo: '/images/sponsors/parlor-social-club.png',
