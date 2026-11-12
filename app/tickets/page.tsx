@@ -25,7 +25,7 @@ export default function TicketsPage() {
           </div>
           <div className="w-full h-px bg-white/10 mb-10" />
           <iframe
-            src="https://posh.vip/embed/checkout/lovenrnb-festival"
+            src="https://www.gatekeepers.app/events/lovenrnb-fest"
             height="700px"
             width="100%"
             style={{ border: 'none' }}

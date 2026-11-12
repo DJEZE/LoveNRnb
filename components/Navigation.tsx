@@ -129,7 +129,7 @@ export function Navigation() {
             {/* Desktop CTA */}
             <div className="hidden md:block">
               <a
-                href="https://posh.vip/e/lovenrnb-festival"
+                href="https://www.gatekeepers.app/events/lovenrnb-fest"
                 className="inline-flex items-center h-9 px-5 font-body text-xs font-semibold uppercase tracking-[0.15em] text-black bg-gold hover:bg-gold-light transition-colors duration-200"
               >
                 Get Tickets
@@ -214,7 +214,7 @@ export function Navigation() {
           </nav>
 
           <a
-            href="https://posh.vip/e/lovenrnb-festival"
+            href="https://www.gatekeepers.app/events/lovenrnb-fest"
             onClick={() => setMobileOpen(false)}
             className="inline-flex items-center h-12 px-8 font-body text-sm font-semibold uppercase tracking-widest text-black bg-gold hover:bg-gold-light transition-colors"
           >

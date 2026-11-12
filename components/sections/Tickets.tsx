@@ -6,7 +6,7 @@ import { AnimatedSection, StaggerContainer, staggerChild } from '@/components/ui
 import { getAvailabilityLabel, cn } from '@/lib/utils'
 import type { TicketTier } from '@/lib/types'
 
-const POSH_URL = 'https://posh.vip/e/lovenrnb-festival'
+const POSH_URL = 'https://www.gatekeepers.app/events/lovenrnb-fest'
 const VIP_URL = 'https://wl.eventim.us/event/kaash-paige/708839?afflky=RichsHouston'
 
 interface TicketsProps {

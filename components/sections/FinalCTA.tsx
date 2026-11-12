@@ -44,7 +44,7 @@ export function FinalCTA() {
           </p>
 
           <a
-            href="https://posh.vip/e/lovenrnb-festival"
+            href="https://www.gatekeepers.app/events/lovenrnb-fest"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center h-16 px-14 font-body text-sm font-bold uppercase tracking-[0.25em] text-black bg-gold hover:bg-gold-light transition-colors duration-200"

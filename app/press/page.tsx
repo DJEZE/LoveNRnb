@@ -15,7 +15,7 @@ export default function PressPage() {
             LoveN<span className="text-gold">Rnb</span>
           </Link>
           <a
-            href="https://posh.vip/e/lovenrnb-festival"
+            href="https://www.gatekeepers.app/events/lovenrnb-fest"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center h-9 px-5 font-body text-xs font-semibold uppercase tracking-[0.15em] text-black bg-gold hover:bg-gold-light transition-colors"

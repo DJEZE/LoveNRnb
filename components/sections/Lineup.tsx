@@ -330,7 +330,7 @@ export function Lineup({ artists, eventName, showAll = false }: LineupProps) {
             Get ready for a night celebrating the sounds of R&amp;B — established talent, emerging voices, and artists representing the next generation of music. From unforgettable live performances to the DJs setting the mood, every moment is designed for the R&amp;B lovers.
           </p>
           <a
-            href="https://posh.vip/e/lovenrnb-festival"
+            href="https://www.gatekeepers.app/events/lovenrnb-fest"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center h-12 px-10 font-body text-xs font-semibold uppercase tracking-[0.2em] text-black bg-gold hover:bg-gold-light transition-colors duration-200"

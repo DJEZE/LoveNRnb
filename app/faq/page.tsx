@@ -58,7 +58,7 @@ const FAQS = [
       {
         q: 'Where do I purchase tickets?',
         a: 'Tickets are available now through our official ticketing page. Click the Get Tickets button on this site.',
-        cta: { label: 'Get Tickets Now', href: 'https://posh.vip/e/lovenrnb-festival' },
+        cta: { label: 'Get Tickets Now', href: 'https://www.gatekeepers.app/events/lovenrnb-fest' },
       },
     ],
   },
@@ -169,7 +169,7 @@ export default function FAQPage() {
             LoveN<span className="text-gold">Rnb</span>
           </Link>
           <Link
-            href="https://posh.vip/e/lovenrnb-festival"
+            href="https://www.gatekeepers.app/events/lovenrnb-fest"
             className="inline-flex items-center h-9 px-5 font-body text-xs font-semibold uppercase tracking-[0.15em] text-black bg-gold hover:bg-gold-light transition-colors"
           >
             Get Tickets
