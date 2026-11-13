@@ -44,6 +44,86 @@ export default function EventsPage() {
           <div className="w-full h-px bg-white/10" />
         </section>
 
+        {/* ── Love In This Club ── */}
+        <section className="bg-black">
+          <div className="container mx-auto px-6 py-16 lg:py-24">
+            <AnimatedSection className="max-w-3xl mx-auto">
+              {/* Badge */}
+              <div className="inline-flex items-center gap-2 border border-gold/40 px-4 py-2 mb-10">
+                <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse-dot flex-shrink-0" />
+                <span className="font-body text-2xs text-gold uppercase tracking-[0.25em]">
+                  LoveNRnB Weekend Kickoff · Free Entry
+                </span>
+              </div>
+
+              <p className="font-body text-2xs text-gold uppercase tracking-[0.3em] mb-4">
+                Friday, November 20, 2026 · 9 PM – 2 AM · Houston, TX
+              </p>
+              <h2
+                className="font-display font-black uppercase text-white leading-none mb-8"
+                style={{ fontSize: 'clamp(2.5rem, 7vw, 6rem)', letterSpacing: '-0.03em' }}
+              >
+                Love In<br />This Club
+              </h2>
+
+              <div className="space-y-5 mb-10">
+                <p className="font-body text-base text-white/60 leading-relaxed">
+                  Kick off LoveNRnB Weekend with us at LOVE IN THIS CLUB — a free R&amp;B and Hip-Hop party bringing good music, good people, and good vibes together before LoveNRnB Fest 2026.
+                </p>
+                <p className="font-body text-base text-white/60 leading-relaxed">
+                  Presented by Unscripted &amp; DJEZE, we&apos;re taking over Tikila&apos;s for a night of nonstop music and energy to set the tone for the weekend.
+                </p>
+              </div>
+
+              {/* Music by */}
+              <div className="mb-10">
+                <p className="font-body text-2xs text-gold uppercase tracking-[0.3em] mb-5">Music By</p>
+                <div className="flex flex-col gap-2">
+                  {['The AM', 'SuperJay', 'Jazzie Rose'].map((artist) => (
+                    <p key={artist} className="font-display font-black uppercase text-white text-xl lg:text-2xl tracking-tight">
+                      {artist}
+                    </p>
+                  ))}
+                </div>
+              </div>
+
+              {/* Event details */}
+              <div className="border border-white/10 p-8 mb-10">
+                <p className="font-body text-2xs text-gold uppercase tracking-[0.3em] mb-5">Event Details</p>
+                <div className="space-y-2">
+                  {[
+                    { label: 'Date', value: 'Friday, November 20, 2026' },
+                    { label: 'Time', value: '9:00 PM – 2:00 AM' },
+                    { label: 'Venue', value: "Tikila's" },
+                    { label: 'Address', value: '2708 N Shepherd Dr, Houston, TX' },
+                    { label: 'Admission', value: 'FREE with RSVP' },
+                    { label: 'Age', value: '21+' },
+                    { label: 'Sponsored by', value: 'El Musico Tequila' },
+                  ].map(({ label, value }) => (
+                    <div key={label} className="flex gap-4">
+                      <span className="font-body text-xs text-white/30 uppercase tracking-widest w-24 flex-shrink-0 pt-0.5">{label}</span>
+                      <span className="font-body text-sm text-white/70">{value}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <a
+                href="https://posh.vip/e/loveinthisclub"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center h-14 px-12 font-body text-sm font-bold uppercase tracking-[0.2em] text-black bg-gold hover:bg-gold-light transition-colors duration-200"
+              >
+                Free RSVP
+              </a>
+              <p className="font-body text-xs text-white/25 mt-4">
+                Free admission subject to venue capacity. RSVP does not guarantee entry.
+              </p>
+            </AnimatedSection>
+          </div>
+          <div className="w-full h-px bg-white/10" />
+        </section>
+
         {/* ── SXSW 2027 ── */}
         <section className="bg-black">
           <div className="container mx-auto px-6 py-16 lg:py-24">
