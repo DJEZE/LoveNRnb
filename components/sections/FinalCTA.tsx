@@ -27,13 +27,13 @@ export function FinalCTA() {
             className="font-display font-bold uppercase text-gold mb-2"
             style={{ fontSize: 'clamp(1.25rem, 3.5vw, 2.5rem)', letterSpacing: '-0.01em' }}
           >
-            Kaash Paige
+            Jacquees
           </p>
           <p
             className="font-display font-bold uppercase text-white/40 mb-8"
             style={{ fontSize: 'clamp(0.9rem, 2vw, 1.5rem)', letterSpacing: '0.05em' }}
           >
-            &amp; Special Guest
+            Kaash Paige &amp; More
           </p>
 
           <p className="font-body text-base text-white/50 mb-3">

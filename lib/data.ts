@@ -36,9 +36,19 @@ export const UPCOMING_EVENT: Event = {
   isSoldOut: false,
   lineup: [
     {
+      id: 'artist-000',
+      name: 'Jacquees',
+      role: 'headliner',
+      image: '/images/artists/jacquees.jpeg',
+      genre: 'R&B',
+      instagram: 'https://www.instagram.com/jacquees/',
+      spotify: '1GhGqxuMhLKzaXfBwrAGXL',
+      tba: false,
+    },
+    {
       id: 'artist-001',
       name: 'Kaash Paige',
-      role: 'headliner',
+      role: 'featured',
       image: '/images/artists/Kaash.jpg',
       genre: 'R&B',
       instagram: 'https://www.instagram.com/kaashpaige/',

@@ -88,10 +88,10 @@ export function Hero({ event }: HeroProps) {
             className="font-display font-black uppercase text-gold leading-none tracking-tight"
             style={{ fontSize: 'clamp(2rem, 6vw, 4.5rem)', letterSpacing: '-0.02em' }}
           >
-            Kaash Paige
+            Jacquees
           </p>
           <p className="font-display font-bold uppercase text-white/40 tracking-[0.12em] text-sm lg:text-base mt-2">
-            &amp; Special Guest
+            Kaash Paige &amp; More
           </p>
           <p className="font-display font-bold uppercase text-white/50 tracking-[0.12em] text-sm lg:text-base mt-3">
             Houston, This One&apos;s for the <span className="text-gold">R&amp;B</span> Lovers.
