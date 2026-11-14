@@ -42,7 +42,7 @@ export const UPCOMING_EVENT: Event = {
       image: '/images/artists/jacquees.jpeg',
       genre: 'R&B',
       instagram: 'https://www.instagram.com/jacquees/',
-      spotify: '1GhGqxuMhLKzaXfBwrAGXL',
+      spotify: '4tMm1dU6Gn04VAZ9ClHcIZ',
       tba: false,
     },
     {
