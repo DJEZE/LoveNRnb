@@ -19,8 +19,8 @@ const FAQS = [
         a: 'Saturday, November 21, 2026. Doors open at 6:30 PM, with live performances beginning at 7:30 PM.',
       },
       {
-        q: 'Who is headlining LoveNRnB Fest?',
-        a: 'LoveNRnB Fest 2026 features R&B artist Kaash Paige, with more artists and special guests to be announced.',
+        q: 'Who is performing at LoveNRnB Fest?',
+        a: 'LoveNRnB Fest 2026 features R&B artists Jacquees and Kaash Paige, with more artists and special guests to be announced.',
       },
       {
         q: 'Is there an age requirement?',
