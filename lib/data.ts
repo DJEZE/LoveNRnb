@@ -329,7 +329,7 @@ export const SPONSORS: Sponsor[] = [
     name: 'Slapwoods',
     logo: '/images/sponsors/slapwoods.jpg',
     tier: 'presenting',
-    url: 'https://www.instagram.com/slapwoods/',
+    url: 'https://www.slapwoods.com/',
   },
   {
     id: 'spon-005',
