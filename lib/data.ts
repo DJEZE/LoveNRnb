@@ -325,6 +325,13 @@ export const SPONSORS: Sponsor[] = [
     url: 'https://www.elmusicotequila.com/',
   },
   {
+    id: 'spon-007',
+    name: 'Slapwoods',
+    logo: '/images/sponsors/slapwoods.jpg',
+    tier: 'presenting',
+    url: 'https://www.instagram.com/slapwoods/',
+  },
+  {
     id: 'spon-005',
     name: 'Parlor Social Club',
     logo: '/images/sponsors/parlor-social-club.png',
