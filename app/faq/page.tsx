@@ -37,7 +37,7 @@ const FAQS = [
     questions: [
       {
         q: 'What ticket types are available?',
-        a: 'General Admission gives you full access to LoveNRnB Fest 2026, featuring live performances, incredible DJs, and an unforgettable R&B concert atmosphere.\n\nVIP Table Reservations are also available for guests looking to elevate their experience with reserved seating and exclusive table experiences. Limited availability — bottle service minimums may apply.',
+        a: 'General Admission ($35) gives you full access to LoveNRnB Fest 2026 featuring Jacquees, Kaash Paige & more — live performances, incredible DJs, and an unforgettable R&B concert atmosphere.\n\nIndividual VIP ($75) includes GA access plus the designated VIP area, a complimentary LoveNRnB goodie bag, and entry to the exclusive Friday VIP Party.\n\nVIP Table ($300) seats 8 guests with a reserved table, VIP area access, and Friday VIP Party admission for the full group.',
       },
       {
         q: 'Are VIP tables available?',

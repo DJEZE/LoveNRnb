@@ -193,9 +193,9 @@ export const UPCOMING_EVENT: Event = {
     {
       id: 'tier-ga',
       name: 'General Admission',
-      price: 30,
+      price: 35,
       perks: [
-        'Admission to LoveNRnB Fest featuring Kaash Paige',
+        'Admission to LoveNRnB Fest featuring Jacquees, Kaash Paige & more',
         'Access to all performances, DJs, and the official afterparty',
         'General admission areas',
       ],
