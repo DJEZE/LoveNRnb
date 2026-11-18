@@ -223,7 +223,7 @@ export default function FAQPage() {
             Can&apos;t find what you&apos;re looking for? Reach out directly and we&apos;ll get back to you.
           </p>
           <a
-            href="mailto:info@lovenrnb.com"
+            href="mailto:eze@lovenrnb.com"
             className="inline-flex items-center h-12 px-8 font-body text-xs font-semibold uppercase tracking-[0.15em] text-black bg-gold hover:bg-gold-light transition-colors"
           >
             Contact Us

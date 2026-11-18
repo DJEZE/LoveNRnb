@@ -50,13 +50,13 @@ const SECTIONS = [
   {
     title: 'Your Rights',
     body: [
-      'You have the right to request access to, correction of, or deletion of any personal data we hold about you. To make a request, email us at info@lovenrnb.com.',
+      'You have the right to request access to, correction of, or deletion of any personal data we hold about you. To make a request, email us at eze@lovenrnb.com.',
     ],
   },
   {
     title: 'Contact',
     body: [
-      'If you have any questions about this Privacy Policy, contact us at info@lovenrnb.com or reach out via @lovenrnbfest on Instagram.',
+      'If you have any questions about this Privacy Policy, contact us at eze@lovenrnb.com or reach out via @lovenrnbfest on Instagram.',
     ],
   },
 ]

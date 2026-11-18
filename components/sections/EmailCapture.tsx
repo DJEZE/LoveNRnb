@@ -200,7 +200,7 @@ export function EmailCapture() {
 
                 {serverError && (
                   <p className="font-body text-xs text-red-400 mt-4">
-                    Something went wrong — please try again or email info@lovenrnb.com.
+                    Something went wrong — please try again or email eze@lovenrnb.com.
                   </p>
                 )}
               </motion.div>

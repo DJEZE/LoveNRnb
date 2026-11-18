@@ -53,7 +53,7 @@ const SECTIONS = [
   {
     title: 'Contact',
     body: [
-      'For questions regarding these terms, reach out to us at info@lovenrnb.com or follow @lovenrnbfest on Instagram.',
+      'For questions regarding these terms, reach out to us at eze@lovenrnb.com or follow @lovenrnbfest on Instagram.',
     ],
   },
 ]

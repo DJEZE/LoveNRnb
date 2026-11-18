@@ -180,10 +180,10 @@ export default function EventsPage() {
                   Interested in partnering with LoveNRnB at SXSW 2027? For sponsorships, artist submissions, brand partnerships, and general inquiries:
                 </p>
                 <a
-                  href="mailto:info@lovenrnb.com"
+                  href="mailto:eze@lovenrnb.com"
                   className="inline-flex items-center justify-center h-11 px-8 font-body text-xs font-semibold uppercase tracking-[0.2em] text-black bg-gold hover:bg-gold-light transition-colors duration-200"
                 >
-                  info@lovenrnb.com
+                  eze@lovenrnb.com
                 </a>
               </div>
             </AnimatedSection>
