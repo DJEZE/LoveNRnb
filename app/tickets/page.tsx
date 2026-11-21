@@ -3,8 +3,8 @@ import { Navigation } from '@/components/Navigation'
 import { Footer } from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Tickets — Kaash Paige Live | November 21 | Rich\'s Houston',
-  description: "Secure your tickets to LoveNRnB Fest 2026. Headlined by Kaash Paige. November 21 at Rich's Houston. General Admission and VIP Table Reservations available.",
+  title: 'Tickets — LoveNRnB Fest 2026 | November 21 | Rich\'s Houston',
+  description: "Secure your tickets to LoveNRnB Fest 2026 featuring Jacquees, Kaash Paige & more. November 21 at Rich's Houston. GA, VIP, and VIP Table available.",
 }
 
 export default function TicketsPage() {
@@ -21,7 +21,7 @@ export default function TicketsPage() {
             >
               Tickets
             </h1>
-            <p className="font-body text-sm text-white/30 mt-3">LoveNRnB Fest 2026 · Kaash Paige · November 21 · Rich&apos;s Houston</p>
+            <p className="font-body text-sm text-white/30 mt-3">LoveNRnB Fest 2026 · Jacquees · Kaash Paige &amp; More · November 21 · Rich&apos;s Houston</p>
           </div>
           <div className="w-full h-px bg-white/10 mb-10" />
           <iframe

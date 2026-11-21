@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     template: '%s | LoveNRnB Fest 2026',
   },
   description:
-    "LoveNRnB Fest 2026 is coming to Rich's Houston on November 21! Experience an unforgettable night of live R&B featuring Kaash Paige, rising artists, and incredible DJs. Get your tickets today!",
+    "LoveNRnB Fest 2026 is coming to Rich's Houston on November 21! Experience an unforgettable night of live R&B featuring Jacquees, Kaash Paige, rising artists, and incredible DJs. Get your tickets today!",
   keywords: [
     'LoveNRnB Fest 2026',
     'Houston R&B Concert',
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     siteName: 'LoveNRnB',
     title: "LoveNRnB Fest 2026 ❤️ | Live R&B Experience | Houston",
     description:
-      "Houston, this one's for the R&B lovers! Experience LoveNRnB Fest 2026 featuring Kaash Paige, November 21 at Rich's Houston. Tickets available now.",
+      "Houston, this one's for the R&B lovers! Experience LoveNRnB Fest 2026 featuring Jacquees, Kaash Paige & more. November 21 at Rich's Houston. Tickets available now.",
     images: [
       {
         url: '/eze-back-lovernb.jpg',

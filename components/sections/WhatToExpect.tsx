@@ -7,7 +7,7 @@ const EXPERIENCES = [
   {
     label: 'Live R&B Performances',
     description:
-      'Experience unforgettable live music headlined by Kaash Paige, alongside rising artists and special guests.',
+      'Experience unforgettable live music featuring Jacquees, Kaash Paige, rising artists, and special guests.',
   },
   {
     label: 'Incredible DJs',
