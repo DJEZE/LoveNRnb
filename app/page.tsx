@@ -12,8 +12,8 @@ export default function HomePage() {
     <main className="relative bg-black">
       <Navigation />
       <BrandHero />
-      <Experiences />
       <ArtistFeature />
+      <Experiences />
       <EmailCapture />
       <Sponsors sponsors={SPONSORS.filter((s) => s.id === 'spon-002' || s.id === 'spon-003')} />
       <Footer />
