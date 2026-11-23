@@ -39,7 +39,7 @@ export const metadata: Metadata = {
         url: '/eze-back-lovernb.jpg',
         width: 1200,
         height: 630,
-        alt: 'LoveNRnB Fest 2026 — Live R&B Experience in Houston',
+        alt: 'LoveNRnB — More Than Music. It\'s An Experience.',
       },
     ],
   },

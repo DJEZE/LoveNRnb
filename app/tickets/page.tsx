@@ -3,8 +3,8 @@ import { Navigation } from '@/components/Navigation'
 import { Footer } from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Tickets — LoveNRnB Fest 2026 | November 21 | Rich\'s Houston',
-  description: "Secure your tickets to LoveNRnB Fest 2026 featuring Jacquees, Kaash Paige & more. November 21 at Rich's Houston. GA, VIP, and VIP Table available.",
+  title: 'Tickets — LoveNRnB',
+  description: 'Get tickets to LoveNRnB events. LoveNRnB Fest, LoveNRnB Live, and more R&B experiences coming in 2027.',
 }
 
 export default function TicketsPage() {
@@ -14,14 +14,14 @@ export default function TicketsPage() {
       <main className="bg-black min-h-screen pt-20">
         <div className="container mx-auto px-6 py-10 lg:py-16">
           <div className="mb-8">
-            <p className="font-body text-2xs text-gold uppercase tracking-[0.3em] mb-3">Secure Your Spot</p>
+            <p className="font-body text-2xs text-gold uppercase tracking-[0.3em] mb-3">LoveNRnB</p>
             <h1
               className="font-display font-black uppercase text-white leading-none"
               style={{ fontSize: 'clamp(4rem, 10vw, 10rem)', letterSpacing: '-0.03em' }}
             >
               Tickets
             </h1>
-            <p className="font-body text-sm text-white/30 mt-3">LoveNRnB Fest 2026 · Jacquees · Kaash Paige &amp; More · November 21 · Rich&apos;s Houston</p>
+            <p className="font-body text-sm text-white/30 mt-3">LoveNRnB · Houston, TX &amp; Nationwide</p>
           </div>
           <div className="w-full h-px bg-white/10 mb-10" />
           <iframe

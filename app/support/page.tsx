@@ -4,9 +4,8 @@ import { Footer } from '@/components/Footer'
 import { SupportContent } from '@/components/sections/SupportContent'
 
 export const metadata: Metadata = {
-  title: 'Support & Partner',
-  description:
-    'Support, sponsor, or invest in LoveNRnB Fest — an independently owned R&B festival built in Houston, Texas.',
+  title: 'Partnerships — LoveNRnB',
+  description: 'Partner with LoveNRnB — the R&B entertainment brand behind LoveNRnB Fest, LoveNRnB Live, and an official SXSW 2027 showcase.',
 }
 
 export default function SupportPage() {
