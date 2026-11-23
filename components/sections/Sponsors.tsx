@@ -64,23 +64,12 @@ export function Sponsors({ sponsors }: SponsorsProps) {
             <p className="font-body text-sm text-white/40 mb-10 max-w-md mx-auto leading-relaxed">
               Whether you&apos;re a brand, student leader, vendor, or media outlet — we&apos;d love to work with you.
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-lg mx-auto">
-              {[
-                { label: 'Become a Sponsor', href: 'mailto:partnerships@lovenrnb.com' },
-                { label: 'Become a Vendor', href: 'https://docs.google.com/forms/d/e/1FAIpQLSevxsrSzvEGXMIaWvsXwQ7shRLtt-OK_Of8aJcFi4QX56x4ig/viewform?usp=preview' },
-                { label: 'Ambassador Program', href: 'https://forms.gle/2iDK6xdAbVshWvu59' },
-              ].map(({ label, href }) => (
-                <a
-                  key={label}
-                  href={href}
-                  target={href.startsWith('http') ? '_blank' : undefined}
-                  rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                  className="inline-flex items-center justify-center h-11 px-5 font-body text-xs font-semibold uppercase tracking-[0.15em] text-gold border border-gold/40 hover:bg-gold/10 transition-colors duration-200"
-                >
-                  {label}
-                </a>
-              ))}
-            </div>
+            <a
+              href="mailto:eze@lovenrnb.com"
+              className="inline-flex items-center justify-center h-11 px-8 font-body text-xs font-semibold uppercase tracking-[0.15em] text-gold border border-gold/40 hover:bg-gold/10 transition-colors duration-200"
+            >
+              Become a Sponsor
+            </a>
           </div>
         </AnimatedSection>
       </div>
