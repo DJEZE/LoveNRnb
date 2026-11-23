@@ -12,18 +12,18 @@ export function BrandHero() {
       {/* Background image with overlay */}
       <div className="absolute inset-0">
         <Image
-          src="/eze-back-lovernb.jpg"
+          src="/images/hero-concert.jpg"
           alt="LoveNRnB"
           fill
-          className="object-cover object-center opacity-30"
+          className="object-cover object-center opacity-55"
           priority
         />
         <div
           className="absolute inset-0"
           style={{
             background: `
-              radial-gradient(ellipse 90% 70% at 50% 40%, rgba(204,0,0,0.22) 0%, rgba(140,0,0,0.08) 50%, transparent 75%),
-              linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.6) 60%, #000 100%)
+              radial-gradient(ellipse 90% 70% at 50% 40%, rgba(204,0,0,0.15) 0%, rgba(140,0,0,0.05) 50%, transparent 75%),
+              linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.55) 50%, #000 100%)
             `,
           }}
         />
