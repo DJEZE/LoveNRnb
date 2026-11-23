@@ -114,44 +114,6 @@ export default function PartnershipsPage() {
           <div className="w-full h-px bg-white/10" />
         </section>
 
-        {/* Presented By */}
-        <section className="bg-black">
-          <div className="container mx-auto px-6 py-16 lg:py-24">
-            <AnimatedSection className="mb-10">
-              <p className="font-body text-2xs text-gold uppercase tracking-[0.3em] mb-4">LoveNRnB Fest 2026</p>
-              <h2
-                className="font-display font-black uppercase text-white leading-none"
-                style={{ fontSize: 'clamp(2.5rem, 6vw, 6rem)', letterSpacing: '-0.03em' }}
-              >
-                Presented<br /><span className="text-gold">By</span>
-              </h2>
-            </AnimatedSection>
-
-            <div className="w-full h-px bg-white/10 mb-10" />
-
-            <div className="flex flex-wrap items-center gap-16 lg:gap-24">
-              {SPONSORS.filter((s) => s.id === 'spon-002' || s.id === 'spon-003').map((sponsor) => (
-                <a
-                  key={sponsor.id}
-                  href={sponsor.url ?? '#'}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center group"
-                >
-                  <Image
-                    src={sponsor.logo}
-                    alt={sponsor.name}
-                    width={320}
-                    height={120}
-                    className={`w-auto object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300 ${sponsor.logoSize ?? 'h-40 lg:h-56'}`}
-                  />
-                </a>
-              ))}
-            </div>
-          </div>
-          <div className="w-full h-px bg-white/10" />
-        </section>
-
         {/* elMusico photo */}
         <section className="bg-black">
           <div className="relative w-full h-[50vh] lg:h-[65vh] overflow-hidden">
