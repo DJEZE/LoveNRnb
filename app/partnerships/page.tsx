@@ -142,21 +142,22 @@ export default function PartnershipsPage() {
 
             <div className="w-full h-px bg-white/10 mb-10" />
 
-            <div className="flex flex-wrap items-center gap-12 lg:gap-20">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/10">
               {SPONSORS.filter((s) => s.id !== 'spon-002' && s.id !== 'spon-003').map((sponsor) => (
                 <a
                   key={sponsor.id}
                   href={sponsor.url ?? '#'}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center group"
+                  className="bg-black flex items-center justify-center p-10 lg:p-14 group hover:bg-surface transition-colors duration-300"
+                  style={{ minHeight: '160px' }}
                 >
                   <Image
                     src={sponsor.logo}
                     alt={sponsor.name}
                     width={320}
                     height={120}
-                    className={`w-auto object-contain opacity-60 group-hover:opacity-90 transition-opacity duration-300 ${sponsor.logoSize ?? 'h-32 lg:h-44'}`}
+                    className={`w-auto object-contain opacity-60 group-hover:opacity-90 transition-opacity duration-300 ${sponsor.logoSize ?? 'h-16 lg:h-20'}`}
                   />
                 </a>
               ))}
