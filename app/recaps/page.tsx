@@ -6,6 +6,8 @@ import { EmailCapture } from '@/components/sections/EmailCapture'
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
 
 const GALLERY = [
+  { src: '/images/fest-jacquees-jump.jpg', alt: 'Jacquees performing at LoveNRnB Fest 2026' },
+  { src: '/images/fest-jacquees-stage2.jpg', alt: 'Jacquees on stage at LoveNRnB Fest 2026' },
   { src: '/images/fest-jacquees-stage.jpg', alt: 'Jacquees performing on stage at LoveNRnB Fest 2026' },
   { src: '/images/fest-kaash-crowd.jpg', alt: 'Kaash Paige in the crowd at LoveNRnB Fest 2026' },
   { src: '/images/fest-sunnyside-carro.jpg', alt: 'Sunnyside & Carro performing at LoveNRnB Fest 2026' },
