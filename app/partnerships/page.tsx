@@ -129,21 +129,21 @@ export default function PartnershipsPage() {
 
             <div className="w-full h-px bg-white/10 mb-10" />
 
-            <div className="grid grid-cols-2 gap-px bg-white/10 max-w-2xl">
+            <div className="flex flex-wrap items-center gap-16 lg:gap-24">
               {SPONSORS.filter((s) => s.id === 'spon-002' || s.id === 'spon-003').map((sponsor) => (
                 <a
                   key={sponsor.id}
                   href={sponsor.url ?? '#'}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-black p-10 flex items-center justify-center group hover:bg-surface transition-colors duration-300"
+                  className="flex items-center justify-center group"
                 >
                   <Image
                     src={sponsor.logo}
                     alt={sponsor.name}
-                    width={200}
-                    height={100}
-                    className={`w-auto object-contain opacity-60 group-hover:opacity-90 transition-opacity duration-300 ${sponsor.logoSize ?? 'h-12 lg:h-16'}`}
+                    width={320}
+                    height={120}
+                    className={`w-auto object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300 ${sponsor.logoSize ?? 'h-40 lg:h-56'}`}
                   />
                 </a>
               ))}
@@ -180,21 +180,21 @@ export default function PartnershipsPage() {
 
             <div className="w-full h-px bg-white/10 mb-10" />
 
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-px bg-white/10">
+            <div className="flex flex-wrap items-center gap-12 lg:gap-20">
               {SPONSORS.filter((s) => s.id !== 'spon-002' && s.id !== 'spon-003').map((sponsor) => (
                 <a
                   key={sponsor.id}
                   href={sponsor.url ?? '#'}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-black p-8 flex items-center justify-center group hover:bg-surface transition-colors duration-300"
+                  className="flex items-center justify-center group"
                 >
                   <Image
                     src={sponsor.logo}
                     alt={sponsor.name}
-                    width={160}
-                    height={80}
-                    className={`w-auto object-contain opacity-50 group-hover:opacity-80 transition-opacity duration-300 ${sponsor.logoSize ?? 'h-10 lg:h-12'}`}
+                    width={320}
+                    height={120}
+                    className={`w-auto object-contain opacity-60 group-hover:opacity-90 transition-opacity duration-300 ${sponsor.logoSize ?? 'h-32 lg:h-44'}`}
                   />
                 </a>
               ))}
