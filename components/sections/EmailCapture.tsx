@@ -69,7 +69,7 @@ export function EmailCapture() {
         <AnimatedSection className="max-w-3xl mx-auto">
           {/* Eyebrow */}
           <p className="font-body text-2xs text-gold uppercase tracking-[0.3em] mb-5">
-            Inner Circle
+            Join the Community
           </p>
 
           {/* Heading — Rolling Loud massive condensed */}
@@ -77,14 +77,14 @@ export function EmailCapture() {
             className="font-display font-black uppercase text-white leading-none mb-6"
             style={{ fontSize: 'clamp(4.5rem, 12vw, 11rem)', letterSpacing: '-0.03em' }}
           >
-            Be First.<br />
-            <span className="text-gold">Always.</span>
+            Don&apos;t Miss<br />
+            <span className="text-gold">What&apos;s Next.</span>
           </h2>
 
           <div className="w-16 h-0.5 bg-gold mb-8" />
 
           <p className="font-body text-base text-white/50 mb-12 max-w-md leading-relaxed">
-            Join the waitlist for early access to tickets, VIP experiences, lineup announcements, and special offers.
+            Be the first to hear about upcoming events, exclusive experiences, merchandise, giveaways, and everything LoveNRnB has coming.
             <br /><br />
             No spam. Just the culture.
           </p>
@@ -192,7 +192,7 @@ export function EmailCapture() {
                       {loading ? (
                         <span className="w-4 h-4 border-2 border-black/30 border-t-black rounded-full animate-spin" />
                       ) : (
-                        <>Join the List <ArrowRight size={14} /></>
+                        <>Join the Community <ArrowRight size={14} /></>
                       )}
                     </button>
                   </div>

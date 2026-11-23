@@ -14,27 +14,26 @@ interface FooterLink {
   label: string
   href: string
   isExternal?: boolean
-  highlight?: boolean
 }
 
 const FOOTER_LINKS: Record<string, FooterLink[]> = {
-  Navigate: [
-    { label: 'Events', href: '#events' },
-    { label: 'Lineup', href: '#lineup' },
-    { label: 'Tickets', href: '#tickets' },
-    { label: 'Contact', href: '#contact' },
+  Experiences: [
+    { label: 'LoveNRnB Fest', href: '/fest' },
+    { label: 'LoveNRnB Live', href: '/live' },
+    { label: 'Upcoming Events', href: '/events' },
+    { label: 'Past Events & Recaps', href: '/recaps' },
   ],
   Connect: [
+    { label: 'About LoveNRnB', href: '/about' },
+    { label: 'Partnerships', href: '/partnerships' },
     { label: 'Instagram', href: 'https://instagram.com/lovenrnbfest', isExternal: true },
     { label: 'TikTok', href: 'https://www.tiktok.com/@offthewallexperience', isExternal: true },
+  ],
+  Contact: [
+    { label: 'General: info@lovenrnb.com', href: 'mailto:info@lovenrnb.com', isExternal: true },
+    { label: 'Partnerships: eze@lovenrnb.com', href: 'mailto:eze@lovenrnb.com', isExternal: true },
     { label: 'YouTube', href: 'https://youtube.com/@lovenrnbfest?si=HI6TibySNAKN3nml', isExternal: true },
     { label: 'Facebook', href: 'https://www.facebook.com/share/19JEK4xjpJ/?mibextid=wwXIfr', isExternal: true },
-  ],
-  Partners: [
-    { label: 'Become a Sponsor', href: '/support' },
-    { label: 'Vendor Inquiry', href: 'https://docs.google.com/forms/d/e/1FAIpQLSevxsrSzvEGXMIaWvsXwQ7shRLtt-OK_Of8aJcFi4QX56x4ig/viewform?usp=preview', isExternal: true, highlight: true },
-    { label: 'Campus Ambassador', href: 'https://forms.gle/2iDK6xdAbVshWvu59', isExternal: true, highlight: true },
-    { label: 'Press & Media', href: '/press' },
   ],
 }
 
@@ -59,7 +58,7 @@ export function Footer() {
             </Link>
 
             <p className="font-body text-sm text-white/40 leading-relaxed mb-7 max-w-[220px]">
-              Where R&amp;B Comes Alive.
+              More Than Music.<br />It&apos;s An Experience.
             </p>
 
             {/* Social icons */}
@@ -97,7 +96,7 @@ export function Footer() {
                       href={link.href}
                       target={link.isExternal ? '_blank' : undefined}
                       rel={link.isExternal ? 'noopener noreferrer' : undefined}
-                      className={link.highlight ? "font-body text-sm text-red-500 hover:text-red-400 font-semibold transition-colors duration-150" : "font-body text-sm text-white/40 hover:text-white transition-colors duration-150"}
+                      className="font-body text-sm text-white/40 hover:text-white transition-colors duration-150"
                     >
                       {link.label}
                     </a>
@@ -112,18 +111,12 @@ export function Footer() {
         <div className="w-full h-px bg-white/10 mb-6" />
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="font-body text-xs text-white/20">
-            &copy; {year} LoveNRnb. All rights reserved. Houston, TX.
+            &copy; {year} LoveNRnB. All rights reserved. Houston, TX.
           </p>
           <div className="flex items-center gap-6">
-            <a href="/faq" className="font-body text-xs text-white/20 hover:text-white/40 transition-colors">
-              FAQ
-            </a>
-            <a href="/privacy" className="font-body text-xs text-white/20 hover:text-white/40 transition-colors">
-              Privacy
-            </a>
-            <a href="/terms" className="font-body text-xs text-white/20 hover:text-white/40 transition-colors">
-              Terms
-            </a>
+            <a href="/faq" className="font-body text-xs text-white/20 hover:text-white/40 transition-colors">FAQ</a>
+            <a href="/privacy" className="font-body text-xs text-white/20 hover:text-white/40 transition-colors">Privacy</a>
+            <a href="/terms" className="font-body text-xs text-white/20 hover:text-white/40 transition-colors">Terms</a>
           </div>
         </div>
       </div>

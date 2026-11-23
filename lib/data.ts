@@ -4,11 +4,19 @@ import type { Event, PastEvent, Sponsor, NavLink } from './types'
 // Navigation
 // ---------------------------------------------------------------------------
 export const NAV_LINKS: NavLink[] = [
-  { label: 'Upcoming Events', href: '/events' },
-  { label: 'Lineup', href: '/lineup' },
-  { label: 'Tickets', href: '/tickets' },
-  { label: 'FAQ', href: '/faq' },
-  { label: 'Support & Partner', href: '/support' },
+  { label: 'About', href: '/about' },
+  {
+    label: 'Experiences',
+    href: '#',
+    children: [
+      { label: 'LoveNRnB Fest', href: '/fest' },
+      { label: 'LoveNRnB Live', href: '/live' },
+    ],
+  },
+  { label: 'Events', href: '/events' },
+  { label: 'Recaps', href: '/recaps' },
+  { label: 'Partnerships', href: '/partnerships' },
+  { label: 'Contact', href: '/#contact' },
 ]
 
 // ---------------------------------------------------------------------------
