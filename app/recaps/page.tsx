@@ -1,8 +1,18 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import { Navigation } from '@/components/Navigation'
 import { Footer } from '@/components/Footer'
 import { EmailCapture } from '@/components/sections/EmailCapture'
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
+
+const GALLERY = [
+  { src: '/images/fest-jacquees-stage.jpg', alt: 'Jacquees performing on stage at LoveNRnB Fest 2026' },
+  { src: '/images/fest-kaash-crowd.jpg', alt: 'Kaash Paige in the crowd at LoveNRnB Fest 2026' },
+  { src: '/images/fest-sunnyside-carro.jpg', alt: 'Sunnyside & Carro performing at LoveNRnB Fest 2026' },
+  { src: '/images/fest-fans-selfie.jpg', alt: 'Fans at LoveNRnB Fest 2026' },
+  { src: '/images/elmusico-fest.jpg', alt: 'elMusico Tequila Blanco at LoveNRnB Fest 2026' },
+  { src: '/images/hero-concert.jpg', alt: 'LoveNRnB Fest 2026 crowd' },
+]
 
 export const metadata: Metadata = {
   title: 'Recaps — LoveNRnB',
@@ -84,6 +94,20 @@ export default function RecapsPage() {
                     {value}
                   </p>
                   <p className="font-body text-xs text-white/40 uppercase tracking-[0.2em]">{label}</p>
+                </div>
+              ))}
+            </div>
+
+            {/* Photo Gallery */}
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-1 mb-16">
+              {GALLERY.map(({ src, alt }) => (
+                <div key={src} className="relative aspect-square overflow-hidden bg-surface">
+                  <Image
+                    src={src}
+                    alt={alt}
+                    fill
+                    className="object-cover object-center hover:scale-105 transition-transform duration-700"
+                  />
                 </div>
               ))}
             </div>
