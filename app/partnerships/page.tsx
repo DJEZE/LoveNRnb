@@ -152,6 +152,19 @@ export default function PartnershipsPage() {
           <div className="w-full h-px bg-white/10" />
         </section>
 
+        {/* elMusico photo */}
+        <section className="bg-black">
+          <div className="relative w-full h-[50vh] lg:h-[65vh] overflow-hidden">
+            <Image
+              src="/images/elmusico-fest.jpg"
+              alt="LoveNRnB Fest 2026 — elMusico Tequila Blanco"
+              fill
+              className="object-cover object-center"
+            />
+            <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, #000 0%, transparent 20%, transparent 70%, #000 100%)' }} />
+          </div>
+        </section>
+
         {/* Past Sponsors */}
         <section className="bg-black">
           <div className="container mx-auto px-6 py-16 lg:py-24">
