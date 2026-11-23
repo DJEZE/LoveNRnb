@@ -207,6 +207,22 @@ export function EmailCapture() {
             )}
           </AnimatePresence>
 
+          {/* SMS via Laylo */}
+          <div className="mt-10 pt-8 border-t border-white/10">
+            <p className="font-body text-2xs text-white/30 uppercase tracking-[0.2em] mb-4">Also join via SMS</p>
+            <a
+              href="https://laylo.com/lovenrnb_/X16P9f"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center h-11 px-8 font-body text-xs font-semibold uppercase tracking-[0.15em] text-gold border border-gold/30 hover:border-gold hover:bg-gold/5 transition-all duration-200"
+            >
+              Get SMS Updates
+            </a>
+            <p className="font-body text-2xs text-white/20 mt-3">
+              By subscribing you agree to receive SMS messages from LoveNRnB. Message &amp; data rates may apply. Reply STOP to unsubscribe.
+            </p>
+          </div>
+
           {/* Trust line */}
           <p className="font-body text-2xs text-white/20 uppercase tracking-[0.2em] mt-8">
             No spam · Unsubscribe anytime
