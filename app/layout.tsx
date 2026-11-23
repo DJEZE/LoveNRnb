@@ -8,19 +8,22 @@ export const metadata: Metadata = {
     process.env.NEXT_PUBLIC_SITE_URL ?? 'https://lovenrnb.com'
   ),
   title: {
-    default: 'LoveNRnB Fest 2026 | Live R&B Experience | November 21 | Houston',
-    template: '%s | LoveNRnB Fest 2026',
+    default: "LoveNRnB | More Than Music. It's An Experience.",
+    template: '%s | LoveNRnB',
   },
   description:
-    "LoveNRnB Fest 2026 is coming to Rich's Houston on November 21! Experience an unforgettable night of live R&B featuring Jacquees, Kaash Paige, rising artists, and incredible DJs. Get your tickets today!",
+    "LoveNRnB is an R&B entertainment brand behind LoveNRnB Fest (Houston's annual R&B festival) and LoveNRnB Live (national touring concert experience). Official SXSW 2027 Music Showcase Presenter.",
   keywords: [
-    'LoveNRnB Fest 2026',
-    'Houston R&B Concert',
+    'LoveNRnB',
+    'LoveNRnB Fest',
+    'LoveNRnB Live',
+    'Houston R&B Festival',
+    'R&B Concert Experience',
+    'SXSW 2027',
     'Houston R&B Events',
-    "Rich's Houston",
-    'R&B Festival Houston',
-    'LoveNRnB Houston',
-    'November 21 Houston Events',
+    'R&B Entertainment Brand',
+    'Live R&B Music',
+    'R&B Festival',
   ],
   authors: [{ name: 'LoveNRnB' }],
   creator: 'LoveNRnB',
@@ -28,9 +31,9 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     siteName: 'LoveNRnB',
-    title: "LoveNRnB Fest 2026 ❤️ | Live R&B Experience | Houston",
+    title: "LoveNRnB | More Than Music. It's An Experience.",
     description:
-      "Houston, this one's for the R&B lovers! Experience LoveNRnB Fest 2026 featuring Jacquees, Kaash Paige & more. November 21 at Rich's Houston. Tickets available now.",
+      "LoveNRnB is an R&B entertainment brand behind LoveNRnB Fest (Houston), LoveNRnB Live (national tour), and an Official SXSW 2027 Music Showcase. More than music. It's an experience.",
     images: [
       {
         url: '/eze-back-lovernb.jpg',
@@ -42,8 +45,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "LoveNRnB Fest 2026 ❤️ | Live R&B Experience | Houston",
-    description: "Houston, this one's for the R&B lovers! November 21 at Rich's Houston. Tickets available now.",
+    title: "LoveNRnB | More Than Music. It's An Experience.",
+    description: "LoveNRnB Fest · LoveNRnB Live · SXSW 2027. R&B entertainment and culture, built in Houston.",
     images: ['/eze-back-lovernb.jpg'],
     creator: '@lovenrnbfest',
   },
