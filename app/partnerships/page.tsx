@@ -1,8 +1,10 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import { Navigation } from '@/components/Navigation'
 import { Footer } from '@/components/Footer'
 import { SupportContent } from '@/components/sections/SupportContent'
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
+import { SPONSORS } from '@/lib/data'
 
 export const metadata: Metadata = {
   title: 'Partnerships — LoveNRnB',
@@ -108,6 +110,48 @@ export default function PartnershipsPage() {
                 eze@lovenrnb.com
               </a>
             </div>
+          </div>
+          <div className="w-full h-px bg-white/10" />
+        </section>
+
+        {/* Past Sponsors & Partners */}
+        <section className="bg-black">
+          <div className="container mx-auto px-6 py-16 lg:py-24">
+            <AnimatedSection className="mb-10">
+              <p className="font-body text-2xs text-gold uppercase tracking-[0.3em] mb-4">2026 Partners</p>
+              <h2
+                className="font-display font-black uppercase text-white leading-none"
+                style={{ fontSize: 'clamp(2.5rem, 6vw, 6rem)', letterSpacing: '-0.03em' }}
+              >
+                Our Past<br /><span className="text-gold">Sponsors</span>
+              </h2>
+            </AnimatedSection>
+
+            <div className="w-full h-px bg-white/10 mb-10" />
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-px bg-white/10">
+              {SPONSORS.map((sponsor) => (
+                <a
+                  key={sponsor.id}
+                  href={sponsor.url ?? '#'}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-black p-8 flex items-center justify-center group hover:bg-surface transition-colors duration-300"
+                >
+                  <Image
+                    src={sponsor.logo}
+                    alt={sponsor.name}
+                    width={160}
+                    height={80}
+                    className={`w-auto object-contain opacity-50 group-hover:opacity-80 transition-opacity duration-300 ${sponsor.logoSize ?? 'h-10 lg:h-12'}`}
+                  />
+                </a>
+              ))}
+            </div>
+
+            <p className="font-body text-xs text-white/25 uppercase tracking-[0.2em] mt-8">
+              LoveNRnB Fest 2026 · Houston, TX
+            </p>
           </div>
           <div className="w-full h-px bg-white/10" />
         </section>
