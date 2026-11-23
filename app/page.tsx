@@ -13,7 +13,7 @@ export default function HomePage() {
       <BrandHero />
       <Experiences />
       <EmailCapture />
-      <Sponsors sponsors={SPONSORS} />
+      <Sponsors sponsors={SPONSORS.filter((s) => s.id === 'spon-002' || s.id === 'spon-003')} />
       <Footer />
     </main>
   )
