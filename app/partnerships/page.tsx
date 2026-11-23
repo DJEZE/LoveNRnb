@@ -114,7 +114,45 @@ export default function PartnershipsPage() {
           <div className="w-full h-px bg-white/10" />
         </section>
 
-        {/* Past Sponsors & Partners */}
+        {/* Presented By */}
+        <section className="bg-black">
+          <div className="container mx-auto px-6 py-16 lg:py-24">
+            <AnimatedSection className="mb-10">
+              <p className="font-body text-2xs text-gold uppercase tracking-[0.3em] mb-4">LoveNRnB Fest 2026</p>
+              <h2
+                className="font-display font-black uppercase text-white leading-none"
+                style={{ fontSize: 'clamp(2.5rem, 6vw, 6rem)', letterSpacing: '-0.03em' }}
+              >
+                Presented<br /><span className="text-gold">By</span>
+              </h2>
+            </AnimatedSection>
+
+            <div className="w-full h-px bg-white/10 mb-10" />
+
+            <div className="grid grid-cols-2 gap-px bg-white/10 max-w-2xl">
+              {SPONSORS.filter((s) => s.id === 'spon-002' || s.id === 'spon-003').map((sponsor) => (
+                <a
+                  key={sponsor.id}
+                  href={sponsor.url ?? '#'}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-black p-10 flex items-center justify-center group hover:bg-surface transition-colors duration-300"
+                >
+                  <Image
+                    src={sponsor.logo}
+                    alt={sponsor.name}
+                    width={200}
+                    height={100}
+                    className={`w-auto object-contain opacity-60 group-hover:opacity-90 transition-opacity duration-300 ${sponsor.logoSize ?? 'h-12 lg:h-16'}`}
+                  />
+                </a>
+              ))}
+            </div>
+          </div>
+          <div className="w-full h-px bg-white/10" />
+        </section>
+
+        {/* Past Sponsors */}
         <section className="bg-black">
           <div className="container mx-auto px-6 py-16 lg:py-24">
             <AnimatedSection className="mb-10">
@@ -123,14 +161,14 @@ export default function PartnershipsPage() {
                 className="font-display font-black uppercase text-white leading-none"
                 style={{ fontSize: 'clamp(2.5rem, 6vw, 6rem)', letterSpacing: '-0.03em' }}
               >
-                Our Past<br /><span className="text-gold">Sponsors</span>
+                Past<br /><span className="text-gold">Sponsors</span>
               </h2>
             </AnimatedSection>
 
             <div className="w-full h-px bg-white/10 mb-10" />
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-px bg-white/10">
-              {SPONSORS.map((sponsor) => (
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-px bg-white/10">
+              {SPONSORS.filter((s) => s.id !== 'spon-002' && s.id !== 'spon-003').map((sponsor) => (
                 <a
                   key={sponsor.id}
                   href={sponsor.url ?? '#'}
