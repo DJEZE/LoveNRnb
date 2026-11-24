@@ -116,15 +116,6 @@ export default function FestPage() {
               ))}
             </div>
 
-            {/* Video placeholder */}
-            <div className="border border-white/10 w-full aspect-video flex items-center justify-center mb-16 bg-surface">
-              <div className="text-center">
-                <div className="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center mx-auto mb-4">
-                  <div className="w-0 h-0 border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent border-l-[14px] border-l-white/40 ml-1" />
-                </div>
-                <p className="font-body text-xs text-white/25 uppercase tracking-[0.2em]">Recap Video Coming Soon</p>
-              </div>
-            </div>
           </div>
           <div className="w-full h-px bg-white/10" />
         </section>
@@ -179,7 +170,9 @@ export default function FestPage() {
                 LoveNRnB Fest returns to Houston in 2027. Be the first to know when tickets drop, the lineup drops, and everything in between.
               </p>
               <a
-                href="/#contact"
+                href="https://laylo.com/lovenrnb_/X16P9f"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center h-12 px-10 font-body text-xs font-semibold uppercase tracking-[0.15em] text-black bg-gold hover:bg-gold-light transition-colors duration-200"
               >
                 Get Notified

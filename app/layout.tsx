@@ -36,9 +36,9 @@ export const metadata: Metadata = {
       "LoveNRnB is an R&B entertainment brand behind LoveNRnB Fest (Houston), LoveNRnB Live (national tour), and an Official SXSW 2027 Music Showcase. More than music. It's an experience.",
     images: [
       {
-        url: '/eze-back-lovernb.jpg',
-        width: 1200,
-        height: 630,
+        url: '/images/hero-concert.jpg',
+        width: 2000,
+        height: 1333,
         alt: 'LoveNRnB — More Than Music. It\'s An Experience.',
       },
     ],
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: "LoveNRnB | More Than Music. It's An Experience.",
     description: "LoveNRnB Fest · LoveNRnB Live · SXSW 2027. R&B entertainment and culture, built in Houston.",
-    images: ['/eze-back-lovernb.jpg'],
+    images: ['/images/hero-concert.jpg'],
     creator: '@lovenrnbfest',
   },
   robots: {

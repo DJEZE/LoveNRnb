@@ -114,16 +114,6 @@ export default function RecapsPage() {
               ))}
             </div>
 
-            {/* Video placeholder */}
-            <div className="border border-white/10 w-full aspect-video flex items-center justify-center mb-16 bg-surface">
-              <div className="text-center">
-                <div className="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center mx-auto mb-4">
-                  <div className="w-0 h-0 border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent border-l-[14px] border-l-white/40 ml-1" />
-                </div>
-                <p className="font-body text-xs text-white/25 uppercase tracking-[0.2em]">Recap Video Coming Soon</p>
-              </div>
-            </div>
-
             {/* Performers */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
               <div>

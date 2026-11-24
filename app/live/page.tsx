@@ -44,13 +44,18 @@ export default function LivePage() {
       <main className="bg-black min-h-screen pt-20">
 
         {/* Hero */}
-        <section
-          className="relative overflow-hidden"
-          style={{
-            background: `radial-gradient(ellipse 80% 60% at 50% 40%, rgba(204,0,0,0.14) 0%, rgba(140,0,0,0.05) 50%, transparent 70%), #000`,
-          }}
-        >
-          <div className="container mx-auto px-6 py-20 lg:py-28">
+        <section className="relative overflow-hidden min-h-[60vh] flex flex-col justify-end">
+          <div className="absolute inset-0">
+            <Image
+              src="/images/hero-concert.jpg"
+              alt="LoveNRnB Live"
+              fill
+              className="object-cover object-center opacity-40"
+              priority
+            />
+            <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0.85) 100%)' }} />
+          </div>
+          <div className="relative z-10 container mx-auto px-6 py-20 lg:py-28">
             <AnimatedSection>
               <p className="font-body text-2xs text-gold uppercase tracking-[0.3em] mb-5">LoveNRnB Live</p>
               <h1
@@ -60,12 +65,12 @@ export default function LivePage() {
                 The Concert<br />
                 <span className="text-gold">Party Experience.</span>
               </h1>
-              <p className="font-body text-base lg:text-lg text-white/50 max-w-xl leading-relaxed">
+              <p className="font-body text-base lg:text-lg text-white/60 max-w-xl leading-relaxed">
                 Our traveling concert and nightlife experience, bringing R&amp;B artists and unforgettable nights to cities across the country.
               </p>
             </AnimatedSection>
           </div>
-          <div className="w-full h-px bg-white/10" />
+          <div className="relative z-10 w-full h-px bg-white/10" />
         </section>
 
         {/* What is LoveNRnB Live */}
@@ -185,7 +190,9 @@ export default function LivePage() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a
-                    href="/#contact"
+                    href="https://laylo.com/lovenrnb_/X16P9f"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center justify-center h-11 px-8 font-body text-xs font-semibold uppercase tracking-[0.15em] text-black bg-gold hover:bg-gold-light transition-colors duration-200"
                   >
                     Get Notified

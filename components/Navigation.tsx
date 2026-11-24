@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Menu, X, ChevronDown } from 'lucide-react'
+import { Menu, X, ChevronDown, ArrowUpRight } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { NAV_LINKS } from '@/lib/data'
 import type { NavLink } from '@/lib/types'
@@ -132,9 +132,9 @@ export function Navigation() {
                 href="https://laylo.com/lovenrnb_/X16P9f"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center h-9 px-5 font-body text-xs font-semibold uppercase tracking-[0.15em] text-black bg-gold hover:bg-gold-light transition-colors duration-200"
+                className="inline-flex items-center gap-1.5 h-9 px-5 font-body text-xs font-semibold uppercase tracking-[0.15em] text-black bg-gold hover:bg-gold-light transition-colors duration-200"
               >
-                Join the Community
+                Join the Community <ArrowUpRight size={12} />
               </a>
             </div>
 
