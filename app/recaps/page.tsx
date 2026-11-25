@@ -194,6 +194,33 @@ export default function RecapsPage() {
           </div>
         </section>
 
+        {/* Spotify Playlist */}
+        <section className="bg-black">
+          <div className="w-full h-px bg-white/10" />
+          <div className="container mx-auto px-6 py-16 lg:py-24">
+            <AnimatedSection className="max-w-3xl">
+              <p className="font-body text-2xs text-gold uppercase tracking-[0.3em] mb-5">The Vibe</p>
+              <h2
+                className="font-display font-black uppercase text-white leading-none mb-10"
+                style={{ fontSize: 'clamp(2.5rem, 6vw, 6rem)', letterSpacing: '-0.03em' }}
+              >
+                The Playlist.
+              </h2>
+              <iframe
+                style={{ borderRadius: '12px' }}
+                src="https://open.spotify.com/embed/playlist/01cqVnij4GWvs33Ehn2Itc?utm_source=generator&si=46adf2eea9434e99"
+                width="100%"
+                height="352"
+                frameBorder="0"
+                allowFullScreen
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+              />
+            </AnimatedSection>
+          </div>
+          <div className="w-full h-px bg-white/10" />
+        </section>
+
         <EmailCapture />
       </main>
       <Footer />
