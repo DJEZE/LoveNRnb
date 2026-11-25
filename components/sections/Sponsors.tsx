@@ -59,10 +59,10 @@ export function Sponsors({ sponsors }: SponsorsProps) {
               className="font-display font-black uppercase text-white leading-none mb-4"
               style={{ fontSize: 'clamp(2.5rem, 6vw, 5rem)', letterSpacing: '-0.03em' }}
             >
-              Partner With LoveNRnB
+              Sponsor or<br /><span className="text-gold">Cover LoveNRnB</span>
             </h3>
             <p className="font-body text-sm text-white/40 mb-10 max-w-md mx-auto leading-relaxed">
-              Whether you&apos;re a brand, student leader, vendor, or media outlet — we&apos;d love to work with you.
+              Brand sponsorships, activations, and media partnerships — reach our R&amp;B community at LoveNRnB Fest, LoveNRnB Live, and SXSW 2027.
             </p>
             <a
               href="mailto:eze@lovenrnb.com"
