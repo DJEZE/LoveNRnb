@@ -14,20 +14,20 @@ const MARKETS_2027 = [
   {
     city: 'New Orleans',
     state: 'LA',
-    status: 'Coming 2027',
-    description: 'The city that runs on music. We&apos;re bringing LoveNRnB energy to the culture capital of the South.',
+    status: 'Feb 27, 2027',
+    description: "The city that runs on music. We're bringing LoveNRnB energy to the culture capital of the South.",
   },
   {
     city: 'Dallas',
     state: 'TX',
     status: 'Coming 2027',
-    description: 'Deep in the heart of Texas. R&B, nightlife, and an experience the DFW crowd won\'t forget.',
+    description: "Deep in the heart of Texas. R&B, nightlife, and an experience the DFW crowd won't forget.",
   },
   {
     city: 'Atlanta',
     state: 'GA',
     status: 'Coming 2027',
-    description: 'The home of R&B&apos;s next chapter. LoveNRnB Live in ATL.',
+    description: "The home of R&B's next chapter. LoveNRnB Live in ATL.",
   },
 ]
 
@@ -71,6 +71,34 @@ export default function LivePage() {
             </AnimatedSection>
           </div>
           <div className="relative z-10 w-full h-px bg-white/10" />
+        </section>
+
+        {/* New Orleans Announcement Banner */}
+        <section className="bg-black border-b border-white/10">
+          <div
+            className="py-5"
+            style={{ background: 'linear-gradient(90deg, rgba(204,0,0,0.12) 0%, rgba(204,0,0,0.06) 50%, rgba(204,0,0,0.12) 100%)' }}
+          >
+            <div className="container mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div className="flex items-center gap-4">
+                <div className="inline-flex items-center gap-2 border border-gold/40 px-3 py-1.5 flex-shrink-0">
+                  <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse flex-shrink-0" />
+                  <span className="font-body text-2xs text-gold uppercase tracking-[0.2em]">Just Announced</span>
+                </div>
+                <p className="font-body text-sm text-white/70">
+                  <span className="font-semibold text-white">LoveNRnB Live: New Orleans</span>
+                  <span className="text-white/40 mx-2">·</span>
+                  February 27, 2027
+                </p>
+              </div>
+              <a
+                href="/live/new-orleans"
+                className="inline-flex items-center justify-center h-9 px-6 font-body text-xs font-semibold uppercase tracking-[0.15em] text-black bg-gold hover:bg-gold-light transition-colors duration-200 flex-shrink-0"
+              >
+                Get Early Access
+              </a>
+            </div>
+          </div>
         </section>
 
         {/* What is LoveNRnB Live */}
@@ -133,21 +161,41 @@ export default function LivePage() {
 
             <div className="w-full h-px bg-white/10 mb-0" />
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-px bg-white/10">
-              {MARKETS_2027.map(({ city, state, status, description }) => (
-                <div key={city} className="bg-black p-10 lg:p-12">
-                  <p className="font-body text-2xs text-white/25 uppercase tracking-[0.2em] mb-3">{state} · {status}</p>
-                  <h3
-                    className="font-display font-black uppercase text-white leading-none mb-5"
-                    style={{ fontSize: 'clamp(2.5rem, 4vw, 4rem)', letterSpacing: '-0.02em' }}
-                  >
-                    {city}
-                  </h3>
-                  <p
-                    className="font-body text-sm text-white/45 leading-relaxed"
-                    dangerouslySetInnerHTML={{ __html: description }}
-                  />
-                </div>
-              ))}
+              {MARKETS_2027.map(({ city, state, status, description }) =>
+                city === 'New Orleans' ? (
+                  <div key={city} className="bg-black p-10 lg:p-12 border border-gold/30 relative">
+                    <div className="inline-flex items-center gap-2 border border-gold/40 px-3 py-1.5 mb-5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse flex-shrink-0" />
+                      <span className="font-body text-2xs text-gold uppercase tracking-[0.2em]">Just Announced</span>
+                    </div>
+                    <p className="font-body text-2xs text-white/25 uppercase tracking-[0.2em] mb-3">{state} · {status}</p>
+                    <h3
+                      className="font-display font-black uppercase text-white leading-none mb-5"
+                      style={{ fontSize: 'clamp(2.5rem, 4vw, 4rem)', letterSpacing: '-0.02em' }}
+                    >
+                      {city}
+                    </h3>
+                    <p className="font-body text-sm text-white/45 leading-relaxed mb-6">{description}</p>
+                    <a
+                      href="/live/new-orleans"
+                      className="inline-flex items-center justify-center h-10 px-6 font-body text-xs font-semibold uppercase tracking-[0.15em] text-black bg-gold hover:bg-gold-light transition-colors duration-200"
+                    >
+                      Get Early Access
+                    </a>
+                  </div>
+                ) : (
+                  <div key={city} className="bg-black p-10 lg:p-12">
+                    <p className="font-body text-2xs text-white/25 uppercase tracking-[0.2em] mb-3">{state} · {status}</p>
+                    <h3
+                      className="font-display font-black uppercase text-white leading-none mb-5"
+                      style={{ fontSize: 'clamp(2.5rem, 4vw, 4rem)', letterSpacing: '-0.02em' }}
+                    >
+                      {city}
+                    </h3>
+                    <p className="font-body text-sm text-white/45 leading-relaxed">{description}</p>
+                  </div>
+                )
+              )}
             </div>
             <div className="border border-t-0 border-white/10 p-8 lg:p-10 text-center">
               <p className="font-body text-xs text-white/30 uppercase tracking-[0.2em]">

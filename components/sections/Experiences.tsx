@@ -75,6 +75,47 @@ export function Experiences() {
           </motion.div>
         </StaggerContainer>
 
+        {/* New Orleans Feature */}
+        <AnimatedSection className="mb-12 lg:mb-16">
+          <div
+            className="relative overflow-hidden border border-gold/30 p-10 lg:p-14"
+            style={{ background: 'radial-gradient(ellipse 60% 80% at 20% 50%, rgba(204,0,0,0.1) 0%, transparent 70%)' }}
+          >
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+              <div>
+                <div className="inline-flex items-center gap-2 border border-gold/40 px-4 py-2 mb-8">
+                  <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse flex-shrink-0" />
+                  <span className="font-body text-2xs text-gold uppercase tracking-[0.25em]">Just Announced</span>
+                </div>
+                <p className="font-body text-2xs text-gold uppercase tracking-[0.3em] mb-3">New Orleans, Louisiana · Feb 27, 2027</p>
+                <h3
+                  className="font-display font-black uppercase text-white leading-none mb-5"
+                  style={{ fontSize: 'clamp(2rem, 4vw, 4rem)', letterSpacing: '-0.03em' }}
+                >
+                  LoveNRnB Live<br />New Orleans
+                </h3>
+                <p className="font-body text-base text-white/50 leading-relaxed mb-8">
+                  The Concert &amp; Party Experience comes to New Orleans. Sign up for exclusive early access.
+                </p>
+                <a
+                  href="/live/new-orleans"
+                  className="inline-flex items-center justify-center h-11 px-8 font-body text-xs font-semibold uppercase tracking-[0.15em] text-black bg-gold hover:bg-gold-light transition-colors duration-200"
+                >
+                  Get Early Access
+                </a>
+              </div>
+              <div className="hidden lg:flex items-center justify-end">
+                <p
+                  className="font-display font-black uppercase text-white/5 leading-none select-none text-right"
+                  style={{ fontSize: 'clamp(4rem, 10vw, 10rem)', letterSpacing: '-0.04em' }}
+                >
+                  FEB<br />27
+                </p>
+              </div>
+            </div>
+          </div>
+        </AnimatedSection>
+
         {/* SXSW Feature */}
         <AnimatedSection>
           <div

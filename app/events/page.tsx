@@ -118,7 +118,37 @@ export default function EventsPage() {
               </p>
 
               <div className="space-y-0">
-                {/* LoveNRnB Live */}
+                {/* New Orleans — specific announced date */}
+                <div className="border-t border-white/10 py-10">
+                  <div className="flex items-start justify-between gap-6">
+                    <div>
+                      <div className="inline-flex items-center gap-2 border border-gold/40 px-3 py-1.5 mb-4">
+                        <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse flex-shrink-0" />
+                        <span className="font-body text-2xs text-gold uppercase tracking-[0.2em]">Just Announced</span>
+                      </div>
+                      <h3
+                        className="font-display font-black uppercase text-white leading-none mb-4"
+                        style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)', letterSpacing: '-0.02em' }}
+                      >
+                        LoveNRnB Live: New Orleans
+                      </h3>
+                      <p className="font-body text-xs text-white/30 uppercase tracking-[0.2em] mb-3">
+                        New Orleans, LA · February 27, 2027
+                      </p>
+                      <p className="font-body text-base text-white/50 leading-relaxed mb-5">
+                        The Concert &amp; Party Experience comes to New Orleans. Early access registration is open now.
+                      </p>
+                      <a href="/live/new-orleans" className="font-body text-xs text-gold uppercase tracking-[0.15em] hover:text-gold-light transition-colors">
+                        Get Early Access →
+                      </a>
+                    </div>
+                    <div className="flex-shrink-0 hidden sm:flex items-center border border-gold/30 px-3 py-1.5">
+                      <span className="font-body text-2xs text-gold uppercase tracking-[0.2em]">Feb 27</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* LoveNRnB Live — general */}
                 <div className="border-t border-white/10 py-10">
                   <div className="flex items-start justify-between gap-6">
                     <div>
@@ -160,7 +190,7 @@ export default function EventsPage() {
                       <p className="font-body text-base text-white/50 leading-relaxed mb-5">
                         Our annual Houston R&amp;B festival returns. Date and lineup coming soon.
                       </p>
-                      <a href="/#contact" className="font-body text-xs text-gold uppercase tracking-[0.15em] hover:text-gold-light transition-colors">
+                      <a href="https://laylo.com/lovenrnb_/X16P9f" target="_blank" rel="noopener noreferrer" className="font-body text-xs text-gold uppercase tracking-[0.15em] hover:text-gold-light transition-colors">
                         Get Notified →
                       </a>
                     </div>
