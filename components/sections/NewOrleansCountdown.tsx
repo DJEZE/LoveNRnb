@@ -1,16 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { useForm } from 'react-hook-form'
-import { motion, AnimatePresence } from 'framer-motion'
-import { ArrowRight, CheckCircle2 } from 'lucide-react'
-import { cn } from '@/lib/utils'
-
-interface FormValues {
-  firstName: string
-  email: string
-  phone: string
-}
+import { ArrowUpRight } from 'lucide-react'
 
 interface TimeLeft {
   days: number
@@ -55,35 +46,11 @@ interface Props {
 
 export function NewOrleansCountdown({ showCountdownOnly, showFormOnly }: Props) {
   const [timeLeft, setTimeLeft] = useState<TimeLeft>(getTimeLeft())
-  const [submitted, setSubmitted] = useState(false)
-  const [loading, setLoading] = useState(false)
-  const [serverError, setServerError] = useState(false)
-
-  const { register, handleSubmit, formState: { errors }, reset } = useForm<FormValues>()
 
   useEffect(() => {
     const id = setInterval(() => setTimeLeft(getTimeLeft()), 1000)
     return () => clearInterval(id)
   }, [])
-
-  const onSubmit = async (data: FormValues) => {
-    setLoading(true)
-    setServerError(false)
-    try {
-      const res = await fetch('/api/subscribe', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name: data.firstName, email: data.email, phone: data.phone }),
-      })
-      if (!res.ok) throw new Error('Failed')
-      setSubmitted(true)
-      reset()
-    } catch {
-      setServerError(true)
-    } finally {
-      setLoading(false)
-    }
-  }
 
   const countdown = (
     <div className="flex items-start gap-3 sm:gap-5">
@@ -97,147 +64,28 @@ export function NewOrleansCountdown({ showCountdownOnly, showFormOnly }: Props) 
     </div>
   )
 
-  const form = (
-    <div className="max-w-lg w-full">
-      <AnimatePresence mode="wait">
-        {submitted ? (
-          <motion.div
-            key="success"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="space-y-6"
-          >
-            <div className="flex items-start gap-4">
-              <CheckCircle2 size={24} className="text-gold flex-shrink-0 mt-0.5" />
-              <div>
-                <p className="font-display font-black text-2xl uppercase text-white leading-none mb-2">
-                  You&apos;re on the list.
-                </p>
-                <p className="font-body text-sm text-white/50 leading-relaxed">
-                  We&apos;ll see you in New Orleans. Watch your inbox for early access details.
-                </p>
-              </div>
-            </div>
-            <div className="pt-6 border-t border-white/10">
-              <p className="font-body text-2xs text-white/30 uppercase tracking-[0.2em] mb-4">Also get SMS updates</p>
-              <a
-                href="https://laylo.com/lovenrnb_/OmnUoi"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center h-11 px-8 font-body text-xs font-semibold uppercase tracking-[0.15em] text-gold border border-gold/30 hover:border-gold hover:bg-gold/5 transition-all duration-200"
-              >
-                Get SMS Updates
-              </a>
-            </div>
-          </motion.div>
-        ) : (
-          <motion.form
-            key="form"
-            onSubmit={handleSubmit(onSubmit)}
-            className="flex flex-col gap-3"
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.25 }}
-          >
-            {/* First Name */}
-            <div className="relative">
-              <input
-                {...register('firstName', { required: 'First name is required' })}
-                type="text"
-                placeholder="First name"
-                autoComplete="given-name"
-                className={cn(
-                  'w-full h-14 px-5',
-                  'font-body text-sm text-white placeholder:text-white/25',
-                  'bg-surface-2 border',
-                  'focus:outline-none focus:border-gold',
-                  'transition-colors duration-200',
-                  errors.firstName ? 'border-red-500/60' : 'border-white/15'
-                )}
-              />
-              {errors.firstName && (
-                <p className="absolute -bottom-5 left-0 font-body text-xs text-red-400">{errors.firstName.message}</p>
-              )}
-            </div>
-
-            {/* Email */}
-            <div className="relative mt-1">
-              <input
-                {...register('email', {
-                  required: 'Email is required',
-                  pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: 'Enter a valid email' },
-                })}
-                type="email"
-                placeholder="your@email.com"
-                autoComplete="email"
-                className={cn(
-                  'w-full h-14 px-5',
-                  'font-body text-sm text-white placeholder:text-white/25',
-                  'bg-surface-2 border',
-                  'focus:outline-none focus:border-gold',
-                  'transition-colors duration-200',
-                  errors.email ? 'border-red-500/60' : 'border-white/15'
-                )}
-              />
-              {errors.email && (
-                <p className="absolute -bottom-5 left-0 font-body text-xs text-red-400">{errors.email.message}</p>
-              )}
-            </div>
-
-            {/* Phone */}
-            <div className="relative mt-1">
-              <input
-                {...register('phone', { required: 'Phone number is required' })}
-                type="tel"
-                placeholder="Phone number"
-                autoComplete="tel"
-                className={cn(
-                  'w-full h-14 px-5',
-                  'font-body text-sm text-white placeholder:text-white/25',
-                  'bg-surface-2 border',
-                  'focus:outline-none focus:border-gold',
-                  'transition-colors duration-200',
-                  errors.phone ? 'border-red-500/60' : 'border-white/15'
-                )}
-              />
-              {errors.phone && (
-                <p className="absolute -bottom-5 left-0 font-body text-xs text-red-400">{errors.phone.message}</p>
-              )}
-            </div>
-
-            <button
-              type="submit"
-              disabled={loading}
-              className="mt-2 w-full h-14 inline-flex items-center justify-center gap-2 font-body text-sm font-bold uppercase tracking-[0.2em] text-black bg-gold hover:bg-gold-light transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              {loading ? (
-                <span className="w-4 h-4 border-2 border-black/30 border-t-black rounded-full animate-spin" />
-              ) : (
-                <>Get Early Access <ArrowRight size={16} /></>
-              )}
-            </button>
-
-            {serverError && (
-              <p className="font-body text-xs text-red-400 mt-1">
-                Something went wrong — please try again or email eze@lovenrnb.com.
-              </p>
-            )}
-
-            <p className="font-body text-2xs text-white/20 mt-1">
-              No spam. Unsubscribe anytime.
-            </p>
-          </motion.form>
-        )}
-      </AnimatePresence>
+  const cta = (
+    <div className="max-w-lg w-full space-y-4">
+      <a
+        href="https://laylo.com/lovenrnb_/OmnUoi"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center justify-center gap-2 w-full h-14 font-body text-sm font-bold uppercase tracking-[0.2em] text-black bg-gold hover:bg-gold-light transition-colors duration-200"
+      >
+        Get Early Access <ArrowUpRight size={16} />
+      </a>
+      <p className="font-body text-2xs text-white/25 text-center">
+        Sign up for early access to tickets, event announcements, and more.
+      </p>
     </div>
   )
 
   if (showCountdownOnly) return countdown
-  if (showFormOnly) return form
+  if (showFormOnly) return cta
   return (
     <div className="space-y-10">
       {countdown}
-      {form}
+      {cta}
     </div>
   )
 }
