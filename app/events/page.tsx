@@ -159,7 +159,7 @@ export default function EventsPage() {
                         LoveNRnB Live 2027
                       </h3>
                       <p className="font-body text-xs text-white/30 uppercase tracking-[0.2em] mb-3">
-                        New Orleans · Dallas · Atlanta
+                        Dallas · Atlanta · More Cities TBA
                       </p>
                       <p className="font-body text-base text-white/50 leading-relaxed mb-5">
                         Our traveling concert-party experience hits the road in 2027.
