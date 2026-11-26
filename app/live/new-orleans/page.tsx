@@ -91,6 +91,11 @@ export default function NewOrleansPage() {
                 <span className="text-gold">We&apos;re Coming.</span>
               </h1>
 
+              {/* Tagline */}
+              <p className="font-body text-xs text-gold/60 uppercase tracking-[0.3em] mb-4">
+                The South&apos;s Premier R&amp;B Experience
+              </p>
+
               {/* Body */}
               <p className="font-body text-base lg:text-lg text-white/55 max-w-2xl leading-relaxed mb-12">
                 LoveNRnB Live is bringing its signature Concert &amp; Party Experience to New Orleans on February 27, 2027.
