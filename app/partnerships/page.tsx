@@ -26,7 +26,7 @@ const PARTNERSHIP_TYPES = [
   },
   {
     title: 'Media & Press',
-    description: 'Press access, event coverage, and media partnerships. Reach us at info@lovenrnb.com.',
+    description: 'Press access, event coverage, and media partnerships. Reach us at partnerships@lovenrnb.com.',
   },
 ]
 

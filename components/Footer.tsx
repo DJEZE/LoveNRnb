@@ -30,7 +30,7 @@ const FOOTER_LINKS: Record<string, FooterLink[]> = {
     { label: 'TikTok', href: 'https://www.tiktok.com/@offthewallexperience', isExternal: true },
   ],
   Contact: [
-    { label: 'General: info@lovenrnb.com', href: 'mailto:info@lovenrnb.com', isExternal: true },
+    { label: 'partnerships@lovenrnb.com', href: 'mailto:partnerships@lovenrnb.com', isExternal: true },
     { label: 'Partnerships: eze@lovenrnb.com', href: 'mailto:eze@lovenrnb.com', isExternal: true },
     { label: 'YouTube', href: 'https://youtube.com/@lovenrnbfest?si=HI6TibySNAKN3nml', isExternal: true },
     { label: 'Facebook', href: 'https://www.facebook.com/share/19JEK4xjpJ/?mibextid=wwXIfr', isExternal: true },
