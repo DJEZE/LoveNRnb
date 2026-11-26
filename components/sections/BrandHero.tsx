@@ -75,8 +75,8 @@ export function BrandHero() {
             className="font-display font-black uppercase text-white leading-none"
             style={{ fontSize: 'clamp(2.8rem, 8vw, 8rem)', letterSpacing: '-0.03em' }}
           >
-            More Than Music.<br />
-            <span className="text-gold">It&apos;s An Experience.</span>
+            The South&apos;s Premier<br />
+            <span className="text-gold">R&amp;B Experience.</span>
           </h1>
         </motion.div>
 

@@ -58,7 +58,7 @@ export function Footer() {
             </Link>
 
             <p className="font-body text-sm text-white/40 leading-relaxed mb-7 max-w-[220px]">
-              More Than Music.<br />It&apos;s An Experience.
+              The South&apos;s Premier<br />R&amp;B Experience.
             </p>
 
             {/* Social icons */}

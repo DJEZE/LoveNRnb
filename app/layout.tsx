@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     process.env.NEXT_PUBLIC_SITE_URL ?? 'https://lovenrnb.com'
   ),
   title: {
-    default: "LoveNRnB | More Than Music. It's An Experience.",
+    default: "LoveNRnB | The South's Premier R&B Experience",
     template: '%s | LoveNRnB',
   },
   description:
@@ -31,22 +31,22 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     siteName: 'LoveNRnB',
-    title: "LoveNRnB | More Than Music. It's An Experience.",
+    title: "LoveNRnB | The South's Premier R&B Experience",
     description:
-      "LoveNRnB is an R&B entertainment brand behind LoveNRnB Fest (Houston), LoveNRnB Live (national tour), and an Official SXSW 2027 Music Showcase. More than music. It's an experience.",
+      "LoveNRnB is an R&B entertainment brand behind LoveNRnB Fest (Houston), LoveNRnB Live (national tour), and an Official SXSW 2027 Music Showcase. The South's premier R&B experience.",
     images: [
       {
         url: '/images/hero-concert.jpg',
         width: 2000,
         height: 1333,
-        alt: 'LoveNRnB — More Than Music. It\'s An Experience.',
+        alt: "LoveNRnB — The South's Premier R&B Experience",
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: "LoveNRnB | More Than Music. It's An Experience.",
-    description: "LoveNRnB Fest · LoveNRnB Live · SXSW 2027. R&B entertainment and culture, built in Houston.",
+    title: "LoveNRnB | The South's Premier R&B Experience",
+    description: "LoveNRnB Fest · LoveNRnB Live · SXSW 2027. The South's premier R&B experience, built in Houston.",
     images: ['/images/hero-concert.jpg'],
     creator: '@lovenrnbfest',
   },
