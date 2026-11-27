@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import Script from 'next/script'
+import { ShopProviders } from '@/components/shop/ShopProviders'
 import './globals.css'
 
 // ─── Metadata ─────────────────────────────────────────────────────────────
@@ -88,7 +89,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <ShopProviders>
         {children}
+        </ShopProviders>
 
         {/* Amplitude */}
         <Script src="https://cdn.amplitude.com/script/b62c1eec1c46d2963a218a94de0163ea.js" strategy="afterInteractive" />
