@@ -58,6 +58,7 @@ export function ProductDetailClient({ product }: Props) {
             src={image}
             alt={product.name}
             fill
+            unoptimized
             className="object-cover object-center"
             priority
           />
