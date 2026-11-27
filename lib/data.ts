@@ -10,14 +10,6 @@ export const NAV_LINKS: NavLink[] = [
   { label: 'Shop', href: '/shop' },
   { label: 'Partnerships', href: '/partnerships' },
   { label: 'Contact', href: '/#contact' },
-  {
-    label: 'Experiences',
-    href: '#',
-    children: [
-      { label: 'LoveNRnB Fest', href: '/fest' },
-      { label: 'LoveNRnB Live', href: '/live' },
-    ],
-  },
 ]
 
 // ---------------------------------------------------------------------------
