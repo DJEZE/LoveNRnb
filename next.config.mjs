@@ -17,7 +17,11 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: '*.stripe.com',
+        hostname: '**.stripe.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'stripe-camo.global.ssl.fastly.net',
       },
     ],
     formats: ['image/avif', 'image/webp'],
