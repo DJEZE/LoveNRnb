@@ -41,6 +41,67 @@ export default function EventsPage() {
           <div className="w-full h-px bg-white/10" />
         </section>
 
+        {/* ── New Orleans Feature Card ── */}
+        <section className="bg-black">
+          <div className="container mx-auto px-6 py-16 lg:py-20">
+            <AnimatedSection className="max-w-3xl mx-auto">
+              <div
+                className="relative overflow-hidden border border-gold/30 p-8 lg:p-12"
+                style={{
+                  background: 'radial-gradient(ellipse 80% 70% at 20% 50%, rgba(204,0,0,0.12) 0%, rgba(140,0,0,0.04) 55%, transparent 75%), #0a0a0a',
+                }}
+              >
+                {/* Large ghosted date */}
+                <div
+                  className="absolute right-0 top-0 bottom-0 flex items-center pr-6 lg:pr-10 pointer-events-none select-none"
+                  aria-hidden="true"
+                >
+                  <span
+                    className="font-display font-black uppercase text-white/[0.04] leading-none hidden lg:block"
+                    style={{ fontSize: 'clamp(5rem, 12vw, 11rem)', letterSpacing: '-0.04em' }}
+                  >
+                    FEB<br />27
+                  </span>
+                </div>
+
+                <div className="relative z-10">
+                  {/* Badge */}
+                  <div className="inline-flex items-center gap-2 border border-gold/40 px-3 py-1.5 mb-6">
+                    <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse flex-shrink-0" />
+                    <span className="font-body text-2xs text-gold uppercase tracking-[0.2em]">Just Announced</span>
+                  </div>
+
+                  {/* Eyebrow */}
+                  <p className="font-body text-2xs text-gold/60 uppercase tracking-[0.3em] mb-3">
+                    LoveNRnB Live · New Orleans, Louisiana
+                  </p>
+
+                  {/* Headline */}
+                  <h3
+                    className="font-display font-black uppercase text-white leading-none mb-3"
+                    style={{ fontSize: 'clamp(2.5rem, 7vw, 6rem)', letterSpacing: '-0.03em' }}
+                  >
+                    New Orleans,<br /><span className="text-gold">Feb 27.</span>
+                  </h3>
+
+                  <p className="font-body text-base text-white/50 leading-relaxed mb-8 max-w-md">
+                    The Concert &amp; Party Experience comes to New Orleans. Early access registration is open now.
+                  </p>
+
+                  <a
+                    href="/live/new-orleans"
+                    className="inline-flex items-center justify-center h-13 px-10 font-body text-sm font-bold uppercase tracking-[0.2em] text-black bg-gold hover:bg-gold-light transition-colors duration-200"
+                    style={{ height: '52px' }}
+                  >
+                    Get Early Access
+                  </a>
+                </div>
+              </div>
+            </AnimatedSection>
+          </div>
+          <div className="w-full h-px bg-white/10" />
+        </section>
+
         {/* ── More Upcoming Experiences ── */}
         <section className="bg-black">
           <div className="container mx-auto px-6 py-16 lg:py-24">
@@ -50,36 +111,6 @@ export default function EventsPage() {
               </p>
 
               <div className="space-y-0">
-                {/* New Orleans — specific announced date */}
-                <div className="border-t border-white/10 py-10">
-                  <div className="flex items-start justify-between gap-6">
-                    <div>
-                      <div className="inline-flex items-center gap-2 border border-gold/40 px-3 py-1.5 mb-4">
-                        <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse flex-shrink-0" />
-                        <span className="font-body text-2xs text-gold uppercase tracking-[0.2em]">Just Announced</span>
-                      </div>
-                      <h3
-                        className="font-display font-black uppercase text-white leading-none mb-4"
-                        style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)', letterSpacing: '-0.02em' }}
-                      >
-                        LoveNRnB Live: New Orleans
-                      </h3>
-                      <p className="font-body text-xs text-white/30 uppercase tracking-[0.2em] mb-3">
-                        New Orleans, LA · February 27, 2027
-                      </p>
-                      <p className="font-body text-base text-white/50 leading-relaxed mb-5">
-                        The Concert &amp; Party Experience comes to New Orleans. Early access registration is open now.
-                      </p>
-                      <a href="/live/new-orleans" className="font-body text-xs text-gold uppercase tracking-[0.15em] hover:text-gold-light transition-colors">
-                        Get Early Access →
-                      </a>
-                    </div>
-                    <div className="flex-shrink-0 hidden sm:flex items-center border border-gold/30 px-3 py-1.5">
-                      <span className="font-body text-2xs text-gold uppercase tracking-[0.2em]">Feb 27</span>
-                    </div>
-                  </div>
-                </div>
-
                 {/* LoveNRnB Live — general */}
                 <div className="border-t border-white/10 py-10">
                   <div className="flex items-start justify-between gap-6">
