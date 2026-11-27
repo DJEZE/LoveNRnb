@@ -14,14 +14,14 @@ export function ProductCard({ product }: ProductCardProps) {
   return (
     <Link href={`/shop/${product.id}`} className="group block">
       {/* Image */}
-      <div className="relative aspect-[3/4] bg-white/5 overflow-hidden mb-4">
+      <div className="relative aspect-square bg-white overflow-hidden mb-4">
         {image ? (
           <Image
             src={image}
             alt={product.name}
             fill
             unoptimized
-            className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
+            className="object-contain object-center p-3 group-hover:scale-105 transition-transform duration-700"
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center">

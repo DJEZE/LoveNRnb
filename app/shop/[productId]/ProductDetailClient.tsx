@@ -53,14 +53,14 @@ export function ProductDetailClient({ product }: Props) {
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
 
       {/* Image */}
-      <div className="relative aspect-[3/4] bg-white/5 overflow-hidden">
+      <div className="relative aspect-[4/3] lg:aspect-[16/10] bg-white overflow-hidden">
         {image ? (
           <Image
             src={image}
             alt={product.name}
             fill
             unoptimized
-            className="object-cover object-center"
+            className="object-contain object-center p-4"
             priority
           />
         ) : (
