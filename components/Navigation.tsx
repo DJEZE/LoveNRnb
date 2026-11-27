@@ -128,7 +128,7 @@ export function Navigation() {
 
             {/* Desktop CTA */}
             <div className="hidden md:block">
-              <
+              <a
                 href="https://laylo.com/lovenrnb_/X16P9f"
                 target="_blank"
                 rel="noopener noreferrer"
