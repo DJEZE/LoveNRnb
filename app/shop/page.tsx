@@ -49,31 +49,37 @@ export default async function ShopPage({
         <section
           className="relative overflow-hidden"
           style={{
-            background: `radial-gradient(ellipse 80% 60% at 50% 40%, rgba(204,0,0,0.12) 0%, rgba(140,0,0,0.05) 50%, transparent 70%), #000`,
+            background: `radial-gradient(ellipse 80% 60% at 50% 40%, rgba(204,0,0,0.14) 0%, rgba(140,0,0,0.06) 50%, transparent 70%), #000`,
           }}
         >
-          <div className="container mx-auto px-6 py-20 lg:py-28">
+          <div className="container mx-auto px-6 py-20 lg:py-32">
             <AnimatedSection>
               <p className="font-body text-2xs text-gold uppercase tracking-[0.3em] mb-5">
-                LoveNRnB Shop
+                LoveNRnB · Vol. 001
               </p>
               <h1
                 className="font-display font-black uppercase text-white leading-none mb-6"
-                style={{ fontSize: 'clamp(4rem, 11vw, 11rem)', letterSpacing: '-0.03em' }}
+                style={{ fontSize: 'clamp(3.5rem, 10vw, 10rem)', letterSpacing: '-0.03em' }}
               >
-                Wear The<br />
-                <span className="text-gold">Culture.</span>
+                Pray For<br />
+                <span className="text-gold">Love.</span>
               </h1>
-              <p className="font-body text-base lg:text-lg text-white/50 max-w-xl leading-relaxed">
-                Official LoveNRnB merchandise. Premium apparel and accessories for R&amp;B lovers.
+              <p className="font-body text-base lg:text-lg text-white/50 max-w-lg leading-relaxed mb-10">
+                For the music. For the culture. For the love.
               </p>
+              <a
+                href="#products"
+                className="inline-flex items-center justify-center h-14 px-10 font-body text-sm font-bold uppercase tracking-[0.2em] text-black bg-gold hover:bg-gold-light transition-colors duration-200"
+              >
+                Shop the Drop
+              </a>
             </AnimatedSection>
           </div>
           <div className="w-full h-px bg-white/10" />
         </section>
 
         {/* Products */}
-        <section className="bg-black">
+        <section id="products" className="bg-black">
           <div className="container mx-auto px-6 py-16 lg:py-24">
 
             {loadError ? (

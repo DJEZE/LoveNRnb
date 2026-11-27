@@ -22,14 +22,14 @@ export async function FeaturedMerch() {
         <AnimatedSection className="flex items-end justify-between gap-6 mb-12">
           <div>
             <p className="font-body text-2xs text-gold uppercase tracking-[0.3em] mb-4">
-              Official Merch
+              Vol. 001
             </p>
             <h2
               className="font-display font-black uppercase text-white leading-none"
               style={{ fontSize: 'clamp(2.5rem, 6vw, 6rem)', letterSpacing: '-0.03em' }}
             >
-              Wear The<br />
-              <span className="text-gold">Culture.</span>
+              Pray For<br />
+              <span className="text-gold">Love.</span>
             </h2>
           </div>
           <Link
