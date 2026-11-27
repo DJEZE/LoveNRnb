@@ -41,74 +41,6 @@ export default function EventsPage() {
           <div className="w-full h-px bg-white/10" />
         </section>
 
-        {/* ── SXSW 2027 ── */}
-        <section className="bg-black">
-          <div className="container mx-auto px-6 py-16 lg:py-24">
-            <AnimatedSection className="max-w-3xl mx-auto">
-              {/* SXSW Logo */}
-              <div className="mb-10">
-                <Image
-                  src="/images/sxsw-logo.png"
-                  alt="SXSW"
-                  width={2000}
-                  height={461}
-                  className="w-auto h-10 lg:h-14 object-contain"
-                />
-              </div>
-
-              {/* Badge */}
-              <div className="inline-flex items-center gap-2 border border-gold/40 px-4 py-2 mb-10">
-                <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse-dot flex-shrink-0" />
-                <span className="font-body text-2xs text-gold uppercase tracking-[0.25em]">
-                  Official SXSW Music Showcase Presenter
-                </span>
-              </div>
-
-              <p className="font-body text-2xs text-gold uppercase tracking-[0.3em] mb-4">
-                Austin, Texas · March 15–21, 2027
-              </p>
-              <h2
-                className="font-display font-black uppercase text-white leading-none mb-8"
-                style={{ fontSize: 'clamp(2.5rem, 7vw, 6rem)', letterSpacing: '-0.03em' }}
-              >
-                LoveNRnB<br />at SXSW 2027
-              </h2>
-
-              <div className="space-y-5 mb-12">
-                <p className="font-body text-base text-white/60 leading-relaxed">
-                  LoveNRnB is officially headed to South by Southwest.
-                </p>
-                <p className="font-body text-base text-white/60 leading-relaxed">
-                  Since 2022, we&apos;ve been creating experiences that bring R&amp;B lovers together while providing a platform for the next generation of artists. In 2027, we&apos;re taking that mission to Austin as an official SXSW Music Showcase Presenter.
-                </p>
-                <p className="font-body text-base text-white/60 leading-relaxed">
-                  Expect a curated showcase highlighting emerging R&amp;B talent, fresh sounds, and artists shaping the future of the genre.
-                </p>
-                <p className="font-body text-sm text-white/40 leading-relaxed">
-                  Official showcase date, venue, and artist lineup coming soon.
-                </p>
-              </div>
-
-              <div className="border border-white/10 p-8 lg:p-10">
-                <p className="font-body text-2xs text-gold uppercase tracking-[0.3em] mb-3">
-                  Sponsorship &amp; Partnership Opportunities
-                </p>
-                <p className="font-body text-sm text-white/50 leading-relaxed mb-6">
-                  Interested in partnering with LoveNRnB at SXSW 2027? For sponsorships, artist submissions, brand partnerships, and general inquiries:
-                </p>
-                <a
-                  href="mailto:eze@lovenrnb.com"
-                  className="inline-flex items-center justify-center h-11 px-8 font-body text-xs font-semibold uppercase tracking-[0.2em] text-black bg-gold hover:bg-gold-light transition-colors duration-200"
-                >
-                  eze@lovenrnb.com
-                </a>
-              </div>
-            </AnimatedSection>
-          </div>
-
-          <div className="w-full h-px bg-white/10" />
-        </section>
-
         {/* ── More Upcoming Experiences ── */}
         <section className="bg-black">
           <div className="container mx-auto px-6 py-16 lg:py-24">
@@ -204,6 +136,74 @@ export default function EventsPage() {
               </div>
             </AnimatedSection>
           </div>
+        </section>
+
+        {/* ── SXSW 2027 ── */}
+        <section className="bg-black">
+          <div className="container mx-auto px-6 py-16 lg:py-24">
+            <AnimatedSection className="max-w-3xl mx-auto">
+              {/* SXSW Logo */}
+              <div className="mb-10">
+                <Image
+                  src="/images/sxsw-logo.png"
+                  alt="SXSW"
+                  width={2000}
+                  height={461}
+                  className="w-auto h-10 lg:h-14 object-contain"
+                />
+              </div>
+
+              {/* Badge */}
+              <div className="inline-flex items-center gap-2 border border-gold/40 px-4 py-2 mb-10">
+                <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse-dot flex-shrink-0" />
+                <span className="font-body text-2xs text-gold uppercase tracking-[0.25em]">
+                  Official SXSW Music Showcase Presenter
+                </span>
+              </div>
+
+              <p className="font-body text-2xs text-gold uppercase tracking-[0.3em] mb-4">
+                Austin, Texas · March 15–21, 2027
+              </p>
+              <h2
+                className="font-display font-black uppercase text-white leading-none mb-8"
+                style={{ fontSize: 'clamp(2.5rem, 7vw, 6rem)', letterSpacing: '-0.03em' }}
+              >
+                LoveNRnB<br />at SXSW 2027
+              </h2>
+
+              <div className="space-y-5 mb-12">
+                <p className="font-body text-base text-white/60 leading-relaxed">
+                  LoveNRnB is officially headed to South by Southwest.
+                </p>
+                <p className="font-body text-base text-white/60 leading-relaxed">
+                  Since 2022, we&apos;ve been creating experiences that bring R&amp;B lovers together while providing a platform for the next generation of artists. In 2027, we&apos;re taking that mission to Austin as an official SXSW Music Showcase Presenter.
+                </p>
+                <p className="font-body text-base text-white/60 leading-relaxed">
+                  Expect a curated showcase highlighting emerging R&amp;B talent, fresh sounds, and artists shaping the future of the genre.
+                </p>
+                <p className="font-body text-sm text-white/40 leading-relaxed">
+                  Official showcase date, venue, and artist lineup coming soon.
+                </p>
+              </div>
+
+              <div className="border border-white/10 p-8 lg:p-10">
+                <p className="font-body text-2xs text-gold uppercase tracking-[0.3em] mb-3">
+                  Sponsorship &amp; Partnership Opportunities
+                </p>
+                <p className="font-body text-sm text-white/50 leading-relaxed mb-6">
+                  Interested in partnering with LoveNRnB at SXSW 2027? For sponsorships, artist submissions, brand partnerships, and general inquiries:
+                </p>
+                <a
+                  href="mailto:eze@lovenrnb.com"
+                  className="inline-flex items-center justify-center h-11 px-8 font-body text-xs font-semibold uppercase tracking-[0.2em] text-black bg-gold hover:bg-gold-light transition-colors duration-200"
+                >
+                  eze@lovenrnb.com
+                </a>
+              </div>
+            </AnimatedSection>
+          </div>
+
+          <div className="w-full h-px bg-white/10" />
         </section>
 
         {/* ── Past Events ── */}
