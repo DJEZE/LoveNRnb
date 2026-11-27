@@ -6,6 +6,7 @@ import { ShoppingBag, Minus, Plus, Check } from 'lucide-react'
 import type { ShopProduct } from '@/lib/shop'
 import { formatPrice } from '@/lib/shop'
 import { useCart } from '@/components/shop/CartContext'
+import { StripeBuyButton } from '@/components/shop/StripeBuyButton'
 
 interface Props {
   product: ShopProduct
@@ -181,21 +182,29 @@ export function ProductDetailClient({ product }: Props) {
           <span className="font-body text-sm text-white/30">Max 10 per order</span>
         </div>
 
-        {/* Add to cart */}
-        <button
-          onClick={handleAddToCart}
-          className={`w-full flex items-center justify-center gap-2 h-14 font-body text-sm font-bold uppercase tracking-[0.2em] transition-all duration-200 ${
-            added
-              ? 'bg-white text-black'
-              : 'text-black bg-gold hover:bg-gold-light'
-          }`}
-        >
-          {added ? (
-            <><Check size={16} /> Added to Cart</>
-          ) : (
-            <><ShoppingBag size={16} /> Add to Cart</>
-          )}
-        </button>
+        {/* Checkout */}
+        {product.metadata.buy_button_id ? (
+          <div className="mt-2">
+            <StripeBuyButton buyButtonId={product.metadata.buy_button_id} />
+          </div>
+        ) : (
+          <>
+            <button
+              onClick={handleAddToCart}
+              className={`w-full flex items-center justify-center gap-2 h-14 font-body text-sm font-bold uppercase tracking-[0.2em] transition-all duration-200 ${
+                added
+                  ? 'bg-white text-black'
+                  : 'text-black bg-gold hover:bg-gold-light'
+              }`}
+            >
+              {added ? (
+                <><Check size={16} /> Added to Cart</>
+              ) : (
+                <><ShoppingBag size={16} /> Add to Cart</>
+              )}
+            </button>
+          </>
+        )}
 
         <p className="font-body text-2xs text-white/20 text-center mt-4 leading-relaxed">
           Secure checkout via Stripe · Ships to US &amp; Canada
