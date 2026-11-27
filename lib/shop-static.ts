@@ -16,7 +16,7 @@ export const STATIC_PRODUCTS: ShopProduct[] = [
     preorder: false,
     featured: true,
     active: true,
-    metadata: { buy_button_id: 'buy_btn_1UgTlsDfa6xjnJVQGPUDnqMV' },
+    metadata: { buy_button_id: 'buy_btn_1UgTlsDfa6xjnJVQGPUDnqMV', payment_link: 'https://buy.stripe.com/6oU6oH8xR9I343S4249sk03' },
   },
 ]
 
