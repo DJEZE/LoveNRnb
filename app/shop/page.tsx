@@ -12,6 +12,26 @@ export const metadata: Metadata = {
 
 export const revalidate = 60
 
+const FALLBACK_PRODUCTS: ShopProduct[] = [
+  {
+    id: 'pray-for-love-longsleeve',
+    name: 'Pray For Love Long Sleeve',
+    description: 'LoveNRnB Vol. 001 — Pray For Love long sleeve. Black with red old english graphics.',
+    images: ['/images/merch-pray-for-love-longsleeve.jpg'],
+    priceId: '',
+    price: 0,
+    currency: 'usd',
+    category: 'apparel',
+    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+    colors: ['Black'],
+    collection: 'Vol. 001',
+    preorder: false,
+    featured: true,
+    active: true,
+    metadata: { buy_button_id: 'buy_btn_1UgTlsDfa6xjnJVQGPUDnqMV' },
+  },
+]
+
 export default async function ShopPage({
   searchParams,
 }: {
@@ -21,15 +41,16 @@ export default async function ShopPage({
   const canceled = params.canceled === '1'
 
   let products: ShopProduct[] = []
-  let loadError = false
 
   try {
     products = await getShopProducts()
   } catch {
-    loadError = true
+    // fall through to static fallback
   }
 
-  const categories = ['all', ...Array.from(new Set(products.map((p) => p.category)))]
+  if (products.length === 0) {
+    products = FALLBACK_PRODUCTS
+  }
 
   return (
     <>
@@ -82,37 +103,13 @@ export default async function ShopPage({
         <section id="products" className="bg-black">
           <div className="container mx-auto px-6 py-16 lg:py-24">
 
-            {loadError ? (
-              <AnimatedSection className="text-center py-24">
-                <p className="font-body text-base text-white/40">
-                  Unable to load products right now. Please check back soon.
-                </p>
-              </AnimatedSection>
-            ) : products.length === 0 ? (
-              <AnimatedSection className="text-center py-24">
-                <ShoppingBagEmpty />
-              </AnimatedSection>
-            ) : (
-              <AnimatedSection>
-                {/* Category filter — client-side via URL could be added later */}
-                <div className="flex flex-wrap gap-3 mb-12">
-                  {categories.map((cat) => (
-                    <span
-                      key={cat}
-                      className="font-body text-2xs uppercase tracking-[0.15em] border border-white/10 px-4 py-2 text-white/40 cursor-default"
-                    >
-                      {cat}
-                    </span>
-                  ))}
-                </div>
-
+            <AnimatedSection>
                 <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8">
                   {products.map((product) => (
                     <ProductCard key={product.id} product={product} />
                   ))}
                 </div>
               </AnimatedSection>
-            )}
           </div>
         </section>
 
