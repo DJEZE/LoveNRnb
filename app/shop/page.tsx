@@ -4,6 +4,7 @@ import { Footer } from '@/components/Footer'
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
 import { ProductCard } from '@/components/shop/ProductCard'
 import { getShopProducts, type ShopProduct } from '@/lib/shop'
+import { STATIC_PRODUCTS } from '@/lib/shop-static'
 
 export const metadata: Metadata = {
   title: 'Shop — LoveNRnB',
@@ -12,25 +13,6 @@ export const metadata: Metadata = {
 
 export const revalidate = 60
 
-const FALLBACK_PRODUCTS: ShopProduct[] = [
-  {
-    id: 'pray-for-love-longsleeve',
-    name: 'Pray For Love Long Sleeve',
-    description: 'LoveNRnB Vol. 001 — Pray For Love long sleeve. Black with red old english graphics.',
-    images: ['/images/merch-pray-for-love-longsleeve.jpg'],
-    priceId: '',
-    price: 0,
-    currency: 'usd',
-    category: 'apparel',
-    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
-    colors: ['Black'],
-    collection: 'Vol. 001',
-    preorder: false,
-    featured: true,
-    active: true,
-    metadata: { buy_button_id: 'buy_btn_1UgTlsDfa6xjnJVQGPUDnqMV' },
-  },
-]
 
 export default async function ShopPage({
   searchParams,
@@ -49,7 +31,7 @@ export default async function ShopPage({
   }
 
   if (products.length === 0) {
-    products = FALLBACK_PRODUCTS
+    products = STATIC_PRODUCTS
   }
 
   return (

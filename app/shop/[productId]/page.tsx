@@ -4,6 +4,7 @@ import { Navigation } from '@/components/Navigation'
 import { Footer } from '@/components/Footer'
 import { AnimatedSection } from '@/components/ui/AnimatedSection'
 import { getShopProduct } from '@/lib/shop'
+import { getStaticProduct } from '@/lib/shop-static'
 import { ProductDetailClient } from './ProductDetailClient'
 
 export const revalidate = 60
@@ -14,7 +15,9 @@ interface Props {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { productId } = await params
-  const product = await getShopProduct(productId)
+  let product = null
+  try { product = await getShopProduct(productId) } catch {}
+  if (!product) product = getStaticProduct(productId)
   if (!product) return { title: 'Product Not Found — LoveNRnB Shop' }
 
   return {
@@ -28,8 +31,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function ProductPage({ params }: Props) {
   const { productId } = await params
-  const product = await getShopProduct(productId)
 
+  let product = null
+  try {
+    product = await getShopProduct(productId)
+  } catch {
+    // fall through to static
+  }
+
+  if (!product) product = getStaticProduct(productId)
   if (!product) notFound()
 
   return (
