@@ -102,73 +102,6 @@ export default function EventsPage() {
           <div className="w-full h-px bg-white/10" />
         </section>
 
-        {/* ── More Upcoming Experiences ── */}
-        <section className="bg-black">
-          <div className="container mx-auto px-6 py-16 lg:py-24">
-            <AnimatedSection className="max-w-3xl mx-auto">
-              <p className="font-body text-2xs text-gold uppercase tracking-[0.3em] mb-10">
-                More Upcoming
-              </p>
-
-              <div className="space-y-0">
-                {/* LoveNRnB Live — general */}
-                <div className="border-t border-white/10 py-10">
-                  <div className="flex items-start justify-between gap-6">
-                    <div>
-                      <h3
-                        className="font-display font-black uppercase text-white leading-none mb-4"
-                        style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)', letterSpacing: '-0.02em' }}
-                      >
-                        LoveNRnB Live 2027
-                      </h3>
-                      <p className="font-body text-xs text-white/30 uppercase tracking-[0.2em] mb-3">
-                        Dallas · Atlanta · More Cities TBA
-                      </p>
-                      <p className="font-body text-base text-white/50 leading-relaxed mb-5">
-                        Our traveling concert-party experience hits the road in 2027.
-                      </p>
-                      <a href="/live" className="font-body text-xs text-gold uppercase tracking-[0.15em] hover:text-gold-light transition-colors">
-                        Learn More →
-                      </a>
-                    </div>
-                    <div className="flex-shrink-0 hidden sm:flex items-center border border-gold/30 px-3 py-1.5">
-                      <span className="font-body text-2xs text-gold uppercase tracking-[0.2em]">2027</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* LoveNRnB Fest */}
-                <div className="border-t border-white/10 py-10">
-                  <div className="flex items-start justify-between gap-6">
-                    <div>
-                      <h3
-                        className="font-display font-black uppercase text-white leading-none mb-4"
-                        style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)', letterSpacing: '-0.02em' }}
-                      >
-                        LoveNRnB Fest 2027
-                      </h3>
-                      <p className="font-body text-xs text-white/30 uppercase tracking-[0.2em] mb-3">
-                        Houston, TX
-                      </p>
-                      <p className="font-body text-base text-white/50 leading-relaxed mb-5">
-                        Our annual Houston R&amp;B festival returns. Date and lineup coming soon.
-                      </p>
-                      <a href="https://laylo.com/lovenrnb_/X16P9f" target="_blank" rel="noopener noreferrer" className="font-body text-xs text-gold uppercase tracking-[0.15em] hover:text-gold-light transition-colors">
-                        Get Notified →
-                      </a>
-                    </div>
-                    <div className="flex-shrink-0 hidden sm:flex items-center border border-gold/30 px-3 py-1.5">
-                      <span className="font-body text-2xs text-gold uppercase tracking-[0.2em]">2027</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="border-t border-white/10" />
-              </div>
-            </AnimatedSection>
-          </div>
-        </section>
-
         {/* ── SXSW 2027 ── */}
         <section className="bg-black">
           <div className="container mx-auto px-6 py-16 lg:py-24">
@@ -235,6 +168,73 @@ export default function EventsPage() {
           </div>
 
           <div className="w-full h-px bg-white/10" />
+        </section>
+
+        {/* ── More Upcoming Experiences ── */}
+        <section className="bg-black">
+          <div className="container mx-auto px-6 py-16 lg:py-24">
+            <AnimatedSection className="max-w-3xl mx-auto">
+              <p className="font-body text-2xs text-gold uppercase tracking-[0.3em] mb-10">
+                More Upcoming
+              </p>
+
+              <div className="space-y-0">
+                {/* LoveNRnB Live — general */}
+                <div className="border-t border-white/10 py-10">
+                  <div className="flex items-start justify-between gap-6">
+                    <div>
+                      <h3
+                        className="font-display font-black uppercase text-white leading-none mb-4"
+                        style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)', letterSpacing: '-0.02em' }}
+                      >
+                        LoveNRnB Live 2027
+                      </h3>
+                      <p className="font-body text-xs text-white/30 uppercase tracking-[0.2em] mb-3">
+                        Dallas · Atlanta · More Cities TBA
+                      </p>
+                      <p className="font-body text-base text-white/50 leading-relaxed mb-5">
+                        Our traveling concert-party experience hits the road in 2027.
+                      </p>
+                      <a href="/live" className="font-body text-xs text-gold uppercase tracking-[0.15em] hover:text-gold-light transition-colors">
+                        Learn More →
+                      </a>
+                    </div>
+                    <div className="flex-shrink-0 hidden sm:flex items-center border border-gold/30 px-3 py-1.5">
+                      <span className="font-body text-2xs text-gold uppercase tracking-[0.2em]">2027</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* LoveNRnB Fest */}
+                <div className="border-t border-white/10 py-10">
+                  <div className="flex items-start justify-between gap-6">
+                    <div>
+                      <h3
+                        className="font-display font-black uppercase text-white leading-none mb-4"
+                        style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)', letterSpacing: '-0.02em' }}
+                      >
+                        LoveNRnB Fest 2027
+                      </h3>
+                      <p className="font-body text-xs text-white/30 uppercase tracking-[0.2em] mb-3">
+                        Houston, TX
+                      </p>
+                      <p className="font-body text-base text-white/50 leading-relaxed mb-5">
+                        Our annual Houston R&amp;B festival returns. Date and lineup coming soon.
+                      </p>
+                      <a href="https://laylo.com/lovenrnb_/X16P9f" target="_blank" rel="noopener noreferrer" className="font-body text-xs text-gold uppercase tracking-[0.15em] hover:text-gold-light transition-colors">
+                        Get Notified →
+                      </a>
+                    </div>
+                    <div className="flex-shrink-0 hidden sm:flex items-center border border-gold/30 px-3 py-1.5">
+                      <span className="font-body text-2xs text-gold uppercase tracking-[0.2em]">2027</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="border-t border-white/10" />
+              </div>
+            </AnimatedSection>
+          </div>
         </section>
 
         {/* ── Past Events ── */}
