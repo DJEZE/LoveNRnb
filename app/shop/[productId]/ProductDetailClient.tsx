@@ -183,27 +183,28 @@ export function ProductDetailClient({ product }: Props) {
         </div>
 
         {/* Checkout */}
-        {product.metadata.buy_button_id ? (
+        {product.metadata.payment_link ? (
+          <a
+            href={product.metadata.payment_link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full flex items-center justify-center gap-2 h-14 font-body text-sm font-bold uppercase tracking-[0.2em] text-black bg-gold hover:bg-gold-light transition-colors duration-200"
+          >
+            <ShoppingBag size={16} /> Buy Now
+          </a>
+        ) : product.metadata.buy_button_id ? (
           <div className="mt-2">
             <StripeBuyButton buyButtonId={product.metadata.buy_button_id} />
           </div>
         ) : (
-          <>
-            <button
-              onClick={handleAddToCart}
-              className={`w-full flex items-center justify-center gap-2 h-14 font-body text-sm font-bold uppercase tracking-[0.2em] transition-all duration-200 ${
-                added
-                  ? 'bg-white text-black'
-                  : 'text-black bg-gold hover:bg-gold-light'
-              }`}
-            >
-              {added ? (
-                <><Check size={16} /> Added to Cart</>
-              ) : (
-                <><ShoppingBag size={16} /> Add to Cart</>
-              )}
-            </button>
-          </>
+          <button
+            onClick={handleAddToCart}
+            className={`w-full flex items-center justify-center gap-2 h-14 font-body text-sm font-bold uppercase tracking-[0.2em] transition-all duration-200 ${
+              added ? 'bg-white text-black' : 'text-black bg-gold hover:bg-gold-light'
+            }`}
+          >
+            {added ? <><Check size={16} /> Added to Cart</> : <><ShoppingBag size={16} /> Add to Cart</>}
+          </button>
         )}
 
         <p className="font-body text-2xs text-white/20 text-center mt-4 leading-relaxed">
