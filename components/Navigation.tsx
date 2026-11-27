@@ -7,7 +7,6 @@ import { Menu, X, ChevronDown, ArrowUpRight } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { NAV_LINKS } from '@/lib/data'
 import type { NavLink } from '@/lib/types'
-import { CartButton } from '@/components/shop/CartButton'
 
 function DropdownMenu({ link }: { link: NavLink }) {
   const [open, setOpen] = useState(false)
@@ -128,9 +127,8 @@ export function Navigation() {
             </nav>
 
             {/* Desktop CTA */}
-            <div className="hidden md:flex items-center gap-3">
-              <CartButton />
-              <a
+            <div className="hidden md:block">
+              <
                 href="https://laylo.com/lovenrnb_/X16P9f"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -141,16 +139,13 @@ export function Navigation() {
             </div>
 
             {/* Mobile toggle */}
-            <div className="md:hidden flex items-center gap-1">
-              <CartButton />
-              <button
-                className="text-white p-1"
-                onClick={() => setMobileOpen(!mobileOpen)}
-                aria-label={mobileOpen ? 'Close' : 'Menu'}
-              >
-                {mobileOpen ? <X size={22} /> : <Menu size={22} />}
-              </button>
-            </div>
+            <button
+              className="md:hidden text-white p-1"
+              onClick={() => setMobileOpen(!mobileOpen)}
+              aria-label={mobileOpen ? 'Close' : 'Menu'}
+            >
+              {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+            </button>
           </div>
         </div>
       </header>
